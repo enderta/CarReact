@@ -15,44 +15,45 @@ const CreateCar = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-       fetch('http://localhost:8081/api/cars', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+        try {
+            const response = await fetch('http://localhost:8081/api/cars', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                    brand: brand,
+                    model: model,
+                    year: year,
+                    color: color,
+                    price: price,
+                    registerNumber: registerNumber,
+                }),
+            });
+            const data = await response.json();
+            console.log(response.status);
+            if (response.status===201) {
 
-            },
-            body: JSON.stringify({
-                id: id,
-                brand: brand,
-                model: model,
-                year: year,
-                color: color,
-                price: price,
-                registerNumber: registerNumber,
-            }),
-        })
+                alert("Car created successfully");
 
-            .then(response => response.json())
-            .then(data => {
-               if (data.response===200){
-                   setMessage('Car created!')
-               }
-                else{
-                setMessage('Car not created!')
-            }
-            }).catch(error => {
-                console.log(error);
+            } else {
+                setMessage("Some error occured");
             }
 
-            );
+        }
+        catch (e) {
+            console.log(e);
+        }
+        setId('');
+        setBrand('');
+        setModel('');
+        setYear('');
+        setColor('');
+        setPrice('');
+        setRegisterNumber('');
+
     }
-
-
-
-
 
 
     return (

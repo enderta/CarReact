@@ -9,24 +9,35 @@ const Cars = () => {
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
-        fetch('http://localhost:8081/api/cars')
-            .then(response => response.json())
-            .then(data => {
-                setCars(data);
-                setLoading(false);
-            }
-            );
-    }, []);
-    const handleDelete = (id) => {
-        fetch(`http://localhost:8081/api/cars/${id}`, {
-            method: 'DELETE',
-        })
-            .then(response => response.json())
-            .then(data => {
-                setCars(cars.filter(car => car.id !== id));
-            });
+       fetch('http://localhost:8081/api/cars')
+                .then(response => response.json())
+                .then(data => {
+                    setCars(data);
+                    setLoading(false);
+                }
+                );
 
+    }, []);
+    const handleDelete = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:8081/api/cars/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',}
+            });
+            console.log(response.status);
+            if (response.status === 204) {
+                alert("Car deleted successfully");
+                setCars(cars.filter(car => car.id !== id));
+            }
+
+        }
+        catch (e) {
+            console.log(e);
+        }
     }
+
+
     const handleCreateButton = (e) => {
         e.preventDefault();
     }
