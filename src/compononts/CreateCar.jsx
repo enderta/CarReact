@@ -4,7 +4,7 @@ import {Button, Form} from "react-bootstrap";
 
 
 const CreateCar = () => {
-    const [id, setId] = React.useState('');
+
     const [brand, setBrand] = React.useState('');
     const [model, setModel] = React.useState('');
     const [year, setYear] = React.useState('');
@@ -22,7 +22,7 @@ const CreateCar = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    id: id,
+
                     brand: brand,
                     model: model,
                     year: year,
@@ -45,13 +45,13 @@ const CreateCar = () => {
         catch (e) {
             console.log(e);
         }
-        setId('');
-        setBrand('');
-        setModel('');
-        setYear('');
-        setColor('');
-        setPrice('');
-        setRegisterNumber('');
+    setPrice('');
+    setBrand('');
+    setModel('');
+    setYear('');
+    setColor('');
+    setRegisterNumber('');
+
 
     }
 
@@ -61,20 +61,18 @@ const CreateCar = () => {
             <h1>Create Car</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group >
-                    <Form.Label>Id</Form.Label>
-                    <Form.Control type="number" placeholder="Enter id" onChange={e => setId(e.target.value)} />
                     <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" placeholder="Enter brand" onChange={e => setBrand(e.target.value)} />
+                    <Form.Control type="text" placeholder="Enter brand" value={brand} onChange={e=>setBrand(e.target.value)} />
                     <Form.Label>Model</Form.Label>
-                    <Form.Control type="text" placeholder="Enter model" onChange={e => setModel(e.target.value)} />
+                    <Form.Control type="text" placeholder="Enter model" value={model} onChange={e=>setModel(e.target.value)} />
                     <Form.Label>Year</Form.Label>
-                    <Form.Control type="number" placeholder="Enter year" onChange={e => setYear(e.target.value)} />
+                    <Form.Control type="number" placeholder="Enter year" value={year} onChange={e => setYear(e.target.value)} />
                     <Form.Label>Color</Form.Label>
-                    <Form.Control type="text" placeholder="Enter color" onChange={e => setColor(e.target.value)} />
+                    <Form.Control type="text" placeholder="Enter color" value={color} onChange={e => setColor(e.target.value)} />
                     <Form.Label>Price</Form.Label>
-                    <Form.Control type="number" placeholder="Enter price" onChange={e => setPrice(e.target.value)} />
+                    <Form.Control type="number" placeholder="Enter price" value={price} onChange={e => setPrice(e.target.value)} />
                     <Form.Label>RegisterNumber</Form.Label>
-                    <Form.Control type="number" placeholder="Enter registerNumber" onChange={e => setRegisterNumber(e.target.value)} />
+                    <Form.Control type="number" placeholder="Enter registerNumber" value={registerNumber} onChange={e => setRegisterNumber(e.target.value)} />
 
                 </Form.Group>
                 <Button variant="primary" type="submit">
