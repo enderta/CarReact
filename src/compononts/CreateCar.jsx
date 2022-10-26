@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form} from "react-bootstrap";
+import {Button, Card, Form} from "react-bootstrap";
 
 
 
@@ -59,32 +59,34 @@ const CreateCar = () => {
     return (
         <div>
             <h1>Create Car</h1>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group >
-                    <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" placeholder="Enter brand" value={brand} onChange={e=>setBrand(e.target.value)} />
-                    <Form.Label>Model</Form.Label>
-                    <Form.Control type="text" placeholder="Enter model" value={model} onChange={e=>setModel(e.target.value)} />
-                    <Form.Label>Year</Form.Label>
-                    <Form.Control type="number" placeholder="Enter year" value={year} onChange={e => setYear(e.target.value)} />
-                    <Form.Label>Color</Form.Label>
-                    <Form.Control type="text" placeholder="Enter color" value={color} onChange={e => setColor(e.target.value)} />
-                    <Form.Label>Price</Form.Label>
-                    <Form.Control type="number" placeholder="Enter price" value={price} onChange={e => setPrice(e.target.value)} />
-                    <Form.Label>RegisterNumber</Form.Label>
-                    <Form.Control type="number" placeholder="Enter registerNumber" value={registerNumber} onChange={e => setRegisterNumber(e.target.value)} />
 
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Create
-                </Button>
-                <div className="message">{message ? <p>{message}</p> : null}</div>
-            </Form>
+<div style={{display: 'flex', justifyContent: 'center'}}>
+               <Card style={{width:"600px"}}>
+                     <Card.Body>
+                         <Form  onSubmit={handleSubmit} >
+                             <Form.Group >
+                                 <Form.Label >Brand</Form.Label>
+                                 <Form.Control type="text" placeholder="Enter brand" value={brand} onChange={e=>setBrand(e.target.value)} />
+                                 <Form.Label>Model</Form.Label>
+                                 <Form.Control type="text" placeholder="Enter model" value={model} onChange={e=>setModel(e.target.value)} />
+                                 <Form.Label>Year</Form.Label>
+                                 <Form.Control type="number" placeholder="Enter year" value={year} onChange={e => setYear(e.target.value)} />
+                                 <Form.Label>Color</Form.Label>
+                                 <Form.Control type="text" placeholder="Enter color" value={color} onChange={e => setColor(e.target.value)} />
+                                 <Form.Label>Price</Form.Label>
+                                 <Form.Control type="number" placeholder="Enter price" value={price} onChange={e => setPrice(e.target.value)} />
+                                 <Form.Label>RegisterNumber</Form.Label>
+                                 <Form.Control type="number" placeholder="Enter registerNumber" value={registerNumber} onChange={e => setRegisterNumber(e.target.value)} />
 
-
-
-
-
+                             </Form.Group>
+                             <br/>
+                             <Button  variant="primary" type="submit">
+                                 Create
+                             </Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+           </div>
 
         </div>
     );
