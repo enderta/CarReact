@@ -60,8 +60,8 @@ const CreateCar = () => {
         <div>
             <h1>Create Car</h1>
 
-<div style={{display: 'flex', justifyContent: 'center'}}>
-               <Card style={{width:"600px"}}>
+<div style={{display: 'flex', justifyContent: 'center',}}>
+               <Card style={{width:"600px",background:"black",color:"red"}}>
                      <Card.Body>
                          <Form  onSubmit={handleSubmit} >
                              <Form.Group >
