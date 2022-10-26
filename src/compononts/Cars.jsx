@@ -43,11 +43,11 @@ const Cars = () => {
     }
 
     return (
-        <div>
+        <div >
             <h1>Cars</h1>
 
             {loading ? <p>Loading...</p> : (
-                <Table striped bordered hover>
+                <Table variant="dark" striped bordered hover>
                     <thead>
                         <tr>
                             <th>Id</th>

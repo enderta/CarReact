@@ -6,7 +6,7 @@ const NavBar = () => {
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/cars">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="/cars">Home </Navbar.Brand>
                     <Nav className="me-auto">
 
                         <Nav.Link href="/cars">Cars</Nav.Link>
