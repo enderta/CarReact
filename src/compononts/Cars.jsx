@@ -45,9 +45,7 @@ const Cars = () => {
     return (
         <div>
             <h1>Cars</h1>
-            <button onClick={handleCreateButton}>
-                <Link to='/cars/create'>Create</Link>
-            </button>
+
             {loading ? <p>Loading...</p> : (
                 <Table striped bordered hover>
                     <thead>
@@ -84,7 +82,11 @@ const Cars = () => {
                 </Table>
             )}
 
-
+        <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
+            <Button variant="dark" onClick={handleCreateButton}>
+                <Link style={{textDecoration:"none",color:"red",alignSelf:"self-end"}} to={'/cars/create'}>Create a Car</Link>
+            </Button>
+        </div>
 
 
         </div>
