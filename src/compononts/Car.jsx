@@ -5,6 +5,7 @@ import CreateCar from "./CreateCar";
 import CreateOwner from "./CreateOwner";
 import NavBar from "./NavBar";
 import Owner from "./Owner";
+import OwnerCar from "./OwnerCar";
 
 
 
@@ -18,7 +19,7 @@ const Car = () => {
                 <Route path='/cars/create' element={<CreateCar/>}/>
                 <Route path='/owners' element={<Owner/>}/>
                 <Route path='/owners/createOwner' element={<CreateOwner/>}/>
-                <Route path='/cars/:id' element={<Car/>}/>
+                <Route path='/owners/:id' element={<OwnerCar/>}/>
             </Routes>
         </div>
     );
