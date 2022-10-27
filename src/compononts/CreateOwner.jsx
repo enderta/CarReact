@@ -1,14 +1,17 @@
 import React from 'react';
-import {Button, Form} from "react-bootstrap";
+import {Button, Card, Form} from "react-bootstrap";
 
 const CreateOwner = () => {
-   const [firstName, setFirstName] = React.useState('');
+
+    const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
     const [address, setAddress] = React.useState('');
     const [email, setEmail] = React.useState('');
-    const []
+    const [city, setCity] = React.useState('');
+    const [message, setMessage] = React.useState('');
 
-    const handleCreateButton = async (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await fetch('http://localhost:8081/api/owners', {
@@ -17,6 +20,11 @@ const CreateOwner = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    firstName: firstName,
+                    lastName: lastName,
+                    address: address,
+                    email: email,
+                    city: city,
 
 
                 }),
@@ -25,7 +33,7 @@ const CreateOwner = () => {
             console.log(response.status);
             if (response.status === 201) {
 
-                alert("Car created successfully");
+                alert("Owmer created successfully");
 
             } else {
                 setMessage("Some error occured");
@@ -34,34 +42,52 @@ const CreateOwner = () => {
         } catch (e) {
             console.log(e);
         }
-    }
+        setFirstName('');
+        setLastName('');
+        setAddress('');
+        setEmail('');
+        setCity('');
 
+    }
 
 
     return (
         <div>
-            <h1>Create User</h1>
-            <Form onSubmit={handleCreateButton}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Id</Form.Label>
-                    <Form.Control type="text" placeholder="Enter id" onChange={e => setId(e.target.value)} />
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Firstname</Form.Label>
-                    <Form.Control type="text" placeholder="Enter firstname" onChange={e => setFirstname(e.target.value)} />
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Lastname</Form.Label>
-                    <Form.Control type="text" placeholder="Enter lastname" onChange={e => setLastname(e.target.value)} />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Create
-                </Button>
+            <h1>Create Owner</h1>
+            <Form>
+
+                <div style={{display: 'flex', justifyContent: 'center',}}>
+                    <Card style={{width: "600px", background: "black", color: "red"}}>
+                        <Card.Body>
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group>
+                                    <Form.Label>First Name</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter First Name" value={firstName}
+                                                  onChange={e => setFirstName(e.target.value)}/>
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Last Name" value={lastName}
+                                                  onChange={e => setLastName(e.target.value)}/>
+                                    <Form.Label>Address</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Address" value={address}
+                                                  onChange={e => setAddress(e.target.value)}/>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Email" value={email}
+                                                  onChange={e => setEmail(e.target.value)}/>
+                                    <Form.Label>City</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter City" value={city}
+                                                  onChange={e => setCity(e.target.value)}/>
+                                    <Button variant="primary" type="submit">
+                                        Submit
+                                    </Button>
+                                </Form.Group>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </div>
             </Form>
 
+                </div>
+                );
+                };
 
-        </div>
-    );
-};
-
-export default CreateOwner;
+                export default CreateOwner;
