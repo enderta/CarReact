@@ -76,6 +76,7 @@ const CreateOwner = () => {
                                     <Form.Label>City</Form.Label>
                                     <Form.Control type="text" placeholder="Enter City" value={city}
                                                   onChange={e => setCity(e.target.value)}/>
+                                    <br/>
                                     <Button variant="primary" type="submit">
                                         Submit
                                     </Button>
