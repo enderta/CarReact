@@ -10,7 +10,7 @@ const NavBar = () => {
                     <Nav className="me-auto">
 
                         <Nav.Link href="/cars">Cars</Nav.Link>
-                        {/*<Nav.Link href="/owners">Owners</Nav.Link>*/}
+                        <Nav.Link href="/owners">Owners</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
