@@ -14,9 +14,7 @@ const Car = () => {
             <NavBar/>
 
             <Routes>
-                <Route path="/cars" element={<Cars/>}>
-
-                </Route>
+                <Route path="/cars" element={<Cars/>}/>
                 <Route path='/cars/create' element={<CreateCar/>}/>
                 <Route path='/owners' element={<Owner/>}/>
                 <Route path='/owners/createOwner' element={<CreateOwner/>}/>
