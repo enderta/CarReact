@@ -1,28 +1,39 @@
 import React from 'react';
 import {Button, Form} from "react-bootstrap";
 
-const CreateUser = () => {
-    const [id, setId] = React.useState('');
-    const [firstname, setFirstname] = React.useState('');
-    const [lastname, setLastname] = React.useState('');
+const CreateOwner = () => {
+   const [firstName, setFirstName] = React.useState('');
+    const [lastName, setLastName] = React.useState('');
+    const [address, setAddress] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const []
 
-    const handleCreateButton = (e) => {
+    const handleCreateButton = async (e) => {
         e.preventDefault();
-        fetch('http://localhost:8081/api/owners', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: id,
-                firstname: firstname,
-                lastname: lastname,
-            }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
+        try {
+            const response = await fetch('http://localhost:8081/api/owners', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+
+
+                }),
             });
+            const data = await response.json();
+            console.log(response.status);
+            if (response.status === 201) {
+
+                alert("Car created successfully");
+
+            } else {
+                setMessage("Some error occured");
+            }
+
+        } catch (e) {
+            console.log(e);
+        }
     }
 
 
@@ -53,4 +64,4 @@ const CreateUser = () => {
     );
 };
 
-export default CreateUser;
+export default CreateOwner;
