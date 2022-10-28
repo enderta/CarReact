@@ -3,14 +3,14 @@ import {useParams} from "react-router";
 import {Card} from "react-bootstrap";
 
 const OwnerCar = () => {
-const [owner,setOwner]=React.useState({});
+const [car,setCar]=React.useState({});
 const [loading,setLoading]=React.useState(true);
 let param=useParams();
 React.useEffect(()=>{
-    fetch(`http://localhost:8081/api/owners/${param.id}`)
+    fetch(`http://localhost:8081/api/cars/${param.id}`)
         .then(response => response.json())
         .then(data => {
-                setOwner(data);
+                setCar(data);
                 setLoading(false);
             }
         );
@@ -20,21 +20,28 @@ React.useEffect(()=>{
 
     return (
         <div>
-            <h1>Owner</h1>
+            <h1>Car</h1>
             {loading ? <p>Loading...</p> : (
                 <div>
                     <Card variant="dark" style={{ width: '18rem' }}>
                         <Card.Body>
-                            <Card.Title>{owner.firstName} {owner.lastName}</Card.Title>
+                            <Card.Title>{car.brand}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{car.model}</Card.Subtitle>
                             <Card.Text>
-                                {owner.address}
+                                {car.year}
                             </Card.Text>
                             <Card.Text>
-                                {owner.city}
+                                {car.color}
                             </Card.Text>
                             <Card.Text>
-                                {owner.email}
+                                {car.price}
                             </Card.Text>
+                            <Card.Text>
+                                {car.registerNumber}
+                            </Card.Text>
+
+
+
 
                         </Card.Body>
                     </Card>
