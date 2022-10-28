@@ -59,7 +59,6 @@ const Cars = () => {
                         <th>Color</th>
                         <th>Price</th>
                         <th>Register Number</th>
-                        <th>Owner</th>
                         <th>
                             Delete
                         </th>
@@ -75,9 +74,6 @@ const Cars = () => {
                             <td>{car.color}</td>
                             <td>{car.price}</td>
                             <td>{car.registerNumber}</td>
-                            <td>
-                                <Link to={`/owners/${car.id}`}>{car.owner.firstName} {car.owner.lastName}</Link>
-                            </td>
                             <td>
                                 <Button variant="danger" onClick={() => handleDelete(car.id)}>Delete</Button>
                             </td>
