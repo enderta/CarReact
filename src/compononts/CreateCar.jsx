@@ -11,7 +11,6 @@ const CreateCar = () => {
     const [color, setColor] = React.useState('');
     const [price, setPrice] = React.useState('');
     const [registerNumber, setRegisterNumber] = React.useState('');
-    const [ownerId, setOwnerId] = React.useState('');
     const [message, setMessage] = React.useState('');
 
     const handleSubmit = async (e) => {
@@ -30,7 +29,7 @@ const CreateCar = () => {
                     color: color,
                     price: price,
                     registerNumber: registerNumber,
-                    ownerId: ownerId,
+
                 }),
             });
             const data = await response.json();
@@ -53,7 +52,6 @@ const CreateCar = () => {
     setYear('');
     setColor('');
     setRegisterNumber('');
-    setOwnerId('');
 
 
     }
@@ -80,8 +78,7 @@ const CreateCar = () => {
                                  <Form.Control type="number" placeholder="Enter price" value={price} onChange={e => setPrice(e.target.value)} />
                                  <Form.Label>RegisterNumber</Form.Label>
                                  <Form.Control type="number" placeholder="Enter registerNumber" value={registerNumber} onChange={e => setRegisterNumber(e.target.value)} />
-                                    <Form.Label>OwnerId</Form.Label>
-                                    <Form.Control type="number" placeholder="Enter ownerId" value={ownerId} onChange={e => setOwnerId(e.target.value)} />
+
                              </Form.Group>
                              <br/>
                              <Button  variant="primary" type="submit">
