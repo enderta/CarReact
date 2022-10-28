@@ -12,6 +12,7 @@ import OwnerCar from "./OwnerCar";
 const Car = () => {
     return (
         <div>
+            <ScrollToTop />
             <NavBar/>
 
             <Routes>
