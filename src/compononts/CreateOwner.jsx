@@ -8,6 +8,7 @@ const CreateOwner = () => {
     const [address, setAddress] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [city, setCity] = React.useState('');
+    const [id, setId] = React.useState('');
     const [message, setMessage] = React.useState('');
 
 
@@ -25,6 +26,7 @@ const CreateOwner = () => {
                     address: address,
                     email: email,
                     city: city,
+                    id: id,
 
 
                 }),
@@ -47,6 +49,7 @@ const CreateOwner = () => {
         setAddress('');
         setEmail('');
         setCity('');
+        setId('');
 
     }
 
@@ -76,6 +79,9 @@ const CreateOwner = () => {
                                     <Form.Label>City</Form.Label>
                                     <Form.Control type="text" placeholder="Enter City" value={city}
                                                   onChange={e => setCity(e.target.value)}/>
+                                    <Form.Label>CarId</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Id" value={id}
+                                                    onChange={e => setId(e.target.value)}/>
                                     <br/>
                                     <Button variant="primary" type="submit">
                                         Submit
