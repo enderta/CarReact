@@ -28,17 +28,21 @@ React.useEffect(()=>{
                             <Card.Title>{car.brand}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{car.model}</Card.Subtitle>
                             <Card.Text>
-                                {car.year}
+                               <h6>
+                                  Year: {car.year}
+                               </h6>
                             </Card.Text>
                             <Card.Text>
-                                {car.color}
+                                 <h6>
+                                    Color: {car.color}
+                                    </h6>
                             </Card.Text>
                             <Card.Text>
-                                {car.price}
+                                    <h6>
+                                        Price: {car.price}
+                                    </h6>
                             </Card.Text>
-                            <Card.Text>
-                                {car.registerNumber}
-                            </Card.Text>
+
 
 
 
