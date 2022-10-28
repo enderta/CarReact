@@ -19,7 +19,7 @@ const Car = () => {
                 <Route path='/cars/create' element={<CreateCar/>}/>
                 <Route path='/owners' element={<Owner/>}/>
                 <Route path='/owners/createOwner' element={<CreateOwner/>}/>
-                <Route path='/owners/:id' element={<OwnerCar/>}/>
+                <Route path='/cars/:id' element={<OwnerCar/>}/>
             </Routes>
         </div>
     );
