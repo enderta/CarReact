@@ -42,6 +42,7 @@ const Cars = () => {
     const handleCreateButton = (e) => {
         e.preventDefault();
     }
+    console.log(cars);
 
 
     return (

@@ -65,7 +65,7 @@ const Owner = () => {
                             <td>{owner.lastName}</td>
                             <td>{owner.address}</td>
                             <td>{owner.city}</td>
-                            <td><Link to={`/owners/${owner.car.id}`}>Cars</Link></td>
+                            <td><Link to={`/owners/${owner.cars[0].id}`}>Cars</Link></td>
 
                             <td>
                                 <Button variant="danger" onClick={() => handleDelete(owner.ownerId)}>Delete</Button>

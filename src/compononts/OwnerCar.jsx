@@ -17,7 +17,7 @@ React.useEffect(()=>{
 
 }
     ,[]);
-
+    console.log(car);
     return (
         <div>
             <h1>Car</h1>
