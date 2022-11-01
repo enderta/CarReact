@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import Owner from "./Owner";
 import OwnerCar from "./OwnerCar";
 import ScrollToTop from "./ScroolToTop";
+import Home from "./Home";
 
 
 
@@ -17,6 +18,8 @@ const Car = () => {
             <NavBar/>
 
             <Routes>
+                <Route path="/*" element={<Home/>}/>
+               {/* <Route path="/home" element={<Home/>}/>*/}
                 <Route path="/cars" element={<Cars/>}/>
                 <Route path='/cars/create' element={<CreateCar/>}/>
                 <Route path='/owners' element={<Owner/>}/>
