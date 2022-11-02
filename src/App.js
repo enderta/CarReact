@@ -24,14 +24,19 @@ const App = () => {
             .catch(error => console.log('error', error));
     }, []);
     console.log(users);
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+        setFilteredUsers(
+            users.filter((user) => {
+                return user.full_name.toLowerCase().includes(event.target.value.toLowerCase());
+            })
+        );
+    }
     return (
         <div>
             <h1>Users</h1>
-            <input type="text" placeholder="Search" onChange={e => {
-                setSearch(e.target.value);
-                setFilteredUsers(users.filter(user => user.full_name.toLowerCase().includes(e.target.value.toLowerCase())));
-            }
-            }/>
+            <input type="text" placeholder="Search" value={search} onChange={handleSearch} />
+
             <table className="table table-striped">
                 <thead>
                 <tr>
