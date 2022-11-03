@@ -1,4 +1,5 @@
 import React from 'react';
+import MainLib from "./compononts/lib/MainLib";
 
 const App = () => {
     const [users, setUsers] = React.useState([]);
@@ -34,33 +35,7 @@ const App = () => {
     }
     return (
         <div>
-            <h1>Users</h1>
-            <input type="text" placeholder="Search" value={search} onChange={handleSearch} />
-
-            <table className="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Group</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                {filteredUsers.map(user => (
-                    <tr key={user.id}>
-                        <td>{user.id}</td>
-                        <td>{user.full_name}</td>
-                        <td>{user.email}</td>
-                        <td>{user.group_name}</td>
-                        <td>{user.status}</td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-
-            
+        <MainLib/>
         </div>
     );
 };
