@@ -6,7 +6,7 @@ const Users = () => {
     const [filteredUsers, setFilteredUsers] = React.useState([]);
     const [userGroup, setUserGroup] = React.useState('all');
     const [status, setStatus] = React.useState('ACTIVE');
-    const [count, setCount] = React.useState(10);
+    const [count, setCount] = React.useState(5);
 
     const handleUserGroup = (e) => {
         setUserGroup(e.target.value);
@@ -23,7 +23,7 @@ const Users = () => {
             )
         );
     }
-
+    console.log(users.length)
     React.useEffect(() => {
         const myHeaders = new Headers();
         myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
@@ -296,14 +296,7 @@ const Users = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
-                                <div
-                                    className="dataTables_info"
-                                    id="tbl_users_info"
-                                    role="status"
-                                    aria-live="polite"
-                                >
-                                    Showing 1 to 10 of 1,282 entries
-                                </div>
+
                             </div>
                             <div className="col-md-7 col-sm-7">
                                 <div
