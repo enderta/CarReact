@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from "react-bootstrap";
 
 const Users = () => {
     const [users, setUsers] = React.useState([]);
@@ -265,20 +266,11 @@ const Users = () => {
                                         return (
                                             <tr role="row" className="odd">
                                                 <td>
-                                                    <a
-                                                        href="javascript:;"
-                                                        className="btn btn-xs btn-primary"
-                                                        onClick="Users.edit_user(1);"
-                                                    >
-                                                        <i className="fa fa-edit"/>
-                                                    </a>
-                                                    <a
-                                                        href="javascript:;"
-                                                        className="btn btn-xs btn-danger"
-                                                        onClick="Users.delete_user(1);"
-                                                    >
-                                                        <i className="fa fa-trash"/>
-                                                    </a>
+                                                    <Button type={"button"} className={"btn btn-sm btn-outline green"}>
+                                                        <i className="fa fa-edit">
+                                                            <span className="hidden-xs"> Edit</span>
+                                                        </i>
+                                                    </Button>
                                                 </td>
                                                 <td className="sorting_1">{user.id}</td>
                                                 <td>{user.full_name}</td>
