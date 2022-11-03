@@ -4,6 +4,9 @@ const Users = () => {
     const [users, setUsers] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [filteredUsers, setFilteredUsers] = React.useState([]);
+    const [userGroup, setUserGroup] = React.useState('all');
+
+
 
     React.useEffect(() => {
         const myHeaders = new Headers();
@@ -32,6 +35,21 @@ const Users = () => {
             })
         );
     }
+    const handleUserGroup = (e) => {
+        setUserGroup(e.target.value);
+        setFilteredUsers(
+            users.filter((user) => {
+                if (e.target.value === 'all') {
+                    return user;
+                }
+                else {
+                    return user.user_group_id === e.target.value;
+                }
+
+            }
+        )
+        );
+    }
     return (
         <div>
             <section id="users" data-load="users.html" className="spapp-created">
@@ -56,7 +74,8 @@ const Users = () => {
                                 <select
                                     id="user_groups"
                                     className="form-control select2"
-                                    onChange="Users.get_users();"
+                                    value={userGroup}
+                                    onChange={handleUserGroup}
                                 >
                                     <option value="null" selected="selected">
                                         ALL
