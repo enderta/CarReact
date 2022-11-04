@@ -12,31 +12,29 @@ const AddUser = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const myHeaders = new Headers();
-            myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
-            myHeaders.append("Content-Type", "application/json");
-            const fomdata = new FormData();
-            fomdata.append("full_name", full_name);
-            fomdata.append("email", email);
-            fomdata.append("password", password);
-            fomdata.append("user_group_id", user_group_id);
-            fomdata.append("address", address);
-            fomdata.append("start_date", start_date);
-            fomdata.append("end_date", end_date);
-            fomdata.append("status", status);
-            const requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: fomdata,
-                redirect: 'follow'
-            };
-            const response = await fetch("https://library2.cydeo.com/rest/v1/add_user", requestOptions);
-            const data = await response.json();
-            alert(data.message);
-        } catch (error) {
-            console.log(error);
-        }
+        var myHeaders = new Headers();
+        myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
+
+        var formdata = new FormData();
+        formdata.append("full_name", full_name);
+        formdata.append("email", email);
+        formdata.append("password", password);
+        formdata.append("user_group_id", user_group_id);
+        formdata.append("start_date", start_date);
+        formdata.append("end_date", end_date);
+        formdata.append("address", address);
+        formdata.append("status", status);
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        fetch("https://library2.cydeo.com/rest/v1/add_user", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(result.message))
         setAddress("");
         setEmail("");
         setEndDate("");
