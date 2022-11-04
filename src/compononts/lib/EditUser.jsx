@@ -25,7 +25,6 @@ const EditUser = () => {
             fetch(`https://library2.cydeo.com/rest/v1/get_user_by_id/${param.id}`,requestOptions)
             .then(response => response.json())
             .then(data => {
-                    console.log(data);
                 setFullName(data.full_name);
                 setEmail(data.email);
                 setPassword(data.password);
@@ -70,6 +69,7 @@ const EditUser = () => {
         } catch (e) {
             console.log(e);
         }
+
 
     }
 
