@@ -8,7 +8,7 @@ import Owner from "./Owner";
 import OwnerCar from "./OwnerCar";
 import ScrollToTop from "./ScroolToTop";
 import Home from "./Home";
-
+import "./car.css"
 
 
 const Car = () => {

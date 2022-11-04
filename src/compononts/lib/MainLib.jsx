@@ -5,6 +5,7 @@ import Users from "./Users";
 import {Route, Routes} from "react-router";
 import Books from "./Books";
 import BorrowedBooks from "./BorrowedBooks";
+import EditUser from "./EditUser";
 
 
 
@@ -14,7 +15,9 @@ const MainLib = () => {
             <Nav />
             <Routes>
                 <Route path="/home" element={<Dash/>}/>
+
                 <Route path="/users" element={<Users/>}/>
+                <Route path="/users/:id" element={<EditUser/>}/>
                 <Route path="/books" element={< Books/>}/>
                 <Route path={"/BorrowedBooks"} element={<BorrowedBooks/>}/>
                 <Route path="*" element={<Dash/>}/>

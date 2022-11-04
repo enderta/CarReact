@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Table} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Users = () => {
     const [users, setUsers] = React.useState([]);
@@ -162,60 +163,49 @@ const Users = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div
-                                    id="tbl_users_processing"
-                                    className="dataTables_processing"
-                                    style={{display: "none"}}
-                                >
-                                    <div className="loading-message loading-message-boxed">
-                                        <img src="./img/loading-spinner-grey.gif" align=""/>
-                                        <span>&nbsp;&nbsp;LOADING...</span>
-                                    </div>
+                                <div className="table-scrollable">
+                                    <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
+                                        <thead>
+                                        <tr role="row">
+                                            <th>Action</th>
+                                            <th>Full Name</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Group</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {
+                                            filteredUsers.map((user, index) => {
+                                                return (
+                                                    <tr role="row" className="odd">
+                                                        <td>
+                                                            <Link to={`/users/${user.id}`}>
+                                                                <Button className={"btn btn-sm btn-outline btn-primary"}>
+                                                                    Edit
+                                                                </Button>
+                                                            </Link>
+                                                        </td>
+                                                        <td className="sorting_1">{user.id}</td>
+                                                        <td>{user.full_name}</td>
+                                                        <td>{user.email}</td>
+                                                        <td>{user.group_name}</td>
+                                                        <td>{user.status}</td>
+                                                    </tr>
+                                                )
+
+                                            })
+
+                                        }
+                                        </tbody>
+                                    </Table>
                                 </div>
                             </div>
-                            <div className="table-scrollable">
-                               <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
-                                    <thead>
-                                    <tr role="row">
-                                        <th>Action</th>
-                                        <th>Full Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Group</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {
-                                        filteredUsers.map((user, index) => {
-                                            return (
-                                                <tr role="row" className="odd">
-                                                    <td>
-                                                        <Button type={"button"}
-                                                                className={"btn btn-sm btn-outline green"}>
-                                                            <i className="fa fa-edit">
-                                                                <span className="hidden-xs"> Edit</span>
-                                                            </i>
-                                                        </Button>
-                                                    </td>
-                                                    <td className="sorting_1">{user.id}</td>
-                                                    <td>{user.full_name}</td>
-                                                    <td>{user.email}</td>
-                                                    <td>{user.group_name}</td>
-                                                    <td>{user.status}</td>
-                                                </tr>
-                                            )
 
-                                        })
-
-                                    }
-                                    </tbody>
-                                </Table>
-                            </div>
                         </div>
 
                     </div>
-
                 </div>
             </section>
 
