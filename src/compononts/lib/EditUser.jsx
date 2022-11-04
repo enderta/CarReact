@@ -60,7 +60,7 @@ const EditUser = () => {
                 redirect: 'follow'
             };
 
-            fetch(`https://library2.cydeo.com/rest/v1/update_user/${param.id}`, requestOptions)
+            fetch(`https://library2.cydeo.com/rest/v1/update_user`, requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
