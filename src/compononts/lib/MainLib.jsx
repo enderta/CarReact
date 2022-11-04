@@ -7,12 +7,14 @@ import Books from "./Books";
 import BorrowedBooks from "./BorrowedBooks";
 import EditUser from "./EditUser";
 import AddUser from "./AddUser";
+import ScrollToTop from "../ScroolToTop";
 
 
 
 const MainLib = () => {
     return (
         <div>
+            <ScrollToTop />
             <Nav />
             <Routes>
                 <Route path="/home" element={<Dash/>}/>
