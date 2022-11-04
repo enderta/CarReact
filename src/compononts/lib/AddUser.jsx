@@ -12,10 +12,10 @@ const AddUser = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        var myHeaders = new Headers();
+        const myHeaders = new Headers();
         myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
 
-        var formdata = new FormData();
+        const formdata = new FormData();
         formdata.append("full_name", full_name);
         formdata.append("email", email);
         formdata.append("password", password);
@@ -25,7 +25,7 @@ const AddUser = () => {
         formdata.append("address", address);
         formdata.append("status", status);
 
-        var requestOptions = {
+        const requestOptions = {
             method: 'POST',
             headers: myHeaders,
             body: formdata,
@@ -33,10 +33,9 @@ const AddUser = () => {
         };
 
         fetch("https://library2.cydeo.com/rest/v1/add_user", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => alert(result.message))
             .catch(error => console.log('error', error));
-
         setAddress("");
         setEmail("");
         setEndDate("");
@@ -46,7 +45,6 @@ const AddUser = () => {
         setStatus("");
         setUserGroupId("");
     }
-
 
     return (
         <div>
