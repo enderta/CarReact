@@ -79,12 +79,7 @@ const Users = () => {
                     <div className="col-md-12">
 
       <span style={{float: "right"}}>
-        <a
-            className="btn btn-lg btn-outline btn-primary btn-sm"
-
-        >
-          <i className="fa fa-plus" aria-hidden="true"/> Add User
-        </a>
+       <Link className={"btn btn-primary"} to={"/users/add"}>Add User</Link>
       </span>
                         <h3>User Management</h3>
 
