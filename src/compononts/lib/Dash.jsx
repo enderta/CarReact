@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Dash = () => {
     const [data, setData] = React.useState({});
@@ -37,12 +38,16 @@ const Dash = () => {
                                         />
                                     </div>
                                     {/* Column */}
+                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/users'}>
                                     <div className="col p-r-0 align-self-center">
+
                                         <h2 className="font-light m-b-0" id="user_count">
                                             {data.users}
                                         </h2>
                                         <h6 className="text-muted">Users</h6>
                                     </div>
+                                    </Link>
+
                                     {/* Column */}
                                 </div>
                             </div>
@@ -59,12 +64,14 @@ const Dash = () => {
                                         />
                                     </div>
                                     {/* Column */}
+                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/books'}>
                                     <div className="col p-r-0 align-self-center">
                                         <h2 className="font-light m-b-0" id="book_count">
                                             {data.book_count}
                                         </h2>
                                         <h6 className="text-muted">Books</h6>
                                     </div>
+                                    </Link>
                                     {/* Column */}
                                 </div>
                             </div>
