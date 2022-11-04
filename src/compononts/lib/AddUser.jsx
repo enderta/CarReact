@@ -73,6 +73,7 @@ const AddUser = () => {
                                 <label htmlFor="end_date">End Date</label>
                                 <input type="text" className="form-control" id="end_date" name="end_date" value={end_date} onChange={(e) => setEndDate(e.target.value)} />
                             </div>
+                            <br/>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
