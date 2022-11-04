@@ -74,21 +74,21 @@ const Users = () => {
     }
     return (
         <div>
-            <section id="users" data-load="users.html" className="spapp-created">
-                <div className="my-3 p-3 bg-white rounded shadow-sm">
-                    <div className="portlet-title">
+            <br/>
+           <section className="container">
+                <div className="row">
+<div className="col-md-12">
+
       <span style={{float: "right"}}>
         <a
             className="btn btn-lg btn-outline btn-primary btn-sm"
-            href="tpl/add-user.html"
-            data-target="#ajax"
-            data-toggle="modal"
+
         >
           <i className="fa fa-plus" aria-hidden="true"/> Add User
         </a>
       </span>
                         <h3>User Management</h3>
-                    </div>
+
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">
@@ -449,6 +449,7 @@ const Users = () => {
                             </div>
                         </div>
                     </form>
+                </div>
                 </div>
             </section>
 
