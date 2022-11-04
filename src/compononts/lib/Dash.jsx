@@ -88,12 +88,14 @@ const Dash = () => {
                                         />
                                     </div>
                                     {/* Column */}
+                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/books'}>
                                     <div className="col p-r-0 align-self-center">
                                         <h2 className="font-light m-b-0" id="borrowed_books">
                                             {data.borrowed_books}
                                         </h2>
                                         <h6 className="text-muted">Borrowed Books</h6>
                                     </div>
+                                    </Link>
                                     {/* Column */}
                                 </div>
                             </div>
