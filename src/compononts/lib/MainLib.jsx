@@ -20,7 +20,7 @@ const MainLib = () => {
                 <Route path="/users/:id" element={<EditUser/>}/>
                 <Route path='/users/add' element={<AddUser/>}/>
                 <Route path="/books" element={< Books/>}/>
-                <Route path={"/BorrowedBooks"} element={<BorrowedBooks/>}/>
+                <Route path={"/borrowedBooks"} element={<BorrowedBooks/>}/>
                 <Route path="*" element={<Dash/>}/>
             </Routes>
         </div>
