@@ -35,6 +35,8 @@ const AddUser = () => {
         fetch("https://library2.cydeo.com/rest/v1/add_user", requestOptions)
             .then(response => response.text())
             .then(result => alert(result.message))
+            .catch(error => console.log('error', error));
+
         setAddress("");
         setEmail("");
         setEndDate("");
