@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+
 const Dash = () => {
     const [data, setData] = React.useState({});
 
@@ -20,91 +21,42 @@ const Dash = () => {
             .catch(error => console.log('error', error));
     }
     , []);
+    console.log(data);
     return (
         <div>
-            <section id="dashboard" data-load="dashboard.html" className="spapp-created">
-                <div className="container">
-                    <br />
-                    <div className="row">
-                        {/* Column */}
-                        <div className="col-md-6 col-lg-4">
-                            <div className="card card-body shadow">
-                                {/* Row */}
-                                <div className="row">
-                                    <div className="col text-left align-self-center">
-                                        <i
-                                            className="fa fa-group fa-4x text-gray-300"
-                                            aria-hidden="true"
-                                        />
-                                    </div>
-                                    {/* Column */}
-                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/users'}>
-                                    <div className="col p-r-0 align-self-center">
-
-                                        <h2 className="font-light m-b-0" id="user_count">
-                                            {data.users}
-                                        </h2>
-                                        <h6 className="text-muted">Users</h6>
-                                    </div>
-                                    </Link>
-
-                                    {/* Column */}
-                                </div>
-                            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 offset-md-3">
+                        <h1>Dashboard</h1>
+                        <div className="card">
+                           <Link to={"/users"} className="btn btn-primary">
+                               <div className="card-body">
+                                   <h5 className="card-title">Total Users</h5>
+                                   <p className="card-text">{data.users}</p>
+                               </div>
+                           </Link>
                         </div>
-                        {/* Column */}
-                        <div className="col-md-6 col-lg-4">
-                            <div className="card card-body shadow">
-                                {/* Row */}
-                                <div className="row">
-                                    <div className="col text-left align-self-center">
-                                        <i
-                                            className="fa fa-book fa-4x text-gray-300"
-                                            aria-hidden="true"
-                                        />
-                                    </div>
-                                    {/* Column */}
-                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/books'}>
-                                    <div className="col p-r-0 align-self-center">
-                                        <h2 className="font-light m-b-0" id="book_count">
-                                            {data.book_count}
-                                        </h2>
-                                        <h6 className="text-muted">Books</h6>
-                                    </div>
-                                    </Link>
-                                    {/* Column */}
+                        <div className="card">
+                            <Link to={"/books"} className="btn btn-primary">
+                                <div className="card-body">
+                                    <h5 className="card-title">Total Books</h5>
+                                    <p className="card-text">{data.book_count}</p>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
-                        {/* Column */}
-                        <div className="col-md-6 col-lg-4">
-                            <div className="card card-body shadow">
-                                {/* Row */}
-                                <div className="row">
-                                    <div className="col text-left align-self-center">
-                                        <i
-                                            className="fa fa-book-reader fa-4x text-gray-300"
-                                            aria-hidden="true"
-                                        />
-                                    </div>
-                                    {/* Column */}
-                                    <Link style={{textDecoration: "none", color: "red", alignSelf: "self-end"}} to={'/borrowedBooks'}>
-                                    <div className="col p-r-0 align-self-center">
-                                        <h2 className="font-light m-b-0" id="borrowed_books">
-                                            {data.borrowed_books}
-                                        </h2>
-                                        <h6 className="text-muted">Borrowed Books</h6>
-                                    </div>
-                                    </Link>
-                                    {/* Column */}
-                                </div>
-                            </div>
+                        <div className="card">
+                           <Link to={"/borrowedBooks"} className="btn btn-primary">
+                                 <div className="card-body">
+                                        <h5 className="card-title">Total Borrowed Books</h5>
+                                        <p className="card-text">{data.borrowed_books}</p>
+                                 </div>
+                            </Link>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </section>
-
         </div>
+
     );
 };
 

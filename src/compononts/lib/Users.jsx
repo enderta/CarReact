@@ -161,12 +161,26 @@ const Users = () => {
                                     <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                                         <thead>
                                         <tr role="row">
-                                            <th>Action</th>
-                                            <th>Full Name</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Group</th>
-                                            <th>Status</th>
+                                            <th><h3>
+                                                Edit
+                                            </h3></th>
+                                            <th><h3>
+                                               ID
+                                            </h3></th>
+                                            <th><h3>
+                                               Full Name
+                                            </h3></th>
+                                            <th><h3>
+                                                Email
+                                            </h3></th>
+                                            <th><h3>
+                                                User Group
+                                            </h3></th>
+                                            <th><h3>
+                                                Status
+                                            </h3></th>
+
+
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -177,15 +191,15 @@ const Users = () => {
                                                         <td>
                                                             <Link to={`/users/${user.id}`}>
                                                                 <Button className={"btn btn-sm btn-outline btn-primary"}>
-                                                                    Edit
+                                                                  Edit
                                                                 </Button>
                                                             </Link>
                                                         </td>
-                                                        <td className="sorting_1">{user.id}</td>
-                                                        <td>{user.full_name}</td>
-                                                        <td>{user.email}</td>
-                                                        <td>{user.group_name}</td>
-                                                        <td>{user.status}</td>
+                                                        <td className="sorting_1"><h6>{user.id}</h6></td>
+                                                        <td><h6>{user.full_name}</h6></td>
+                                                        <td><h6>{user.email}</h6></td>
+                                                        <td><h6>{user.group_name}</h6></td>
+                                                        <td><h6>{user.status}</h6></td>
                                                     </tr>
                                                 )
 

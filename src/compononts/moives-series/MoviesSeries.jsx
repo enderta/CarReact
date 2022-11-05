@@ -5,6 +5,7 @@ import HomeNavi from "./HomeNavi";
 import Series from "./Series";
 import Seasons from "./Seasons";
 import Movies from "./Movies";
+import './moviesSeries.css'
 
 const MoviesSeries = () => {
     return (<div>

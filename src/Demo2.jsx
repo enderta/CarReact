@@ -1,14 +1,35 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//
+//Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
-// Examples
-// "the-stealth-warrior" gets converted to "theStealthWarrior"
-
-function toCamelCase(str){
-    let arr = str.split(/[-_]/);
-    let result = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        result += arr[i][0].toUpperCase() + arr[i].slice(1);
+/*function digitSum(num){
+    let sum = 0;
+    while(num > 0){
+        sum += num % 10;
+        num = Math.floor(num / 10);
     }
-    return result;
+  return sum;
+}
+
+function digitalRoot(num){
+    let sum = digitSum(num);
+    while(sum > 9){
+        sum = digitSum(sum);
+    }
+    return sum;
+}
+
+console.log(digitalRoot(942));*/
+const sumDigits = (num) => {
+    let sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+    return sum;
+}
+const digitalRoot = (num) => {
+    let sum = sumDigits(num);
+    while (sum > 9) {
+        sum = sumDigits(sum);
+    }
+    return sum;
 }
