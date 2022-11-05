@@ -28,7 +28,7 @@ const Dash = () => {
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
                     <br/>
-                        <div className="card">
+                        <div className="card" style={{margin:"10px"}}>
                            <Link to={"/users"} className="btn btn">
                                <div className="card-body">
                                    <h5 className="card-title">Total Users</h5>
@@ -36,7 +36,7 @@ const Dash = () => {
                                </div>
                            </Link>
                         </div>
-                        <div className="card">
+                        <div className="card"style={{margin:"10px"}}>
                             <Link to={"/books"} className="btn btn">
                                 <div className="card-body">
                                     <h5 className="card-title">Total Books</h5>
@@ -44,7 +44,7 @@ const Dash = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="card">
+                        <div className="card" style={{margin:"10px"}}>
                            <Link to={"/borrowedBooks"} className="btn btn">
                                  <div className="card-body">
                                         <h5 className="card-title">Total Borrowed Books</h5>
