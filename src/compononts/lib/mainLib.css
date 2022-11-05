@@ -3,7 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: #f3ce13;
 
+}
+.card,.card-body,.btn btn-primary{
+   background: black;
+    color: #f3ce13;
+    border-color: #f3ce13;
 }
 body{
     width: 100%;
@@ -24,4 +30,9 @@ table{
     border: 1px solid #ddd;
     text-decoration-color: #f3ce13;
     color: #f3ce13;
+}
+text{
+    color: #f3ce13;
+
+
 }

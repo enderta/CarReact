@@ -27,9 +27,9 @@ const Dash = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        <h1>Dashboard</h1>
+                    <br/>
                         <div className="card">
-                           <Link to={"/users"} className="btn btn-primary">
+                           <Link to={"/users"} className="btn btn">
                                <div className="card-body">
                                    <h5 className="card-title">Total Users</h5>
                                    <p className="card-text">{data.users}</p>
@@ -37,7 +37,7 @@ const Dash = () => {
                            </Link>
                         </div>
                         <div className="card">
-                            <Link to={"/books"} className="btn btn-primary">
+                            <Link to={"/books"} className="btn btn">
                                 <div className="card-body">
                                     <h5 className="card-title">Total Books</h5>
                                     <p className="card-text">{data.book_count}</p>
@@ -45,7 +45,7 @@ const Dash = () => {
                             </Link>
                         </div>
                         <div className="card">
-                           <Link to={"/borrowedBooks"} className="btn btn-primary">
+                           <Link to={"/borrowedBooks"} className="btn btn">
                                  <div className="card-body">
                                         <h5 className="card-title">Total Borrowed Books</h5>
                                         <p className="card-text">{data.borrowed_books}</p>

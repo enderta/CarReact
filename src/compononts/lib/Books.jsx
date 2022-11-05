@@ -102,13 +102,13 @@ const Books = () => {
                                         <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                                             <thead>
                                             <tr role="row">
-                                                <th>Action</th>
-                                                <th>ISBN</th>
-                                                <th>Title</th>
-                                                <th>Author</th>
-                                                <th>Category</th>
-                                                <th>Year</th>
-                                                <th>Borrowed By</th>
+                                                <th><h3>Action</h3></th>
+                                                <th><h3>ISBN</h3></th>
+                                                <th><h3>Title</h3></th>
+                                                <th><h3>Author</h3></th>
+                                                <th><h3>Category</h3></th>
+                                                <th><h3>Year</h3></th>
+                                                <th><h3>Borrowed By</h3></th>
                                             </tr>
                                             </thead>
                                             <tbody>
