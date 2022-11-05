@@ -4,14 +4,12 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: #f3ce13;
-
 }
 .card,.card-body,.btn {
    background: black;
     color: #f3ce13;
     border-color: #f3ce13;
     --bs-btn-hover-border-color: red;
-
 }
 body{
     width: 100%;
@@ -21,9 +19,7 @@ body{
 }
 h1, h2, h3, h4, h5, h6{
     font-family: 'Roboto', sans-serif;
-
     color: #f3ce13;
-
 }
 table{
     width: 100%;
@@ -35,6 +31,4 @@ table{
 }
 text{
     color: #f3ce13;
-
-
 }
