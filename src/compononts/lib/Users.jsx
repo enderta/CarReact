@@ -80,7 +80,7 @@ const Users = () => {
                     <div className="col-md-12">
 
       <span style={{float: "right"}}>
-       <Link className={"btn btn-primary"} to={"/users/add"}>Add User</Link>
+       <Link className={"btn btn"} to={"/users/add"}><h6>Add User</h6></Link>
       </span>
                         <h3>User Management</h3>
 
@@ -191,7 +191,7 @@ const Users = () => {
                                                     <tr role="row" className="odd">
                                                         <td>
                                                             <Link to={`/users/${user.id}`}>
-                                                                <Button className={"btn btn-sm btn-outline btn-primary"}>
+                                                                <Button className={"btn btn-sm btn-outline btn-danger"}>
                                                                   Edit
                                                                 </Button>
                                                             </Link>

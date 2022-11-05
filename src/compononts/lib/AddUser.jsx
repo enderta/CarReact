@@ -94,7 +94,7 @@ const AddUser = () => {
                                         onChange={(e) => setStatus(e.target.value)}/>
                             </div>
                             <br/>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn">Submit</button>
                         </form>
                     </div>
                 </div>

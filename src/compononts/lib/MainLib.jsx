@@ -9,6 +9,7 @@ import EditUser from "./EditUser";
 import AddUser from "./AddUser";
 import ScrollToTop from "../car/ScroolToTop";
 import './mainLib.css'
+import AddBook from "./AddBook";
 
 
 
@@ -23,6 +24,7 @@ const MainLib = () => {
                 <Route path="/users/:id" element={<EditUser/>}/>
                 <Route path='/users/add' element={<AddUser/>}/>
                 <Route path="/books" element={< Books/>}/>
+                <Route path='/books/add' element={<AddBook/>}/>
                 <Route path={"/borrowedBooks"} element={<BorrowedBooks/>}/>
                 <Route path="*" element={<Dash/>}/>
             </Routes>

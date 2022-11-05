@@ -27,13 +27,8 @@ const Books = () => {
                     <div className="row">
                         <div className="col-md-12">
 
-      <span style={{float: "right"}}>
-        <a
-            className="btn btn-lg btn-outline btn-primary btn-sm"
-
-        >
-          <i className="fa fa-plus" aria-hidden="true"/> Add Book
-        </a>
+     <span style={{float: "right"}}>
+       <Link className={"btn btn"} to={"/books/add"}><h6>Add Book</h6></Link>
       </span>
                             <h3>Book Management</h3>
 
