@@ -114,7 +114,9 @@ const Users = () => {
                                         <option value="INACTIVE">INACTIVE</option>
                                     </select>
                                 </div>
+                                <br/>
                             </div>
+
                         </div>
                         <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
                             <div className="row">
@@ -155,6 +157,7 @@ const Users = () => {
                                             />
                                         </label>
                                     </div>
+                                    <br/>
                                 </div>
                                 <div className="table-scrollable">
                                     <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
