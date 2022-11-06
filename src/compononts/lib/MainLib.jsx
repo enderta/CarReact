@@ -28,7 +28,7 @@ const MainLib = () => {
                 <Route path="/books" element={< Books/>}/>
                 <Route path='/books/add' element={<AddBook/>}/>
                 <Route path={"/borrowedBooks"} element={<BorrowedBooks/>}/>
-              {/*  <Route path="*" element={<Dash/>}/>*/}
+                <Route path="*" element={<Dash/>}/>
             </Routes>
         </div>
     );
