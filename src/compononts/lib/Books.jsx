@@ -84,7 +84,9 @@ const Books = () => {
                                             }
                                         </select>
                                     </div>
+                                    <br/>
                                 </div>
+
 
                             </div>
                             <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
@@ -150,7 +152,7 @@ const Books = () => {
                                                             <td>
                                                                 <Link to={`/books/${book.id}`}>
                                                                     <Button className={"btn btn-sm btn-outline btn-danger"}>
-                                                                        Edit
+                                                                        Edit Book
                                                                     </Button>
                                                                 </Link>
                                                             </td>
