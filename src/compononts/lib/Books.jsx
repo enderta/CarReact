@@ -46,6 +46,11 @@ const Books = () => {
         );
     }
 
+   const handleCount = (event) => {
+        setCount(event.target.value);
+
+   }
+
     return (
         <div>
             <div>
@@ -58,7 +63,6 @@ const Books = () => {
        <Link className={"btn btn"} to={"/books/add"}><h6>Add Book</h6></Link>
       </span>
                             <h3>Book Management</h3>
-
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group">
@@ -95,7 +99,7 @@ const Books = () => {
                                                     <option value={10}>10</option>
                                                     <option value={15}>15</option>
                                                     <option value={50}>50</option>
-                                                </select>{" "}
+                                                </select>
                                                 Records
                                             </label>
                                         </div>
@@ -114,7 +118,7 @@ const Books = () => {
                                                     placeholder=""
                                                     aria-controls="tbl_users"
                                                     value={search}
-                                                   /* onChange={handleSearch}*/
+                                                   onChange={handleSearch}
                                                 />
                                             </label>
                                         </div>
