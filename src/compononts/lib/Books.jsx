@@ -89,7 +89,7 @@ const Books = () => {
                                                     <option value={15}>15</option>
                                                     <option value={50}>50</option>
                                                 </select>{" "}
-                                                records
+                                                Records
                                             </label>
                                         </div>
                                     </div>
