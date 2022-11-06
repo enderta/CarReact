@@ -77,8 +77,8 @@ const EditUser = () => {
         <div>
           <div className={"container"}>
                 <div className={"row"} >
-                    <div className={"col-md-6 offset-md-3"} style={{border:"1px solid",padding:'10px',margin:"10px",position:'absolute',left:"25%",right:"25%"}}>
-                        <Form onSubmit={handleSubmit}>
+                    <div className={"col-md-6 offset-md-3"} >
+                        <Form onSubmit={handleSubmit} style={{border:"1px solid",padding:'10px',margin:"10px",position:'absolute',left:"25%",right:"25%"}}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Full Name</Form.Label>
                                 <Form.Control type="text" placeholder="Enter Full Name" value={full_name} onChange={(e) => setFullName(e.target.value)}/>
