@@ -112,7 +112,9 @@ const Books = () => {
                                             </label>
                                         </div>
                                     </div>
+
                                     <div className="table-scrollable">
+                                        <br/>
                                         <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                                             <thead>
                                             <tr role="row">
