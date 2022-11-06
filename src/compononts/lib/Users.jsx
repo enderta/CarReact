@@ -121,7 +121,7 @@ const Users = () => {
                                 <div className="col-md-6 col-sm-6">
                                     <div className="dataTables_length" id="tbl_users_length">
                                         <label>
-                                            Show{" "}
+                                            Show
                                             <select
                                                 name="tbl_users_length"
                                                 aria-controls="tbl_users"
@@ -134,7 +134,7 @@ const Users = () => {
                                                 <option value={15}>15</option>
                                                 <option value={50}>50</option>
                                             </select>
-                                            records
+                                            Records
                                         </label>
                                     </div>
                                 </div>
@@ -161,24 +161,24 @@ const Users = () => {
                                     <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                                         <thead>
                                         <tr role="row">
-                                            <th><h3>
+                                            <th><h4>
                                                 Edit
-                                            </h3></th>
-                                            <th><h3>
+                                            </h4></th>
+                                            <th><h4>
                                                ID
-                                            </h3></th>
-                                            <th><h3>
+                                            </h4></th>
+                                            <th><h4>
                                                Full Name
-                                            </h3></th>
-                                            <th><h3>
+                                            </h4></th>
+                                            <th><h4>
                                                 Email
-                                            </h3></th>
-                                            <th><h3>
+                                            </h4></th>
+                                            <th><h4>
                                                 User Group
-                                            </h3></th>
-                                            <th><h3>
+                                            </h4></th>
+                                            <th><h4>
                                                 Status
-                                            </h3></th>
+                                            </h4></th>
 
 
                                         </tr>

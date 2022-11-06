@@ -48,10 +48,11 @@ const AddUser = () => {
 
     return (
         <div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6 offset-md-3">
-                        <h1>Add User</h1>
+            <div className="container" style={{}}>
+                <div className="row" >
+
+                    <div className="col-md-6 offset-md-3" style={{border:"1px solid",padding:'10px',margin:"10px",position:'absolute',left:"25%",right:"25%"}}>
+                        <h4>Add User</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="full_name">Full Name</label>
