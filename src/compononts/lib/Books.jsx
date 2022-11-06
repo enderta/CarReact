@@ -41,7 +41,7 @@ const Books = () => {
         setSearch(event.target.value);
         setFilteredBooks(
             books.filter((book) => {
-                return book.name.toLowerCase().includes(event.target.value.toLowerCase());
+                return book.name.toLowerCase().includes(event.target.value.toLowerCase())||book.author.toLowerCase().includes(event.target.value.toLowerCase())||book.category.toLowerCase().includes(event.target.value.toLowerCase());
             })
         );
     }
