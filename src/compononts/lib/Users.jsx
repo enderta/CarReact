@@ -83,7 +83,6 @@ const Users = () => {
        <Link className={"btn btn"} to={"/users/add"}><h6>Add User</h6></Link>
       </span>
                         <h3>User Management</h3>
-
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
