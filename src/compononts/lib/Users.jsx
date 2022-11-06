@@ -191,7 +191,7 @@ const Users = () => {
                                                         <td>
                                                             <Link to={`/users/${user.id}`}>
                                                                 <Button className={"btn btn-sm btn-outline btn-danger"}>
-                                                                  Edit
+                                                                  Edit User
                                                                 </Button>
                                                             </Link>
                                                         </td>
