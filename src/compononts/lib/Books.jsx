@@ -151,7 +151,7 @@ const Books = () => {
                                                                 </Link>
                                                             </td>
                                                             <td className="sorting_1"><h6>{book.id}</h6></td>
-                                                            <td><h6>{book.title}</h6></td>
+                                                            <td><h6>{book.name}</h6></td>
                                                             <td><h6>{book.author}</h6></td>
                                                             <td><h6>{book.category}</h6></td>
                                                             <td><h6>{book.year}</h6></td>
