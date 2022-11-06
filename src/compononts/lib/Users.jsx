@@ -121,7 +121,6 @@ const Users = () => {
                                 <div className="col-md-6 col-sm-6">
                                     <div className="dataTables_length" id="tbl_users_length">
                                         <label>
-                                            Show
                                             <select
                                                 name="tbl_users_length"
                                                 aria-controls="tbl_users"
