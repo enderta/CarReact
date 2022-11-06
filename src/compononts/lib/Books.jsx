@@ -37,7 +37,14 @@ const Books = () => {
 
 
     }, [count]);
-    console.log(filteredBooks)
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+        setFilteredBooks(
+            books.filter((book) => {
+                return book.name.toLowerCase().includes(event.target.value.toLowerCase());
+            })
+        );
+    }
 
     return (
         <div>
@@ -82,7 +89,7 @@ const Books = () => {
                                                     aria-controls="tbl_users"
                                                     className="form-control input-sm input-xsmall input-inline"
                                                     value={count}
-                                                  /*  onChange={handleCount}*/
+                                                  onChange={handleCount}
                                                 >
                                                     <option value={5}>5</option>
                                                     <option value={10}>10</option>
