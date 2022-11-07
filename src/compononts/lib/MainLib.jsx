@@ -11,6 +11,7 @@ import ScrollToTop from "../car/ScroolToTop";
 import './mainLib.css'
 import AddBook from "./AddBook";
 import Login from "./Login";
+import EditBook from "./EditBook";
 
 
 
@@ -27,7 +28,8 @@ const MainLib = () => {
                 <Route path='/users/add' element={<AddUser/>}/>
                 <Route path="/books" element={< Books/>}/>
                 <Route path='/books/add' element={<AddBook/>}/>
-                <Route path={"/borrowedBooks"} element={<BorrowedBooks/>}/>
+                <Route path='/books/:id' element={<EditBook/>}/>
+                <Route path="/borrowedBooks" element={<BorrowedBooks/>}/>
                 <Route path="*" element={<Dash/>}/>
             </Routes>
         </div>
