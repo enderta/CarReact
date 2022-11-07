@@ -35,7 +35,8 @@ const BorrowedBooks = () => {
             <div className="table-scrollable">
                 <h4>Books to Borrow</h4>
                 <br/>
-                <Table className="table border ">
+                <div className="table-scrollable">
+                    <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                     <thead>
                     <tr role="row">
                         <th><h4>Id</h4></th>
@@ -88,6 +89,7 @@ const BorrowedBooks = () => {
                     </tbody>
                 </Table>
             </div>
+        </div>
         </div>
     );
 };
