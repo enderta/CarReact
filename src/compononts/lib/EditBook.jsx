@@ -102,6 +102,10 @@ const EditBook = () => {
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control type="text" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                             </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Id</Form.Label>
+                                <Form.Control type="text" placeholder="Enter Id" value={id} onChange={(e) => setId(e.target.value)} />
+                            </Form.Group>
                             <Button variant="primary" type="submit">
                                 Submit
                             </Button>
