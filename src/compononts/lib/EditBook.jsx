@@ -21,7 +21,6 @@ const EditBook = () => {
                 redirect: 'follow'
 
             }
-
             fetch(`https://library2.cydeo.com/rest/v1/get_book_by_id/${param.id}`,requestOptions)
             .then(response => response.json())
             .then(data => {
@@ -35,8 +34,6 @@ const EditBook = () => {
                 setId(data.id);
             }
             );
-
-
     }, []);
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -64,14 +61,7 @@ const EditBook = () => {
         } catch (error) {
             console.log(error);
         }
-
-
-
-
             }
-
-
-
     return (
         <div>
             <div className={"container"}>
@@ -113,7 +103,6 @@ const EditBook = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
