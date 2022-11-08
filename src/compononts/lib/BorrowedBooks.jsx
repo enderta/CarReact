@@ -31,7 +31,7 @@ const BorrowedBooks = () => {
     }, []);
 const handleSearch = (e) => {
    setSearch(e.target.value);
-    setFilter(borrowedBooks.filter((book) => book.name.toLowerCase().includes(search.toLowerCase())));
+    setFilter(borrowedBooks.filter((book) => book.name.toLowerCase().includes(search.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)));
 
 
 }
@@ -86,7 +86,7 @@ const handleSearch = (e) => {
                                                         return <tr>
                                                             <td><h5>{item.id}</h5></td>
                                                             <td><h5>{item.name}</h5></td>
-                                                            <td><Link className={"btn btn"} to={`borrow/${item.id}`}><h5>Borrow</h5></Link></td>
+                                                            <td><Link className={"btn btn"} to={`/borrowedBooks/${item.id}`}><h5>Borrow</h5></Link></td>
                                                         </tr>
                                                     }
                                                 )

@@ -12,6 +12,7 @@ import './mainLib.css'
 import AddBook from "./AddBook";
 import Login from "./Login";
 import EditBook from "./EditBook";
+import BorrowingBook from "./BorrowingBook";
 
 
 
@@ -30,6 +31,7 @@ const MainLib = () => {
                 <Route path='/books/add' element={<AddBook/>}/>
                 <Route path='/books/:id' element={<EditBook/>}/>
                 <Route path="/borrowedBooks" element={<BorrowedBooks/>}/>
+                <Route path='/borrowedBooks/:id' element={<BorrowingBook/>}/>
                 <Route path="*" element={<Dash/>}/>
             </Routes>
         </div>
