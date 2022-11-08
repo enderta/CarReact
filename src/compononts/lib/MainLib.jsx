@@ -27,10 +27,10 @@ const MainLib = () => {
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/books" element={<Books/>}/>
                 <Route path="/borrowedBooks" element={<BorrowedBooks/>}/>
-                <Route path="/editUser/:id" element={<EditUser/>}/>
-                <Route path="/addUser" element={<AddUser/>}/>
-                <Route path="/addBook" element={<AddBook/>}/>
-                <Route path="/editBook/:id" element={<EditBook/>}/>
+                <Route path="/users/:id" element={<EditUser/>}/>
+                <Route path="/users/add" element={<AddUser/>}/>
+                <Route path="/books/add" element={<AddBook/>}/>
+                <Route path="/books/:id" element={<EditBook/>}/>
                 <Route path="/borrowedBooks/:id" element={<BorrowingBook/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Login/>}/>
