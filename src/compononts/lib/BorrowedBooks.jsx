@@ -42,12 +42,14 @@ const handleSearch = (e) => {
          <div className='container'>
             <div className='row'>
                 <h4>Borrow Book</h4>
+                <br/>
                 <div className='col-md-12'>
                     <div className='search'>
                         <form onSubmit={handleSearch}>
                             <input type='text' placeholder='Search' value={search} onChange={handleSearch}/>
                         </form>
                     </div>
+                    <br/>
                     <Table bordered>
                         <thead>
                         <tr>
