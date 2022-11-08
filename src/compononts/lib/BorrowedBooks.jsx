@@ -6,9 +6,6 @@ import Nav from "./Nav";
 const BorrowedBooks = () => {
 
     const [borrowedBooks, setBorrowedBooks] = React.useState([]);
-    const [title, setTitle] = React.useState('');
-    const [id, setId] = React.useState('');
-    const [userId, setUserId] = React.useState(1);
     const [search, setSearch] = React.useState('');
     const [filter, setFilter] = React.useState([]);
 
