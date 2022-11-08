@@ -9,39 +9,39 @@ const AddBook = () => {
     const [year, setYear] = React.useState("");
     const [description, setDescription] = React.useState("");
 
-   const handleSubmit =(e) => {
-         e.preventDefault();
-       const myHeaders = new Headers();
-       myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
-       myHeaders.append("Content-Type", "application/json");
+    const handleSubmit =(e) => {
+        e.preventDefault();
+        const myHeaders = new Headers();
+        myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
+        myHeaders.append("Content-Type", "application/json");
 
-       const raw = JSON.stringify({
-           "name": title,
-           "isbn": isbn,
-           "year": year,
-           "author": author,
-           "book_category_id": catagory,
-           "description": description
-       });
+        const raw = JSON.stringify({
+            "name": title,
+            "isbn": isbn,
+            "year": year,
+            "author": author,
+            "book_category_id": catagory,
+            "description": description
+        });
 
-       const requestOptions = {
-           method: 'POST',
-           headers: myHeaders,
-           body: raw,
-           redirect: 'follow'
-       };
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
 
-       fetch("https://library2.cydeo.com/rest/v1/add_book", requestOptions)
-              .then(response => response.json())
-                .then(result => alert(result.message))
-                   .catch(error => console.log('error', error));
-         setIsbn("");
-            setTitle("");
-            setAuthor("");
-            setCatagory("");
-            setYear("");
-            setDescription("");
-   }
+        fetch("https://library2.cydeo.com/rest/v1/add_book", requestOptions)
+            .then(response => response.json())
+            .then(result => alert(result.message))
+            .catch(error => console.log('error', error));
+        setIsbn("");
+        setTitle("");
+        setAuthor("");
+        setCatagory("");
+        setYear("");
+        setDescription("");
+    }
     return (
         <div>
             <Nav/>
@@ -53,7 +53,7 @@ const AddBook = () => {
                             <div className="form-group">
                                 <label htmlFor="isbn">ISBN</label>
                                 <input type="text" className="form-control" id="isbn" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
-                                                            </div>
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="title">Title</label>
                                 <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />

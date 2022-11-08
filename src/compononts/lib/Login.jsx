@@ -17,7 +17,7 @@ const Login = () => {
                                 <h1 className="card-title">Birmingham Library</h1>
                                 <form >
                                     <div className="form-group" >
-                                        <label htmlFor="exampleInputEmail1">Email address</label>
+                                        <label htmlFor="exampleInputEmail1">Email</label>
                                         <input type="email" className="form-control" id="exampleInputEmail1"
                                                aria-describedby="emailHelp"/>
                                     </div>
