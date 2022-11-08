@@ -5,17 +5,14 @@ import Nav from "./Nav";
 
 const Dash = () => {
     const [data, setData] = React.useState({});
-
     React.useEffect(() => {
             const myHeaders = new Headers();
             myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
-
             const requestOptions = {
                 method: 'GET',
                 headers: myHeaders,
                 redirect: 'follow'
             };
-
             fetch("https://library2.cydeo.com/rest/v1/dashboard_stats", requestOptions)
             .then(response => response.json())
             .then(result => setData(result))
@@ -58,7 +55,6 @@ const Dash = () => {
                     </div>
                 </div>
         </div>
-
     );
 };
 

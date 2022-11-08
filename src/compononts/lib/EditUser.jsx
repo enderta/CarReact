@@ -60,7 +60,6 @@ const EditUser = () => {
                 body: fomdata,
                 redirect: 'follow'
             };
-
             fetch(`https://library2.cydeo.com/rest/v1/update_user`, requestOptions)
                 .then(response => response.json())
                 .then(data => {
@@ -70,8 +69,6 @@ const EditUser = () => {
         } catch (e) {
             console.log(e);
         }
-
-
     }
 
     return (

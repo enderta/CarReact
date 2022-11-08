@@ -8,9 +8,6 @@ const LoginPage = () => {
         <div>
             <Login/>
             <MainLib/>
-
-
-
         </div>
     );
 };

@@ -23,15 +23,11 @@ const BorrowedBooks = () => {
 
                 setBorrowedBooks(data.filter((book) => book.disabled === "0"));
                 setFilter(data.filter((book) => book.disabled === "0"));
-
-
             });
     }, []);
 const handleSearch = (e) => {
    setSearch(e.target.value);
     setFilter(borrowedBooks.filter((book) => book.name.toLowerCase().includes(search.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)));
-
-
 }
     console.log(filter)
 
@@ -44,7 +40,6 @@ const handleSearch = (e) => {
                     <div className="row">
                         <div className="col-md-12">
                             <h3>Borrow Book</h3>
-
                             <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
                                 <div className="row">
                                     <div className="col-md-6 col-sm-6">
@@ -68,7 +63,6 @@ const handleSearch = (e) => {
                                             </label>
                                         </div>
                                     </div>
-
                                     <div className="table-scrollable">
                                         <br/>
                                         <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
@@ -90,19 +84,14 @@ const handleSearch = (e) => {
                                                     }
                                                 )
                                                 }
-
-
                                             </tbody>
                                         </Table>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
 

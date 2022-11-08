@@ -35,7 +35,6 @@ const Users = () => {
             headers: myHeaders,
             redirect: 'follow'
         };
-
         fetch(`https://library2.cydeo.com/rest/v1/get_users?user_group=null&user_status=ACTIVE&draw=2&columns[0][data]=actions&columns[0][name]=actions&columns[0][searchable]=true&columns[0][orderable]=false&columns[0][search][value]=&columns[0][search][regex]=false&columns[1][data]=id&columns[1][name]=id&columns[1][searchable]=true&columns[1][orderable]=true&columns[1][search][value]=&columns[1][search][regex]=false&columns[2][data]=full_name&columns[2][name]=full_name&columns[2][searchable]=true&columns[2][orderable]=true&columns[2][search][value]=&columns[2][search][regex]=false&columns[3][data]=email&columns[3][name]=email&columns[3][searchable]=true&columns[3][orderable]=true&columns[3][search][value]=&columns[3][search][regex]=false&columns[4][data]=group_name&columns[4][name]=group_name&columns[4][searchable]=true&columns[4][orderable]=true&columns[4][search][value]=&columns[4][search][regex]=false&columns[5][data]=status&columns[5][name]=status&columns[5][searchable]=true&columns[5][orderable]=true&columns[5][search][value]=&columns[5][search][regex]=false&order[0][column]=1&order[0][dir]=desc&start=0&length=${count}&search[value]=&search[regex]=false&_=1667389886463`, requestOptions)
             .then(response => response.json())
             .then(result => {
@@ -53,7 +52,6 @@ const Users = () => {
             })
         );
     }
-
     const handleStatus = (e) => {
         setStatus(e.target.value);
         setFilteredUsers(
@@ -71,7 +69,6 @@ const Users = () => {
                 }
             )
         );
-
     }
     return (
         <div>
@@ -118,7 +115,6 @@ const Users = () => {
                                 </div>
                                 <br/>
                             </div>
-
                         </div>
                         <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
                             <div className="row">
@@ -183,8 +179,6 @@ const Users = () => {
                                             <th><h4>
                                                 Status
                                             </h4></th>
-
-
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -206,21 +200,16 @@ const Users = () => {
                                                         <td><h6>{user.status}</h6></td>
                                                     </tr>
                                                 )
-
                                             })
-
                                         }
                                         </tbody>
                                     </Table>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </section>
-
         </div>
 );
 };

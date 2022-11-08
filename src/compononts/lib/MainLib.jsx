@@ -19,10 +19,8 @@ import BorrowingBook from "./BorrowingBook";
 const MainLib = () => {
     return (
         <div>
-
             <ScrollToTop/>
             <Routes>
-
                 <Route path="/home" element={<Dash/>}/>
                 <Route path="/users" element={<Users/>}/>
                 <Route path="/books" element={<Books/>}/>
@@ -35,12 +33,6 @@ const MainLib = () => {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Login/>}/>
             </Routes>
-            <div>
-                {/*<Routes>
-
-                </Routes>*/}
-            </div>
-
         </div>
     );
 };

@@ -46,7 +46,6 @@ const AddUser = () => {
         setStatus("");
         setUserGroupId("");
     }
-
     return (
         <div>
             <Nav/>

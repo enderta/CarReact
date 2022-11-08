@@ -33,7 +33,6 @@ const BorrowingBook = () => {
     return (
         <div>
             {loading ? <div><h3>Borrowing...</h3></div> : <div> {data.message}{window.location.href = "/borrowedBooks"}</div>}
-
         </div>
     );
 };

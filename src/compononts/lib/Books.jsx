@@ -21,9 +21,9 @@ const Books = () => {
         fetch(`https://library2.cydeo.com/rest/v1/get_books?book_categories=null&draw=1&columns%5B0%5D%5Bdata%5D=actions&columns%5B0%5D%5Bname%5D=actions&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=isbn&columns%5B1%5D%5Bname%5D=isbn&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=name&columns%5B2%5D%5Bname%5D=B.name&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=author&columns%5B3%5D%5Bname%5D=B.author&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=category&columns%5B4%5D%5Bname%5D=BC.name&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=year&columns%5B5%5D%5Bname%5D=B.year&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=full_name&columns%5B6%5D%5Bname%5D=U.full_name&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=1&order%5B0%5D%5Bdir%5D=desc&start=0&length=${count}&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1667734188443`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                setBooks(result.data);
-              setFilteredBooks(result.data);
-            }
+                    setBooks(result.data);
+                    setFilteredBooks(result.data);
+                }
             )
             .catch(error => console.log('error', error));
     }, [count]);
@@ -31,31 +31,26 @@ const Books = () => {
         setSearch(event.target.value);
         setFilteredBooks(
             books.filter((book) => {
-                return book.name.toLowerCase().includes(event.target.value.toLowerCase())||book.author.toLowerCase().includes(event.target.value.toLowerCase())||book.category.toLowerCase().includes(event.target.value.toLowerCase());
+                return book.name.toLowerCase().includes(event.target.value.toLowerCase()) || book.author.toLowerCase().includes(event.target.value.toLowerCase()) || book.category.toLowerCase().includes(event.target.value.toLowerCase());
             })
         );
     }
-
-   const handleCount = (event) => {
+    const handleCount = (event) => {
         setCount(event.target.value);
-   }
-
-    let cats=['Fairy Tale', 'Action and Adventure', 'Classic', 'Anthology', 'Short Story', 'Drama', 'Comic and Graphic Novel', 'Crime and Detective', 'Romance', 'Fantasy', 'Fan-Fiction', 'Science Fiction', 'Historical Fiction', 'Memoir', 'Humor', 'Poetry', 'Fable', 'Essay', 'Horror', 'Biography/Autobiography'];
+    }
+    let cats = ['Fairy Tale', 'Action and Adventure', 'Classic', 'Anthology', 'Short Story', 'Drama', 'Comic and Graphic Novel', 'Crime and Detective', 'Romance', 'Fantasy', 'Fan-Fiction', 'Science Fiction', 'Historical Fiction', 'Memoir', 'Humor', 'Poetry', 'Fable', 'Essay', 'Horror', 'Biography/Autobiography'];
     console.log(cats);
-
-
     const handleCatagory = (event) => {
         setCatagory(event.target.value);
-       if (event.target.value === "All") {
-           setFilteredBooks(books);
-       }
-         else {
-              setFilteredBooks(
+        if (event.target.value === "All") {
+            setFilteredBooks(books);
+        } else {
+            setFilteredBooks(
                 books.filter((book) => {
-                     return book.category === event.target.value;
+                    return book.category === event.target.value;
                 })
-              );
-       }
+            );
+        }
     }
     console.log(books)
     return (
@@ -78,10 +73,10 @@ const Books = () => {
                                             <option value="All">All</option>
                                             {
                                                 cats.map((item) => {
-                                                    return <option value={item}><h6>
-                                                        {item}
-                                                    </h6></option>
-                                                }
+                                                        return <option value={item}><h6>
+                                                            {item}
+                                                        </h6></option>
+                                                    }
                                                 )
 
                                             }
@@ -89,8 +84,6 @@ const Books = () => {
                                     </div>
                                     <br/>
                                 </div>
-
-
                             </div>
                             <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
                                 <div className="row">
@@ -102,7 +95,7 @@ const Books = () => {
                                                     aria-controls="tbl_users"
                                                     className="form-control input-sm input-xsmall input-inline"
                                                     value={count}
-                                                  onChange={handleCount}
+                                                    onChange={handleCount}
                                                 >
                                                     <option value={5}>5</option>
                                                     <option value={10}>10</option>
@@ -127,15 +120,15 @@ const Books = () => {
                                                     placeholder=""
                                                     aria-controls="tbl_users"
                                                     value={search}
-                                                   onChange={handleSearch}
+                                                    onChange={handleSearch}
                                                 />
                                             </label>
                                         </div>
                                     </div>
-
                                     <div className="table-scrollable">
                                         <br/>
-                                        <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
+                                        <Table
+                                            className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
                                             <thead>
                                             <tr role="row">
                                                 <th><h4>Action</h4></th>
@@ -154,7 +147,8 @@ const Books = () => {
                                                         <tr role="row" className="odd">
                                                             <td>
                                                                 <Link to={`/books/${book.id}`}>
-                                                                    <Button className={"btn btn-sm btn-outline btn-danger"}>
+                                                                    <Button
+                                                                        className={"btn btn-sm btn-outline btn-danger"}>
                                                                         Edit Book
                                                                     </Button>
                                                                 </Link>
@@ -165,24 +159,18 @@ const Books = () => {
                                                             <td><h6>{book.category}</h6></td>
                                                             <td><h6>{book.year}</h6></td>
                                                             <td><h6>{book.full_name}</h6></td>
-
                                                         </tr>
                                                     )
-
                                                 })
-
                                             }
                                             </tbody>
                                         </Table>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
     );
