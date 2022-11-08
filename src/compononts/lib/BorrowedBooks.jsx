@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table} from "react-bootstrap";
+import {Button, Table} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 const BorrowedBooks = () => {
@@ -39,45 +39,76 @@ const handleSearch = (e) => {
 
     return (
         <div>
-         <div className='container'>
-            <div className='row'>
-                <h4>Borrow Book</h4>
+            <div>
                 <br/>
-                <div className='col-md-12'>
-                    <div className='search'>
-                        <form onSubmit={handleSearch}>
-                            <input type='text' placeholder='Search' value={search} onChange={handleSearch}/>
-                        </form>
+                <section className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h3>Borrow Book</h3>
+
+                            <div id="tbl_users_wrapper" className="dataTables_wrapper no-footer">
+                                <div className="row">
+                                    <div className="col-md-6 col-sm-6">
+                                    </div>
+                                    <div className="col-md-6 col-sm-6">
+                                        <div
+                                            id="tbl_users_filter"
+                                            className="dataTables_filter"
+                                            style={{textAlign: "right"}}
+                                        >
+                                            <label>
+                                                Search:
+                                                <input
+                                                    type="search"
+                                                    className="form-control input-sm input-small input-inline"
+                                                    placeholder=""
+                                                    aria-controls="tbl_users"
+                                                    value={search}
+                                                    onChange={handleSearch}
+                                                />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div className="table-scrollable">
+                                        <br/>
+                                        <Table className="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
+                                            <thead>
+                                            <tr>
+                                                <th><h4>ID</h4></th>
+                                                <th><h4>Book Name</h4></th>
+                                                <th><h4>Borrow</h4></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {
+                                                filter.map((item) => {
+                                                        return <tr>
+                                                            <td><h5>{item.id}</h5></td>
+                                                            <td><h5>{item.name}</h5></td>
+                                                            <td><Link className={"btn btn"} to={`borrow/${item.id}`}><h5>Borrow</h5></Link></td>
+                                                        </tr>
+                                                    }
+                                                )
+                                                }
+
+
+                                            </tbody>
+                                        </Table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <br/>
-                    <Table bordered>
-                        <thead>
-                        <tr>
-                            <th><h4>ID</h4></th>
-                            <th><h4>Title</h4></th>
-                            <th><h4>Borrow</h4></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {filter.map((book) => (
-                            <tr >
-                                <td>{book.id}</td>
-                                <td>{book.name}</td>
-                                <td>
-                                    <Link to={`/borrow/${book.id}`}>
-                                        <button className='btn btn-primary'>Borrow</button>
-                                    </Link>
-                                </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </Table>
-                </div>
+                </section>
+
             </div>
         </div>
-        </div>
+
 
     );
-};
+}
 
 export default BorrowedBooks;
