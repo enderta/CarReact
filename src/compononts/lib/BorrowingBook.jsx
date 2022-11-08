@@ -32,10 +32,8 @@ const BorrowingBook = () => {
     }, []);
     return (
         <div>
-            {loading ? <div><h3>Borrowing...</h3></div> : <div><h3>{data.message}</h3></div>}
-            {setTimeout(() => {
-                window.location.href = "/borrowedBooks";}
-            , 3000)}
+            {loading ? <div><h3>Borrowing...</h3></div> : <div> {data.message}{window.location.href = "/borrowedBooks"}</div>}
+
         </div>
     );
 };

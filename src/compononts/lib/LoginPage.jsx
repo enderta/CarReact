@@ -6,10 +6,7 @@ import MainLib from "./MainLib";
 const LoginPage = () => {
     return (
         <div>
-            <Routes>
-                <Route path='/' element={<Login />} />
-                <Route path='/login' element={<Login />} />
-            </Routes>
+            <Login/>
             <MainLib/>
 
         </div>
