@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Table} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import './mainLib.css'
+import Nav from "./Nav";
 
 const Users = () => {
     const [users, setUsers] = React.useState([]);
@@ -74,6 +75,7 @@ const Users = () => {
     }
     return (
         <div>
+            <Nav/>
             <br/>
             <section className="container">
                 <div className="row">

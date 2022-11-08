@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router";
 import {Button, Form} from "react-bootstrap";
+import Nav from "./Nav";
 
 const EditBook = () => {
     const [isbn, setIsbn] = React.useState("");
@@ -64,6 +65,7 @@ const EditBook = () => {
             }
     return (
         <div>
+            <Nav/>
             <div className={"container"}>
                 <div className={"row"} >
                     <div className={"col-md-6 offset-md-3"} >

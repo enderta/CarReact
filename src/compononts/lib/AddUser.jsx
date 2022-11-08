@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from "./Nav";
 
 const AddUser = () => {
     const [full_name, setFullName] = React.useState("");
@@ -48,6 +49,7 @@ const AddUser = () => {
 
     return (
         <div>
+            <Nav/>
             <div className="container" style={{}}>
                 <div className="row" >
                     <div className="col-md-6 offset-md-3" >

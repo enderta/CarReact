@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Form} from "react-bootstrap";
 import {useParams} from "react-router";
+import Nav from "./Nav";
 
 const EditUser = () => {
     const [full_name, setFullName] = React.useState("");
@@ -75,6 +76,7 @@ const EditUser = () => {
 
     return (
         <div>
+            <Nav/>
           <div className={"container"}>
                 <div className={"row"} >
                     <div className={"col-md-6 offset-md-3"} >

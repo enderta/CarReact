@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Nav from "./Nav";
 
 
 const Dash = () => {
@@ -24,6 +25,7 @@ const Dash = () => {
     console.log(data);
     return (
         <div>
+            <Nav/>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">

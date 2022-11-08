@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from "./Nav";
 
 const AddBook = () => {
     const [isbn, setIsbn] = React.useState("");
@@ -43,6 +44,7 @@ const AddBook = () => {
    }
     return (
         <div>
+            <Nav/>
             <div className="container" style={{}}>
                 <div className="row" >
                     <div className="col-md-6 offset-md-3" >

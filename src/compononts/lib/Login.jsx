@@ -8,14 +8,14 @@ const Login = () => {
     return (
         <div>
             <div>
-                {/*<Image src={require('./pexels-ersan-13864601.jpg')} fluid/>*/}
+                <Image src={require('./pexels-ersan-13864601.jpg')} style={{position:'absolute',opacity:'0.3'}}/>
             </div>
             <div className="container" >
                 <div className="row">
                     <div className="col-6">
-                        <div className="card" style={{border:"1px solid",padding:'10px',margin:"10px",position:'absolute',left:"25%",right:"25%"}}>
+                        <div className="card" style={{border:"1px solid",padding:'10px',margin:"10px",position:'absolute',top:'50%',left:"25%",right:"25%"}}>
                             <div className="card-body" >
-                                <h1 className="card-title">Login</h1>
+                                <h1 className="card-title">Birmingham Library</h1>
                                 <form >
                                     <div className="form-group" >
                                         <label htmlFor="exampleInputEmail1">Email address</label>

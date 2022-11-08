@@ -20,22 +20,27 @@ const MainLib = () => {
     return (
         <div>
 
-            <ScrollToTop />
-            <Nav />
-
+            <ScrollToTop/>
             <Routes>
-                <Route path='/login' element={<Login/>}/>
+
                 <Route path="/home" element={<Dash/>}/>
                 <Route path="/users" element={<Users/>}/>
-                <Route path="/users/:id" element={<EditUser/>}/>
-                <Route path='/users/add' element={<AddUser/>}/>
-                <Route path="/books" element={< Books/>}/>
-                <Route path='/books/add' element={<AddBook/>}/>
-                <Route path='/books/:id' element={<EditBook/>}/>
+                <Route path="/books" element={<Books/>}/>
                 <Route path="/borrowedBooks" element={<BorrowedBooks/>}/>
-                <Route path='/borrowedBooks/:id' element={<BorrowingBook/>}/>
+                <Route path="/editUser/:id" element={<EditUser/>}/>
+                <Route path="/addUser" element={<AddUser/>}/>
+                <Route path="/addBook" element={<AddBook/>}/>
+                <Route path="/editBook/:id" element={<EditBook/>}/>
+                <Route path="/borrowedBooks/:id" element={<BorrowingBook/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<Login/>}/>
             </Routes>
+            <div>
+                {/*<Routes>
+
+                </Routes>*/}
+            </div>
+
         </div>
     );
 };

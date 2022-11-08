@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Table} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import Nav from "./Nav";
 
 const Books = () => {
     const [books, setBooks] = React.useState([]);
@@ -59,6 +60,7 @@ const Books = () => {
     console.log(books)
     return (
         <div>
+            <Nav/>
             <div>
                 <br/>
                 <section className="container">
