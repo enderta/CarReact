@@ -6,9 +6,9 @@ import LoginPage from "./compononts/lib/LoginPage";
 
 const App = () => {
 
+
     return (
         <div>
-
         <MainLib/>
           {/*  <Car/>*/}
           {/*  <MoviesSeries/>*/}
