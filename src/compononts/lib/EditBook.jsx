@@ -58,7 +58,6 @@ const EditBook = () => {
             };
             const response = await fetch("https://library2.cydeo.com/rest/v1/update_book", requestOptions);
             const data = await response.json();
-            console.log(data);
         } catch (error) {
             console.log(error);
         }

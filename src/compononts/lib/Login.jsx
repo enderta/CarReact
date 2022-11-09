@@ -12,7 +12,8 @@ const Login = () => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault()
         if (email === "admin@gmail" && password === "admin") {
             window.location.href = "/home"
         } else {

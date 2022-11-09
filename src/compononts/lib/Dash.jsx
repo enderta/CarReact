@@ -19,7 +19,7 @@ const Dash = () => {
             .catch(error => console.log('error', error));
     }
     , []);
-    console.log(data);
+
     return (
         <div>
             <Nav/>

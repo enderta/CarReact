@@ -52,7 +52,6 @@ const Books = () => {
             );
         }
     }
-    console.log(books)
     return (
         <div>
             <Nav/>
