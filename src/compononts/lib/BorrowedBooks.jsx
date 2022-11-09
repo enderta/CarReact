@@ -29,7 +29,6 @@ const handleSearch = (e) => {
    setSearch(e.target.value);
     setFilter(borrowedBooks.filter((book) => book.name.toLowerCase().includes(search.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)));
 }
-    console.log(filter)
 
     return (
         <div>
