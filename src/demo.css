@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+
+.sidebar { grid-area: 4 / 1 / 7 / 2;   background-color: red; }
+.footer { grid-area: 7 / 2 / 8 / 5; background-color: yellow;}
+.content { grid-area: 4 / 2 / 7 / 5; background-color: lightblue;}
+.navbar { grid-area: 1 / 1 / 2 / 5;  background-color: purple;}
+.hero { grid-area: 2 / 1 / 4 / 5; background-color: pink;}

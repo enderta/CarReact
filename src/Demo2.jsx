@@ -33,3 +33,29 @@ const digitalRoot = (num) => {
     }
     return sum;
 }
+
+const solution=(n)=>{
+   let x= n.filter((n)=>n%4===0)
+    let max=0
+    for(let i=0;i<x.length;i++){
+        if(x[i]>max){
+            max=x[i]
+        }
+    }
+    return max
+}
+//find bugs and modify one line of code in the incorrect implementation of the function solution
+//that is supposed to return the smallest element of array A which contains at mostt 1000 integers
+//with range [-1000...1000]
+//function solution(A){
+//    var ans=0
+//    for(var i=0;i<A.length;i++){
+//        if(A[i]<ans){
+//            ans=A[i]
+//        }
+//    }
+//    return ans
+//}
+
+//
+//}
