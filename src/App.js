@@ -5,6 +5,7 @@ import MoviesSeries from "./compononts/moives-series/MoviesSeries";
 import LoginPage from "./compononts/lib/LoginPage";
 import {Button} from "react-bootstrap";
 import Demo from './Demo'
+import Department from "./compononts/departments/Department";
 
 
 
@@ -21,7 +22,8 @@ const App = () => {
 
            {/* <MainLib/>*/}
             {/*  <Car/>*/}
-              <MoviesSeries/>
+          {/*    <MoviesSeries/>*/}
+            <Department />
         </div>
     );
 };
