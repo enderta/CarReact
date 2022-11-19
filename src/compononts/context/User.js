@@ -34,17 +34,7 @@ const User = ({user}) => {
             </tr>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Edit User</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <EditUser user={user} handleClose={handleClose}/>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
+                <EditUser user={user} handleClose={handleClose}/>
             </Modal>
 
 
