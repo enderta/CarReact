@@ -16,10 +16,10 @@ const Users = () => {
 
     return (
         <div>
-            <div className="table-scrollable">
+            <div >
                 <Table >
                     <thead>
-                    <tr role="row">
+                    <tr >
                         <th><h4>
                             Edit
                         </h4></th>

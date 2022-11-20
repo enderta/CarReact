@@ -21,6 +21,7 @@ const UseContext = (props) => {
             })
             .catch(error => console.log('error', error));
     }, []);
+
     return (
         <div>
             <UserContext.Provider value={{users}}>
