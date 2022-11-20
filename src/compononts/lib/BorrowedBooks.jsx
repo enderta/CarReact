@@ -4,11 +4,9 @@ import {Link} from "react-router-dom";
 import Nav from "./Nav";
 
 const BorrowedBooks = () => {
-
     const [borrowedBooks, setBorrowedBooks] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [filter, setFilter] = React.useState([]);
-
     React.useEffect(() => {
         const myHeaders = new Headers();
         myHeaders.append("x-library-token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoiNTgzNiIsImZ1bGxfbmFtZSI6IlRlc3QgTGlicmFyaWFuIDI0IiwiZW1haWwiOiJsaWJyYXJpYW4yNEBsaWJyYXJ5IiwidXNlcl9ncm91cF9pZCI6IjIifSwiaWF0IjoxNjY3Mzg3NjA1LCJleHAiOjE2Njk5Nzk2MDV9.P8Y0XKzwiZjRA8718Q3pGOaTodEI5rGi9KL_SUbhrm0");
@@ -29,7 +27,6 @@ const handleSearch = (e) => {
    setSearch(e.target.value);
     setFilter(borrowedBooks.filter((book) => book.name.toLowerCase().includes(search.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)));
 }
-
     return (
         <div>
             <Nav/>

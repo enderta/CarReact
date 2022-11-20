@@ -3,7 +3,6 @@ import {Button, Modal} from "react-bootstrap";
 import EditBook from "./EditBook";
 
 const Book = (props) => {
-    console.log(props.book);
     const [show, setShow] = React.useState(false);
     return (
         <>
@@ -18,7 +17,6 @@ const Book = (props) => {
                     <td>{props.book.category}</td>
                     <td>{props.book.year}</td>
                     <td>{props.book.full_name}</td>
-
             </tr>
             <Modal show={show} onHide={() => setShow(false)}>
                 <Modal.Header closeButton>
@@ -28,7 +26,6 @@ const Book = (props) => {
                     <EditBook book={props.book} />
                 </Modal.Body>
             </Modal>
-
         </>
     );
 };

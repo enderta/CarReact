@@ -21,7 +21,6 @@ const Books = () => {
             )
             .catch(error => console.log('error', error));
     }, []);
-    console.log(books);
     return (
         <div>
     <BookList books={books}/>

@@ -3,7 +3,6 @@ import Book from "./Book";
 import {Button, Table} from "react-bootstrap";
 
 const BookList = (props) => {
-    console.log(props.books);
     return (
         <div>
             <Table >
@@ -29,8 +28,6 @@ const BookList = (props) => {
                 }
                 </tbody>
             </Table>
-
-
         </div>
     );
 };
