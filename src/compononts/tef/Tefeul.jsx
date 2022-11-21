@@ -23,7 +23,7 @@ const Tefeul = () => {
 
     const handleCloseAyat = () => setShowAyat(false);
     const handleShowAyat = () => setShowAyat(true);
-
+    let handleRandom;
 
     React.useEffect(() => {
 
@@ -44,42 +44,51 @@ const Tefeul = () => {
                 }
             )
             .catch(err => {
-                    console.error(err);
+                console.error(err);
+
                 }
             );
-        if (chappter > 114) {
+     /*   if (chappter > 114) {
             alert('Ayat is not more than 114')
             setChappter(1)
         } else if (ayat > verse) {
 
             alert('Chappter is not more than ' + verse)
             setAyat(1)
-        } else {
+        } else {*/
+
             fetch(`https://al-quran1.p.rapidapi.com/${chappter}/${ayat}`, options)
-                .then(response => response.json())
-                .then(data => {
+                .then(response => response.json()
+                )
+                              .then(data => {
+                                  console.log(data)
+                                  if(data.error==="resource not found"){
+                                        setAyat(1)
+                                  }
+                                    else{
                         SetOriginalText(data.content);
-                        SetEng(data.translation_eng);
+                        SetEng(data.translation_eng);}
                     }
                 )
                 .catch(err => {
-                        console.error(err);
+                    console.error(err);
+
                     }
                 );
-        }
+
 
     }, [ayat, chappter])
 
+    handleRandom = () => {
 
-    const handleRandom = () => {
-
-            setChappter(Math.floor(Math.random() * 114) + 1);
+        setChappter(Math.floor(Math.random() * 114) + 1);
 
         //create random number for ayat between 1 and verse
 
-            setAyat(Math.floor(Math.random() * verse) + 1);
+        setAyat(Math.floor(Math.random() * verse) + 1);
 
     }
+
     console.log(ayat);
     console.log(chappter);
     console.log(verse);
