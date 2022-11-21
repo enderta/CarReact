@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Form, Modal, ModalBody} from "react-bootstrap";
+import {Button, Card, Col, Form, Modal, ModalBody, Row} from "react-bootstrap";
 
 const Tefeul = () => {
     const [chappter, setChappter] = React.useState(1);
@@ -11,6 +11,12 @@ const Tefeul = () => {
     const [showAyat, setShowAyat] = React.useState(false);
     const [name, setName] = React.useState('');
     const [description, setDescription] = React.useState('');
+    const [randomChapter, setRandomChapter] = React.useState(0);
+    const [randomAyat, setRandomAyat] = React.useState(0);
+
+
+
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -20,6 +26,7 @@ const Tefeul = () => {
 
 
     React.useEffect(() => {
+
         const options = {
             method: 'GET',
             headers: {
@@ -42,9 +49,11 @@ const Tefeul = () => {
             );
         if (chappter > 114) {
             alert('Ayat is not more than 114')
+            setChappter(1)
         } else if (ayat > verse) {
 
             alert('Chappter is not more than ' + verse)
+            setAyat(1)
         } else {
             fetch(`https://al-quran1.p.rapidapi.com/${chappter}/${ayat}`, options)
                 .then(response => response.json())
@@ -60,57 +69,102 @@ const Tefeul = () => {
         }
 
     }, [ayat, chappter])
-    console.log(originalText);
-    console.log(eng);
-    console.log(verse);
 
+
+    const handleRandom = () => {
+
+            setChappter(Math.floor(Math.random() * 114) + 1);
+
+        //create random number for ayat between 1 and verse
+
+            setAyat(Math.floor(Math.random() * verse) + 1);
+
+    }
+    console.log(ayat);
+    console.log(chappter);
+    console.log(verse);
 
     return (
         <div>
-            <div className="container"  >
-                <Card className="text-center" style={{
-                    border: "1px solid",
-                    padding: '10px',
-                    margin: "10px",
-                    position: 'absolute',
-                    top: '25%',
-                    left: "25%",
-                    right: "25%"}}>
-                    <Card.Header><h3>Quran</h3></Card.Header>
-                    <br/>
-                    <Card.Body>
+        <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
+           <p>
+                <h1>{name}</h1>
+           </p>
+            <p>
+                <h1>{originalText}</h1>
+            </p>
+            <p>
+                <h1>{eng}</h1>
+            </p>
 
-                        <Card.Title style={{}}><h4>Chapter</h4></Card.Title>
 
-                        <Form.Control style={{width:"300px"}} type="number" placeholder="Enter Chappter"
-                                      onChange={(e) => setChappter(e.target.value)}/>
-                        <br/>
-                        <Card.Title ><h4>Ayat</h4></Card.Title>
-                        <Form.Control style={{width:"300px"}}  type="number" placeholder="Enter Ayat" onChange={(e) => setAyat(e.target.value)}/>
-                        <br/>
-                        <Button variant="primary" onClick={handleShowAyat}>
-                            Show Ayat
-                        </Button>
-                        <Modal show={showAyat} onHide={handleCloseAyat}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>{name}</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <p>{originalText}</p>
-                                <p>{eng}</p>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleCloseAyat}>
-                                    Close
+           {/* <div className="card" style={{
+                border: "1px solid",
+                padding: '10px',
+                margin: "10px",
+                position: 'absolute',
+                top: '25%',
+                left: "25%",
+                right: "25%"
+            }}>
+            <Card >
+                <Card.Header>
+                    <h1>Al-Quran</h1>
+                </Card.Header>
+                <Card.Body>
+                    <Form>
+                        <Row className="align-items-center">
+                            <Col xs="auto">
+                                <Form.Label htmlFor="inlineFormInput" >
+                                    <h3>Chapter</h3>
+                                </Form.Label>
+                                <Form.Control
+                                    className="mb-2"
+                                    id="inlineFormInput"
+                                    placeholder="Chapter"
+                                    value={chappter}
+                                    onChange={(e) => setChappter(e.target.value)}
+                                />
+                            </Col>
+                            <Col xs="auto">
+                                <Form.Label htmlFor="inlineFormInputGroup" >
+                                    <h3>Ayat</h3>
+                                </Form.Label>
+                                <Form.Control
+                                    className="mb-2"
+                                    id="inlineFormInputGroup"
+                                    placeholder="Ayat"
+                                    value={ayat}
+                                    onChange={(e) => setAyat(e.target.value)}
+                                />
+                            </Col>
+
+                                <Button style={{margin:"5px",width:"500px"}} onClick={handleShowAyat} >
+                                   <h3>Show</h3>
                                 </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </Card.Body>
-                </Card>
-            </div>
 
+                        </Row>
+
+                    </Form>
+                </Card.Body>
+            </Card>
+            <Modal show={showAyat} onHide={handleCloseAyat}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{name}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h3>{originalText}</h3>
+                    <h3>{eng}</h3>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseAyat}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+        </div>*/}
         </div>
-
     );
 };
 

@@ -30,15 +30,15 @@ const Login = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-6">
-                        <div className="card" style={{
-                            border: "1px solid",
-                            padding: '10px',
-                            margin: "10px",
-                            position: 'absolute',
-                            top: '25%',
-                            left: "25%",
-                            right: "25%"
-                        }}>
+                            <div className="card" style={{
+                                border: "1px solid",
+                                padding: '10px',
+                                margin: "10px",
+                                position: 'absolute',
+                                top: '25%',
+                                left: "25%",
+                                right: "25%"
+                            }}>
                             <div className="card-body">
                                 <h1 className="card-title">Birmingham Library</h1>
                                 <form>
