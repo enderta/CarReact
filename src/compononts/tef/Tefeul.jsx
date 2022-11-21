@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Col, Form, Modal, ModalBody, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Form, Modal, ModalBody, Row} from "react-bootstrap";
 
 const Tefeul = () => {
     const [chappter, setChappter] = React.useState(1);
@@ -95,16 +95,22 @@ const Tefeul = () => {
 
     return (
         <div>
-        <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
-           <p>
-                <h1>{name}</h1>
-           </p>
-            <p>
-                <h1>{originalText}</h1>
-            </p>
-            <p>
-                <h1>{eng}</h1>
-            </p>
+            <Container >
+                <br/>
+                <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
+
+                <p>
+                    <br/>
+                    <h1>{name}</h1>
+                </p>
+                <p>
+                    <h1>{originalText}</h1>
+                </p>
+                <p>
+                    <h1>{eng}</h1>
+                </p>
+            </Container>
+
 
 
            {/* <div className="card" style={{
