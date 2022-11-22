@@ -110,16 +110,16 @@ const Tefeul = () => {
 
                     <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
 
-                    <p>
+                    <h1>
                         <br/>
-                        <h1>{name}</h1>
-                    </p>
-                    <p>
-                        <h1>{originalText}</h1>
-                    </p>
-                    <p>
-                        <h1>{eng}</h1>
-                    </p>
+                        {name}
+                    </h1>
+                    <h1>
+                        {originalText}
+                    </h1>
+                    <h1>
+                        {eng}
+                    </h1>
 
             </Container>
 
