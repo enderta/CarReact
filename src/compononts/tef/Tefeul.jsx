@@ -1,5 +1,7 @@
 import React from 'react';
-import {Button, Card, Col, Container, Form, Modal, ModalBody, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Form, Image, Modal, ModalBody, Row} from "react-bootstrap";
+import RandomImg from "./RandomImg";
+import './tef.css'
 
 const Tefeul = () => {
     const [chappter, setChappter] = React.useState(1);
@@ -86,29 +88,39 @@ const Tefeul = () => {
         //create random number for ayat between 1 and verse
 
         setAyat(Math.floor(Math.random() * verse) + 1);
+        const randomNum = Math.floor(Math.random() * numImagesAvailable);
+        const url = `https://source.unsplash.com/collection/${collectionID}/${randomNum}`;
+        setImg(url);
 
     }
 
-    console.log(ayat);
-    console.log(chappter);
-    console.log(verse);
+    const numImagesAvailable = 982  //how many photos are total in the collection
+    const numItemsToGenerate = 1; //how many photos you want to display
+    const collectionID = 928423   //the collection ID from the original url
+    const [img, setImg] = React.useState("");
 
     return (
         <div>
-            <Container >
-                <br/>
-                <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
+            <div>
+                <Image src={img} style={{position: 'absolute', opacity: '0.3', height: "100%", width: "100%"}}/>
+            </div>
+            <Container className='container' >
 
-                <p>
-                    <br/>
-                    <h1>{name}</h1>
-                </p>
-                <p>
-                    <h1>{originalText}</h1>
-                </p>
-                <p>
-                    <h1>{eng}</h1>
-                </p>
+                <br/>
+
+                    <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
+
+                    <p>
+                        <br/>
+                        <h1>{name}</h1>
+                    </p>
+                    <p>
+                        <h1>{originalText}</h1>
+                    </p>
+                    <p>
+                        <h1>{eng}</h1>
+                    </p>
+
             </Container>
 
 

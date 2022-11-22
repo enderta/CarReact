@@ -15,6 +15,7 @@ import BookList from "./compononts/context/BookList";
 import Books from "./compononts/context/Books";
 import Tefeul from "./compononts/tef/Tefeul";
 import RandomNum from "./compononts/tef/RandomNum";
+import RandomImg from "./compononts/tef/RandomImg";
 
 
 const App = () => {
@@ -49,6 +50,8 @@ const App = () => {
          {/*   <Books/>*/}
             <Tefeul/>
          {/*   <RandomNum/>*/}
+        {/*    <RandomImg/>*/}
+
 
 
 
