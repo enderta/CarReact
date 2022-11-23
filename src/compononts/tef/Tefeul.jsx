@@ -46,37 +46,36 @@ const Tefeul = () => {
                 }
             )
             .catch(err => {
-                console.error(err);
+                    console.error(err);
 
                 }
             );
-     /*   if (chappter > 114) {
-            alert('Ayat is not more than 114')
-            setChappter(1)
-        } else if (ayat > verse) {
+        /*   if (chappter > 114) {
+               alert('Ayat is not more than 114')
+               setChappter(1)
+           } else if (ayat > verse) {
+               alert('Chappter is not more than ' + verse)
+               setAyat(1)
+           } else {*/
 
-            alert('Chappter is not more than ' + verse)
-            setAyat(1)
-        } else {*/
-
-            fetch(`https://al-quran1.p.rapidapi.com/${chappter}/${ayat}`, options)
-                .then(response => response.json()
-                )
-                              .then(data => {
-                                  console.log(data)
-                                  if(data.error==="resource not found"){
-                                        setAyat(1)
-                                  }
-                                    else{
+        fetch(`https://al-quran1.p.rapidapi.com/${chappter}/${ayat}`, options)
+            .then(response => response.json()
+            )
+            .then(data => {
+                    console.log(data)
+                    if(data.error==="resource not found"){
+                        setAyat(1)
+                    }
+                    else{
                         SetOriginalText(data.content);
                         SetEng(data.translation_eng);}
-                    }
-                )
-                .catch(err => {
+                }
+            )
+            .catch(err => {
                     console.error(err);
 
-                    }
-                );
+                }
+            );
 
 
     }, [ayat, chappter])
@@ -97,35 +96,29 @@ const Tefeul = () => {
     const numImagesAvailable = 982  //how many photos are total in the collection
     const numItemsToGenerate = 1; //how many photos you want to display
     const collectionID = 928423   //the collection ID from the original url
-    const [img, setImg] = React.useState("");
+    const [img, setImg] = React.useState("https://source.unsplash.com/collection/928423/1");
 
     return (
-        <div>
-            <div>
-                <Image src={img} style={{position: 'absolute', opacity: '0.3', height: "100%", width: "100%"}}/>
-            </div>
-            <Container className='container' >
+        <>
+
+                <Image src={img} style={{position: 'absolute', opacity: '0.3', height: "100%", width: "100%"}} onClick={handleRandom} />
 
                 <br/>
+                <h1>
 
-                    <Button variant={'primary'} onClick={handleRandom} >Get A Random Ayat</Button>
-
-                    <h1>
-                        <br/>
-                        {name}
-                    </h1>
-                    <h1>
-                        {originalText}
-                    </h1>
-                    <h1>
-                        {eng}
-                    </h1>
-
-            </Container>
+                    {name}
+                </h1>
+                <h1>
+                    {originalText}
+                </h1>
+                <h1>
+                    {eng}
+                </h1>
 
 
 
-           {/* <div className="card" style={{
+
+            {/* <div className="card" style={{
                 border: "1px solid",
                 padding: '10px',
                 margin: "10px",
@@ -165,13 +158,10 @@ const Tefeul = () => {
                                     onChange={(e) => setAyat(e.target.value)}
                                 />
                             </Col>
-
                                 <Button style={{margin:"5px",width:"500px"}} onClick={handleShowAyat} >
                                    <h3>Show</h3>
                                 </Button>
-
                         </Row>
-
                     </Form>
                 </Card.Body>
             </Card>
@@ -189,9 +179,8 @@ const Tefeul = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
         </div>*/}
-        </div>
+        </>
     );
 };
 
