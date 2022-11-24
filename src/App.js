@@ -4,7 +4,7 @@ import Car from "./compononts/car/Car";
 import MoviesSeries from "./compononts/moives-series/MoviesSeries";
 import LoginPage from "./compononts/lib/LoginPage";
 import {Button, Modal, Table} from "react-bootstrap";
-import Demo from './Demo'
+
 import Department from "./compononts/departments/Department";
 import Student from "./compononts/departments/Student";
 
