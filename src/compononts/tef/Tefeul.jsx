@@ -108,9 +108,13 @@ const Tefeul = () => {
 
                     {name}
                 </h1>
+
+            <br/>
                 <h1>
                     {originalText}
                 </h1>
+
+            <br/>
                 <h1>
                     {eng}
                 </h1>
