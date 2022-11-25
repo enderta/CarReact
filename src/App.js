@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import MainLib from "./compononts/lib/MainLib";
 import Car from "./compononts/car/Car";
 import MoviesSeries from "./compononts/moives-series/MoviesSeries";
@@ -18,6 +18,7 @@ import RandomNum from "./compononts/tef/RandomNum";
 import RandomImg from "./compononts/tef/RandomImg";
 
 
+
 const App = () => {
     const users=[
         {id:1,username:'admin',password:'admin'},
@@ -31,9 +32,29 @@ const App = () => {
 
 
 
+    const [marsPhotoData, setMarsPhotoData] = useState([]);
 
 
 
+
+
+    useEffect(() => {
+        fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY')
+            .then(response => response.json())
+            .then(data => {
+                setMarsPhotoData(data);
+            })
+            .catch(error => {
+                console.log(error);
+            }
+            );
+    }, []);
+
+    //
+    // let x=marsPhotoData.filter((item)=>item.id===1)
+    // console.log(x)
+
+    console.log(marsPhotoData)
 
     return (
         <div>
@@ -48,11 +69,12 @@ const App = () => {
                 <Users/>
             </UseContext>*/}
          {/*   <Books/>*/}
-            <Tefeul/>
+        {/*    <Tefeul/>*/}
          {/*   <RandomNum/>*/}
         {/*    <RandomImg/>*/}
 
 
+   {/* <img src={x.map((item)=>item.img_src)} />*/}
 
 
 
