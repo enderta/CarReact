@@ -21,6 +21,7 @@ const PaitensTable = () => {
                     <th>Blood Group</th>
                     <th>Created Date</th>
                     <th>Delete</th>
+                    <th>Show</th>
                 </tr>
                 </thead>
                 <tbody>
