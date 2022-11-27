@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Patient from "./Patient";
+import {PatientContext} from "./Patients";
 
 const PaitensTable = (props) => {
+   const patients=useContext(PatientContext);
+    console.log(patients.filteredPatients);
     return (
         <div>
 
@@ -17,12 +20,14 @@ const PaitensTable = (props) => {
                     <th>DOB</th>
                     <th>Blood Group</th>
                     <th>Created Date</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 {
-                    props.patients.map((patient) => (
-                        <Patient patient={patient}/>
+                    patients.filteredPatients.map((patient) => (
+                        <Patient patient={patient} />
+
                     ))
 
                 }

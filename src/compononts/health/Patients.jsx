@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Form} from "react-bootstrap";
 import PaitensTable from "./PaitensTable";
 import Search from "./Search";
-
-const Patients = () => {
+export const PatientContext= React.createContext();
+const Patients = (props) => {
     const [id, setId] = React.useState("");
     const [firstName, setFirstName] = React.useState("");
     const [lastName, setLastName] = React.useState("");
@@ -78,6 +78,10 @@ const Patients = () => {
         setSearch(e.target.value);
         setFilteredPatients(patients.filter((patient)=>patient.firstName.toLowerCase().includes(e.target.value.toLowerCase())));
     }
+   const handleDelete=(id)=>{
+        setFilteredPatients(filteredPatients.filter((patient)=>patient.id!==id));
+
+   }
 
 
     return (
@@ -85,8 +89,15 @@ const Patients = () => {
             <h1>
                 Patients
             </h1>
-            <Search search={handleSearch}/>
-          <PaitensTable patients={filteredPatients}/>
+          <PatientContext.Provider value={{filteredPatients,handleSearch,handleDelete}}>
+                <Search search={search} handleSearch={handleSearch}/>
+              <PaitensTable patient={filteredPatients} handleDelete={handleDelete}/>
+
+            </PatientContext.Provider>
+
+
+
+
         </div>
 
     );

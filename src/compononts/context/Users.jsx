@@ -11,9 +11,6 @@ const Users = () => {
 
     const users= useContext(UserContext);
 
-    console.log(users);
-
-
     return (
         <div>
             <div >

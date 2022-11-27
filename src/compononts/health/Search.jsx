@@ -1,16 +1,13 @@
 import React from 'react';
 import {Form} from "react-bootstrap";
+import {PatientContext} from "./Patients";
 
-const Search = (props) => {
+const Search = () => {
+    const search= React.useContext(PatientContext);
+    console.log(search);
     return (
         <div>
-           <Form bsPrefix={"form-inline"}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Control type="text" placeholder="Search" onChange={props.search}/>
-                </Form.Group>
-            </Form>
-
-
+            <Form.Control type="text" placeholder="Search" onChange={search.handleSearch}/>
 
         </div>
     );

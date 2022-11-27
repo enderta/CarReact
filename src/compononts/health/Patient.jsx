@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {PatientContext} from "./Patients";
 
-const Patient = (props) => {
+const Patient = ({patient}) => {
+    const del=useContext(PatientContext);
+    const handleDelete=()=>{
+        del.handleDelete(patient.id);
+    }
     return (
         <>
             <tr>
-                <td>{props.patient.id}</td>
-                <td>{props.patient.firstName}</td>
-                <td>{props.patient.lastName}</td>
-                <td>{props.patient.email}</td>
-                <td>{props.patient.phone}</td>
-                <td>{props.patient.gender}</td>
-                <td>{props.patient.dob}</td>
-                <td>{props.patient.bloodGroup}</td>
-                <td>{props.patient.createdDate}</td>
-
+                <td>{patient.id}</td>
+                <td>{patient.firstName}</td>
+                <td>{patient.lastName}</td>
+                <td>{patient.email}</td>
+                <td>{patient.phone}</td>
+                <td>{patient.gender}</td>
+                <td>{patient.dob}</td>
+                <td>{patient.bloodGroup}</td>
+                <td>{patient.createdDate}</td>
+                <td>
+                    <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
+                </td>
             </tr>
         </>
     );
