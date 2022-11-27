@@ -4,56 +4,11 @@ import PaitensTable from "./PaitensTable";
 import Search from "./Search";
 export const PatientContext= React.createContext();
 const Patients = (props) => {
-    const [id, setId] = React.useState("");
-    const [firstName, setFirstName] = React.useState("");
-    const [lastName, setLastName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [phone, setPhone] = React.useState("");
-    const [gender,setGender] = React.useState("");
-    const [dob,setDob] = React.useState("");
-    const [bloodGroup,setBloodGroup] = React.useState("");
-    const [createdDate,setCreatedDate] = React.useState("");
+    const [patients, setPatients] = React.useState([]);
+    const [filteredPatients, setFilteredPatients] = React.useState([]);
     const [search, setSearch] = React.useState("");
 
-   function handleChanges(e) {
-        const {name, value} = e.target;
-        switch (name) {
-            case "id":
-                setId(value);
-                break;
-            case "firstName":
-                setFirstName(value);
-                break;
-            case "lastName":
-                setLastName(value);
-                break;
-            case "email":
-                setEmail(value);
-                break;
-            case "phone":
-                setPhone(value);
-                break;
-            case "gender":
-                setGender(value);
-                break;
-            case "dob":
-                setDob(value);
-                break;
-            case "bloodGroup":
-                setBloodGroup(value);
-                break;
-            case "createdDate":
-                setCreatedDate(value);
-                break;
-            default:
-                break;
 
-        }
-
-    }
-
-    const [patients, setPatients] = React.useState([]);
-   const [filteredPatients, setFilteredPatients] = React.useState([]);
 
     React.useEffect(() => {
         var myHeaders = new Headers();
