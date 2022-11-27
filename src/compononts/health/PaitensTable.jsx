@@ -2,9 +2,9 @@ import React, {useContext} from 'react';
 import Patient from "./Patient";
 import {PatientContext} from "./Patients";
 
-const PaitensTable = (props) => {
+const PaitensTable = () => {
    const patients=useContext(PatientContext);
-    console.log(patients.filteredPatients);
+
     return (
         <div>
 

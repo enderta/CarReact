@@ -28,7 +28,7 @@ const Patient = ({patient}) => {
                 <td>{patient.email}</td>
                 <td>{patient.phone}</td>
                 <td>{patient.gender}</td>
-                <td>{patient.dob}</td>
+                <td>{patient.birthDate}</td>
                 <td>{patient.bloodGroup}</td>
                 <td>{patient.createdDate}</td>
                 <td>
