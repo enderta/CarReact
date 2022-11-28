@@ -70,25 +70,6 @@ const Patient = ({patient}) => {
                 <td onClick={tableSort} data-sort={"dob"} data-sort-type={"asc"}>{patient.birthdate}</td>
                 <td onClick={tableSort} data-sort={"blood"} data-sort-type={"asc"}>{patient.bloodGroup}</td>
                 <td onClick={tableSort} data-sort={"createdDate"} data-sort-type={"asc"}>{patient.createdDate}</td>
-                    <td>
-                        <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
-                    </td>
-                    <td>
-                        <button className="btn btn-primary" onClick={()=>handleShow(patient.id)}>Show</button>
-                        <Modal show={show} onHide={() => setShow(false)}>
-
-                            <ModalPaitent patient={patient} country={country}/>
-                        </Modal>
-                    </td>
-                    <td>
-                        <button className="btn btn-primary" onClick={handleEdit}>Edit</button>
-                        <Modal show={show} onHide={() => setShow(false)}>
-                            <EditPat patient={patient} />
-
-                        </Modal>
-                    </td>
-
-
 
                     <td>
                     <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
