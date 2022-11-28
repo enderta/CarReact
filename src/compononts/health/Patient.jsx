@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {PatientContext} from "./Patients";
 import {Modal} from "react-bootstrap";
+import ModalPaitent from "./ModalPaitent";
 
 const Patient = ({patient}) => {
     const del=useContext(PatientContext);
@@ -61,14 +62,8 @@ const Patient = ({patient}) => {
                 <td>
                     <button className="btn btn-primary" onClick={()=>handleShow(patient.id)}>Show</button>
                     <Modal show={show} onHide={() => setShow(false)}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Country</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            {
-                                country.name===null?"":country.name
-                            }
-                        </Modal.Body>
+
+                        <ModalPaitent patient={patient} country={country}/>
                     </Modal>
 
                 </td>
