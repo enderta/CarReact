@@ -39,6 +39,7 @@ const Patients = (props) => {
    }
 
 
+
     return (
         <div>
             <h1>
@@ -46,13 +47,8 @@ const Patients = (props) => {
             </h1>
           <PatientContext.Provider value={{filteredPatients,handleSearch,handleDelete}}>
                 <Search search={search} handleSearch={handleSearch}/>
-              <PaitensTable patient={filteredPatients} handleDelete={handleDelete}/>
-
+              <PaitensTable patient={filteredPatients} handleDelete={handleDelete} />
             </PatientContext.Provider>
-
-
-
-
         </div>
 
     );

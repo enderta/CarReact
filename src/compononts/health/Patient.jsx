@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {PatientContext} from "./Patients";
 import {Modal} from "react-bootstrap";
 import ModalPaitent from "./ModalPaitent";
+import EditPat from "./EditPat";
 
 const Patient = ({patient}) => {
     const del=useContext(PatientContext);
@@ -23,6 +24,9 @@ const Patient = ({patient}) => {
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));*/
+    }
+    const handleEdit=()=>{
+        setShow(true);
     }
     const [country, setCountry] = React.useState("");
     const handleShow=(id)=>{
@@ -65,9 +69,14 @@ const Patient = ({patient}) => {
 
                         <ModalPaitent patient={patient} country={country}/>
                     </Modal>
-
                 </td>
+                <td>
+                    <button className="btn btn-primary" onClick={handleEdit}>Edit</button>
+                 <Modal show={show} onHide={() => setShow(false)}>
+                            <EditPat patient={patient} />
 
+                </Modal>
+                </td>
 
 
             </tr>

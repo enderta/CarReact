@@ -22,6 +22,7 @@ const PaitensTable = () => {
                     <th>Created Date</th>
                     <th>Delete</th>
                     <th>Show</th>
+                    <th>Edit</th>
                 </tr>
                 </thead>
                 <tbody>
