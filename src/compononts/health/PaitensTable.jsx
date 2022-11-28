@@ -9,9 +9,9 @@ const PaitensTable = () => {
         <div>
 
             <table className="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>Id</th>
+                <thead >
+                <tr >
+                    <th >Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -25,7 +25,7 @@ const PaitensTable = () => {
                     <th>Edit</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody >
                 {
                     patients.filteredPatients.map((patient) => (
                         <Patient patient={patient} />

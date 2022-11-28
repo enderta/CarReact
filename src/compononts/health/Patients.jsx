@@ -47,9 +47,9 @@ const Patients = (props) => {
             <h1>
                 Patients
             </h1>
-          <PatientContext.Provider value={{filteredPatients,handleSearch,handleDelete}}>
+          <PatientContext.Provider value={{setFilteredPatients,filteredPatients,handleSearch,handleDelete}}>
                 <Search search={search} handleSearch={handleSearch}/>
-              <PaitensTable patient={filteredPatients} handleDelete={handleDelete} />
+              <PaitensTable patient={filteredPatients} handleDelete={handleDelete} set={setFilteredPatients()} />
             </PatientContext.Provider>
         </div>
 
