@@ -4,7 +4,7 @@ import PaitensTable from "./PaitensTable";
 import Search from "./Search";
 import ScrollToTop from "../moives-series/ScrollToTop";
 export const PatientContext= React.createContext();
-const Patients = (props) => {
+const Patients = () => {
     const [patients, setPatients] = React.useState([]);
     const [filteredPatients, setFilteredPatients] = React.useState([]);
     const [search, setSearch] = React.useState("");
@@ -49,7 +49,7 @@ const Patients = (props) => {
             </h1>
           <PatientContext.Provider value={{setFilteredPatients,filteredPatients,handleSearch,handleDelete}}>
                 <Search search={search} handleSearch={handleSearch}/>
-              <PaitensTable patient={filteredPatients} handleDelete={handleDelete} set={setFilteredPatients()} />
+              <PaitensTable patient={filteredPatients} handleDelete={handleDelete}  />
             </PatientContext.Provider>
         </div>
 

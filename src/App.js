@@ -44,8 +44,8 @@ const App = () => {
 
 
    {/* <img src={x.map((item)=>item.img_src)} />*/}
-    {/*<Patients/>*/}
-    <Books/>
+    <Patients/>
+
 
         </div>
     );
