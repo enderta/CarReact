@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Form} from "react-bootstrap";
 import PaitensTable from "./PaitensTable";
 import Search from "./Search";
+import ScrollToTop from "../moives-series/ScrollToTop";
 export const PatientContext= React.createContext();
 const Patients = (props) => {
     const [patients, setPatients] = React.useState([]);
@@ -42,6 +43,7 @@ const Patients = (props) => {
 
     return (
         <div>
+            <ScrollToTop/>
             <h1>
                 Patients
             </h1>
