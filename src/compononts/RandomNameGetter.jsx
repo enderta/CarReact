@@ -32,10 +32,11 @@ const RandomNameGetter = () => {
             setLucky([...lucky,names[randomIndex]]);
             setName(names[randomIndex]);
             setNames(names.filter((name,index) => index !== randomIndex));
-
-        }
+            console.log(names);
+            console.log(lucky);}
         else{
             alert('no more names');
+            setName('');
             setNames(lucky)
             setLucky([]);
         }
