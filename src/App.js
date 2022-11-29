@@ -19,6 +19,8 @@ import RandomImg from "./compononts/tef/RandomImg";*/
 import Nav from "./compononts/portfolio/Nav";
 import Patients from "./compononts/health/Patients";
 import Books from "./compononts/lib/Books";
+import Main from "./compononts/portfolio/Main";
+import RandomNameGetter from "./compononts/RandomNameGetter";
 
 
 
@@ -44,7 +46,9 @@ const App = () => {
 
 
    {/* <img src={x.map((item)=>item.img_src)} />*/}
-    <Patients/>
+    {/*<Patients/>*/}
+      {/*      <Main/>*/}
+            <RandomNameGetter/>
 
 
         </div>

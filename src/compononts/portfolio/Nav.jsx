@@ -1,28 +1,18 @@
 import React from 'react';
+import {Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 //navbar for resume page home, about, contact, portfolio
 const Nav = () => {
     return (
         <div>
-            <nav className="navbar bg-dark ">
-                <a className="navbar-brand" href="#">Navbar</a>
-
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
+            <Navbar  className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <Link className={'navbar-brand'} to={'/home'}>Home</Link>
+                    <Link className={'navbar-brand'} to={'/about'}>About</Link>
+                    <Link className={'navbar-brand'} to={'/contact'}>Contact</Link>
+                    <Link className={'navbar-brand'} to={'/portfolio'}>Portfolio</Link>
                 </div>
-            </nav>
+            </Navbar>
         </div>
     );
 };
