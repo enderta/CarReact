@@ -21,7 +21,7 @@ const Baby = () => {
 
     const handleChange = (e) => {
         setSearch(e.target.value);
-        setFiltered(sortedByName.filter((item) => item.name.toLowerCase().includes(e.target.value.toLowerCase())));
+        setFiltered(sortedByName.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())));
     }
 
     const addFavorite = (item) => {
@@ -58,11 +58,28 @@ const Baby = () => {
             }
         }));
     }
+    const handleClickGender = (e) => {
+        if (e.target.value=== 'm'){
+            setFiltered(sortedByName.filter((item) => item.sex==='m'));
+        }else if (e.target.value==='f'){
+            setFiltered(sortedByName.filter((item) => item.sex==='f'));
+        }
+        else {
+            setFiltered(sortedByName);
+        }
+
+    }
 
     return (
         <div>
             <div className="search">
-                <input type="text" placeholder="Search" onChange={handleChange}/>
+                <input type="text" style={{margin:'10px'}} placeholder="Search" onChange={handleChange}/>
+
+                <span>
+                    <button  style={{margin:'1px'}} className="btn btn-primary" onClick={handleClickGender} value="m" name={'male'}>Male</button>
+                    <button style={{margin:'1px'}} className="btn btn-danger" onClick={handleClickGender} value={'f'} name={'female'} >Female</button>
+                    <button style={{margin:'1px'}} className="btn btn-success" onClick={handleClickGender} value={'all'} name={'all'} >All</button>
+                </span>
             </div>
             <div className="container">
                 <div className="row">
