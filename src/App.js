@@ -21,6 +21,7 @@ import Patients from "./compononts/health/Patients";
 import Books from "./compononts/lib/Books";
 import Main from "./compononts/portfolio/Main";
 import RandomNameGetter from "./compononts/RandomNameGetter";
+import Baby from "./Baby";
 
 
 
@@ -48,8 +49,8 @@ const App = () => {
    {/* <img src={x.map((item)=>item.img_src)} />*/}
     {/*<Patients/>*/}
       {/*      <Main/>*/}
-            <RandomNameGetter/>
-
+          {/*  <RandomNameGetter/>*/}
+<Baby/>
 
         </div>
     );

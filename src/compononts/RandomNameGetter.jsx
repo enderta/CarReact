@@ -20,8 +20,6 @@ const RandomNameGetter = () => {
         'kurt','kyle',
     ]);
 
-
-
    const getRandomNumber= () => {
         return Math.floor(Math.random() * names.length);
 
@@ -29,9 +27,12 @@ const RandomNameGetter = () => {
    const getRandomName = () => {
         const randomIndex = getRandomNumber();
         if(!lucky.includes(names[randomIndex])){
+
             setLucky([...lucky,names[randomIndex]]);
-            setName(names[randomIndex]);
+
             setNames(names.filter((name,index) => index !== randomIndex));
+            setName(names[randomIndex]);
+
             console.log(names);
             console.log(lucky);}
         else{
@@ -40,6 +41,7 @@ const RandomNameGetter = () => {
             setNames(lucky)
             setLucky([]);
         }
+
 
    }
 
