@@ -1,20 +1,20 @@
-.flex-container {
-    display: flex;
-    flex-flow: column wrap;
-     justify-content: center;
+* {
+    box-sizing: border-box;
 }
-
-.flex-item {
-    display: flex;
-    flex-flow: row wrap;
-
-
+main {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
 }
-
-.flex-item:nth-child(1) {
-    min-height: 50px;
+ul {
+    padding: 0;
 }
-
-.flex-item:nth-child(2) {
-    min-height: 50px;
+li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    margin: 2px;
+    border-radius: 3px;
+}
+li:hover {
+    cursor: pointer;
 }
