@@ -25,7 +25,16 @@ const Baby = () => {
     }
 
     const addFavorite = (item) => {
-        setFavorite([...favorite, item]);
+        setFavorite([...favorite, item].sort((a, b) => {
+            if (a.name > b.name) {
+                return 1;
+            } else if (a.name < b.name) {
+                return -1;
+            } else {
+                return 0;
+            }
+
+        }));
         setFiltered(filtered.filter((i) => i.id !== item.id).sort((a, b) => {
                 if (a.name > b.name) {
                     return 1;
@@ -52,8 +61,8 @@ const Baby = () => {
 
     return (
         <div>
-            <div>
-                <input type="text" placeholder="Search" value={search} onChange={handleChange}/>
+            <div className="search">
+                <input type="text" placeholder="Search" onChange={handleChange}/>
             </div>
             <div className="container">
                 <div className="row">
@@ -61,65 +70,47 @@ const Baby = () => {
                         <h1>Favorite</h1>
                         <ul>
                             {
-                                favorite.map((item, index) => {
-                                        return (
-                                            <li key={index} className={item.sex} onClick={() => removeFavorite(item)}>
-                                                {
-                                                    item.sex === 'm' ?
-                                                        <button style={{
-                                                            color: 'blue',
-                                                            border: "1px solid"
-                                                        }}>{item.name}</button>
-                                                        :
-                                                        <button
-                                                            style={{color: 'red', border: "1px solid"}}>{item.name}</button>
-                                                }
-                                            </li>
-                                        )
+                            favorite.map((item, index) => {
+                            return(
+                            <li key={index}>
+                                <div className="item">
+                                    {
+                                    item.sex==='m'?
+                                    <button className="btn btn-primary" onClick={() => removeFavorite(item)}>{item.name}</button>:
+                                    <button className="btn btn-danger" onClick={() => removeFavorite(item)}>{item.name}</button>
                                     }
-                                )
-                            }
-                            <br/>
-                            <br/>
-                        </ul>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-6">
-                                    <div>
-                                        <h1>Names</h1>
-                                        <ul>
-                                            {
-                                                filtered.map((item, index) => {
-                                                    return (
-                                                        <li className={item.sex} key={index}
-                                                            onClick={() => addFavorite(item)}>
-                                                            {
-                                                                item.sex === 'm' ?
-                                                                    <button style={{
-                                                                        color: 'blue',
-                                                                        border: "1px solid"
-                                                                    }}>{item.name}</button>
-                                                                    :
-                                                                    <button style={{
-                                                                        color: 'red',
-                                                                        border: "1px solid"
-                                                                    }}>{item.name}</button>
-
-                                                            }
-                                                        </li>
-                                                    )
-                                                })
-                                            }
-                                        </ul>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            )}
+                            )}
+
+                        </ul>
                     </div>
-                </div>
-            </div>
+                    <div className="col-6">
+                        <h1>Sorted by name</h1>
+                        <ul>
+                            {
+                            filtered.map((item, index) => {
+                            return(
+                            <li key={index}>
+                                <div className="item">
+                                    {
+                                        item.sex==='m'?
+                                        <button className="btn btn-primary" onClick={() => addFavorite(item)}>{item.name}</button>:
+                                        <button className="btn btn-danger" onClick={() => addFavorite(item)}>{item.name}</button>
+                                    }
+                                </div>
+                            </li>
+                            )}
+                            )}
+
+
+                        </ul>
         </div>
-    )
-}
+        </div>
+        </div>
+        </div>
+    );
+};
 
 export default Baby;
