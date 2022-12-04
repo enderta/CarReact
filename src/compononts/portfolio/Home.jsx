@@ -8,6 +8,7 @@ import Contact from "./Contact";
 const Home = () => {
     return (
         <div>
+
           home
         </div>
     );

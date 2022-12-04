@@ -22,6 +22,7 @@ import Books from "./compononts/lib/Books";
 import Main from "./compononts/portfolio/Main";
 import RandomNameGetter from "./compononts/RandomNameGetter";
 import Baby from "./Baby";
+import Flags from "./compononts/countries/Flags";
 
 
 
@@ -50,7 +51,8 @@ const App = () => {
     {/*<Patients/>*/}
       {/*      <Main/>*/}
           {/*  <RandomNameGetter/>*/}
-<Baby/>
+{/*<Baby/>*/}
+      <Flags/>
 
         </div>
     );
