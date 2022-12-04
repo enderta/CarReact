@@ -17,30 +17,22 @@ const Flags = () => {
     console.log(country);
     return (
         <div>
-          <Table striped bordered hover>
-                <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Name</th>
-                    <th>Capital</th>
-                    <th>show</th>
-                </tr>
-                </thead>
-                <tbody>
+
                 {
-                country.map((item) => {
-                    return (
-                       <TableCon item={item} />
+                    country.map((item) => {
+                            return (
+                                <TableCon item={item} />
+                            )
+
+
+                        }
                     )
 
-
-                }
-                )
-
                 }
 
-                </tbody>
-            </Table>
+
+
+
         </div>
     );
 };
