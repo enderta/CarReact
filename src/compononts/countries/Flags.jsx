@@ -10,8 +10,6 @@ const Flags = () => {
     const [filter, setFilter] = React.useState([]);
     const [search, setSearch] = React.useState('');
 
-
-
     React.useEffect(() => {
        fetch('https://restcountries.com/v2/all')
               .then(res => res.json())
