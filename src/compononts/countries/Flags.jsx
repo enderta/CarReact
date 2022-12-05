@@ -30,7 +30,6 @@ const Flags = () => {
     return (
         <div>
             <input type={'text'} placeholder={'Search'} onChange={handleSearch}/>
-
             <div className="container">
                 <div className="row">
                     {filter.map((item, index) => (
@@ -38,10 +37,6 @@ const Flags = () => {
                     ))}
                 </div>
             </div>
-
-
-
-
         </div>
     );
 };
