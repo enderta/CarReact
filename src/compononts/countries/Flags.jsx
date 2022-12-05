@@ -7,25 +7,33 @@ import TableCon from "./TableCon";
 import ModalCon from "./ModalCon";
 const Flags = () => {
     const [country, setCountry] = React.useState([]);
-    const [show, setShow] = React.useState(false);
-
-    const handleShow = () => setShow(true);
+    const [filter, setFilter] = React.useState([]);
+    const [search, setSearch] = React.useState('');
 
 
 
     React.useEffect(() => {
        fetch('https://restcountries.com/v2/all')
               .then(res => res.json())
-                .then(data => setCountry(data.slice(1)))
+                .then(data => {
+                    setCountry(data.slice(1));
+                    setFilter(data.slice(1));
+                })
 
     }, []);
-    console.log(country);
+
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+        const searchCountry = country.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase()));
+        setFilter(searchCountry);
+    }
     return (
         <div>
+            <input type={'text'} placeholder={'Search'} onChange={handleSearch}/>
 
             <div className="container">
                 <div className="row">
-                    {country.map((item, index) => (
+                    {filter.map((item, index) => (
                       <TableCon item={item} />
                     ))}
                 </div>
