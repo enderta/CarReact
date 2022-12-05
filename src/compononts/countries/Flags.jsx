@@ -29,7 +29,8 @@ const Flags = () => {
     }
     return (
         <div>
-            <input type={'text'} placeholder={'Search'} onChange={handleSearch}/>
+            <h1>Countries</h1>
+            <input type={'text'} placeholder={'Search'} onChange={handleSearch} style={{margin:"10px"}}/>
             <div className="container">
                 <div className="row">
                     {filter.map((item, index) => (
