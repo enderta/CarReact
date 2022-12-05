@@ -10,7 +10,8 @@ import ContactId from "./ContactId";
 const Main = () => {
     return (
         <div>
-           <Nav/>
+            <Nav/>
+            
             <Routes>
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/contact" element={<Contact/>}/>

@@ -19,10 +19,7 @@ const Baby = () => {
     const [filtered, setFiltered] = React.useState(sortedByName);
     const [favorite, setFavorite] = React.useState([]);
 
-    const handleChange = (e) => {
-        setSearch(e.target.value);
-        setFiltered(sortedByName.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())));
-    }
+
 
     const addFavorite = (item) => {
         setFavorite([...favorite, item].sort((a, b) => {
@@ -69,11 +66,18 @@ const Baby = () => {
         }
 
     }
+    const handleChange = (e) => {
+        setSearch(e.target.value);
 
+    }
+    React.useEffect(() => {
+        setFiltered(sortedByName.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())));
+    }
+        , [search]);
     return (
         <div>
             <div className="search">
-                <input type="text" style={{margin:'10px'}} placeholder="Search" onChange={handleChange}/>
+                <input type="text" placeholder="Search..." value={search} onChange={handleChange}/>
 
                 <span>
                     <button  style={{margin:'1px'}} className="btn btn-primary" onClick={handleClickGender} value="m" name={'male'}>Male</button>
