@@ -24,6 +24,7 @@ import RandomNameGetter from "./compononts/RandomNameGetter";
 import Baby from "./Baby";
 import Flags from "./compononts/countries/Flags";
 import Users from "./compononts/accounts/Users";
+import Rout from "./compononts/accounts/Rout";
 
 
 const App = () => {
@@ -53,7 +54,7 @@ const App = () => {
             {/*  <RandomNameGetter/>*/}
             {/*<Baby/>*/}
             {/* <Flags/>*/}
-            <Users/>
+            <Rout/>
         </div>
     );
 };
