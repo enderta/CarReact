@@ -23,37 +23,37 @@ import Main from "./compononts/portfolio/Main";
 import RandomNameGetter from "./compononts/RandomNameGetter";
 import Baby from "./Baby";
 import Flags from "./compononts/countries/Flags";
-
-
+import Users from "./compononts/accounts/Users";
 
 
 const App = () => {
 
+
     return (
         <div>
-       {/* <Demo d={data}/>*/}
+            {/* <Demo d={data}/>*/}
 
 
-         {/*   <MainLib/>*/}
-          {/*    <Car/>*/}
-      {/*        <MoviesSeries/>*/}
-          {/*  <Department/>*/}
-        {/*  <UseContext>
+            {/*   <MainLib/>*/}
+            {/*    <Car/>*/}
+            {/*        <MoviesSeries/>*/}
+            {/*  <Department/>*/}
+            {/*  <UseContext>
                 <Users/>
             </UseContext>*/}
-         {/*   <Books/>*/}
-        {/*    <Tefeul/>*/}
-         {/*   <RandomNum/>*/}
-        {/*    <RandomImg/>*/}
+            {/*   <Books/>*/}
+            {/*    <Tefeul/>*/}
+            {/*   <RandomNum/>*/}
+            {/*    <RandomImg/>*/}
 
 
-   {/* <img src={x.map((item)=>item.img_src)} />*/}
-    {/*<Patients/>*/}
-      {/*      <Main/>*/}
-          {/*  <RandomNameGetter/>*/}
-{/*<Baby/>*/}
-      <Flags/>
-
+            {/* <img src={x.map((item)=>item.img_src)} />*/}
+          {/*  <Patients/>*/}
+            {/*      <Main/>*/}
+            {/*  <RandomNameGetter/>*/}
+            {/*<Baby/>*/}
+            {/* <Flags/>*/}
+            <Users/>
         </div>
     );
 };
