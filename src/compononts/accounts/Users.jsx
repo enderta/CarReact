@@ -27,12 +27,15 @@ const Users = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    users.map((user) => (
-                       <UsersTable key={user.id} user={user}/>
-                    ))
 
-                }
+                    {
+                        users.map((user) => (
+                            <UsersTable key={user.id} user={user}/>
+                        ))
+
+                    }
+
+
                 </tbody>
             </Table>
 
