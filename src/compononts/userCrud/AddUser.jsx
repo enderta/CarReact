@@ -17,7 +17,6 @@ const AddUser = () => {
         }
     }
     const handleSubmit = (e) => {
-
         e.preventDefault();
         const user = {
             name,
@@ -60,5 +59,4 @@ const AddUser = () => {
         </div>
     );
 };
-
 export default AddUser;
