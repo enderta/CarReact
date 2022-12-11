@@ -9,9 +9,9 @@ const Users = () => {
         fetch('http://localhost:3001/users')
             .then(res => res.json())
             .then(data => {
-                setUsers(data);
-            }
-        )
+                    setUsers(data);
+                }
+            )
 
     }, []);
     const handleDelete = (id) => {
@@ -31,20 +31,22 @@ const Users = () => {
             </Button>
             <Table className={'table'} striped bordered hover>
                 <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Title</th>
-                        <th>Delete</th>
-                    </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Title</th>
+                    <th>Delete</th>
+                </tr>
                 </thead>
                 <tbody>
                 {
                     users.map((user) => (
                         <tr>
                             <td>
-                                {user.id}
+                                <Button className={'btn-primary'} variant="primary" as={Link} to={`/users/${user.id}`}>
+                                    {user.id}
+                                </Button>
                             </td>
                             <td>
                                 {user.name}
@@ -62,6 +64,7 @@ const Users = () => {
                             </td>
                         </tr>
                     ))
+
                 }
                 </tbody>
             </Table>

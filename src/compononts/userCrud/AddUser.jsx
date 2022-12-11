@@ -7,16 +7,16 @@ const AddUser = () => {
     const [surname, setSurname] = React.useState('');
     const [title, setTitle] = React.useState('');
     const handleChange=(e)=>{
-        const {name, value} = e.target;
-        if(name === 'name'){
-            setName(value);
+        if(e.target.name==='name'){
+            setName(e.target.value);
         }
-        if(name === 'surname'){
-            setSurname(value);
+        if(e.target.name==='surname'){
+            setSurname(e.target.value);
         }
-        if(name === 'title'){
-            setTitle(value);
+        if(e.target.name==='title'){
+            setTitle(e.target.value);
         }
+
     }
     const handleSubmit = (e) => {
 
