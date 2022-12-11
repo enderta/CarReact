@@ -1,47 +1,67 @@
 import React from 'react';
 import {useNavigate} from "react-router";
+import {Button, Form, FormGroup} from "react-bootstrap";
 
 const AddUser = () => {
-   const [name, setName] = React.useState('');
-   const [surname, setSurname] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [surname, setSurname] = React.useState('');
     const [title, setTitle] = React.useState('');
-
-const handleSubmit = (e) => {
-
-    e.preventDefault();
-    const user = {
-        name,
-        surname,
-        title
+    const handleChange=(e)=>{
+        const {name, value} = e.target;
+        if(name === 'name'){
+            setName(value);
+        }
+        if(name === 'surname'){
+            setSurname(value);
+        }
+        if(name === 'title'){
+            setTitle(value);
+        }
     }
-    fetch('http://localhost:3001/users', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    }).then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(err => console.log(err))
-   window.location.href = 'http://localhost:3000';
+    const handleSubmit = (e) => {
 
-}
+        e.preventDefault();
+        const user = {
+            name,
+            surname,
+            title
+        }
+        fetch('http://localhost:3001/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => console.log(err))
+        window.location.href = 'http://localhost:3000';
+
+    }
     return (
         <div>
             <h1>Add User</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" className="form-control" id="name" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}/>
-                    <input type="text" className="form-control" id="surname" placeholder="Enter surname" value={surname} onChange={(e) => setSurname(e.target.value)}/>
-                    <input type="text" className="form-control" id="title" placeholder="Enter title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <Form  style={{height:"200px",width:"200px",border:"1px"}}>
+                <Form.Group className="mb-2" controlId="formBasicEmail" >
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" placeholder="Enter name" name={'name'} value={name} onChange={handleChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Surname</Form.Label>
+                    <Form.Control type="text" placeholder="Enter surname" name={'surname'} value={surname} onChange={handleChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" placeholder="Enter title" name={'title'} value={title} onChange={handleChange}/>
+                </Form.Group>
+                <Button variant="primary" type="submit" onClick={handleSubmit}>
+                    Submit
+                </Button>
 
-            
+            </Form>
+
         </div>
     );
 };
