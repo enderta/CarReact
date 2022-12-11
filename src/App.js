@@ -52,11 +52,11 @@ const App = () => {
             {/* <img src={x.map((item)=>item.img_src)} />*/}
           {/*  <Patients/>*/}
             {/*      <Main/>*/}
-            {/*  <RandomNameGetter/>*/}
+              <RandomNameGetter/>
             {/*<Baby/>*/}
         {/*     <Flags/>*/}
           {/*  <Rout/>*/}
-          <MainCrud/>
+       {/*   <MainCrud/>*/}
         </div>
     );
 };
