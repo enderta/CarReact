@@ -4,7 +4,7 @@ import {useParams} from "react-router";
 const UserInfo = () => {
     const [user, setUser] = React.useState([]);
     let usid=useParams()
-    console.log(usid.id)
+
     React.useEffect(()=>{
         fetch(`http://localhost:3001/users/${usid.id}`)
             .then((response) => response.json())
