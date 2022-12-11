@@ -14,5 +14,4 @@ const MainCrud = () => {
         </div>
     );
 };
-
 export default MainCrud;

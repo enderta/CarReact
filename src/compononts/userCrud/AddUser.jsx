@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigate} from "react-router";
 import {Button, Form, FormGroup} from "react-bootstrap";
 
 const AddUser = () => {
@@ -16,7 +15,6 @@ const AddUser = () => {
         if(e.target.name==='title'){
             setTitle(e.target.value);
         }
-
     }
     const handleSubmit = (e) => {
 
@@ -38,7 +36,6 @@ const AddUser = () => {
             })
             .catch(err => console.log(err))
         window.location.href = 'http://localhost:3000';
-
     }
     return (
         <div>
@@ -59,9 +56,7 @@ const AddUser = () => {
                 <Button variant="primary" type="submit" onClick={handleSubmit}>
                     Submit
                 </Button>
-
             </Form>
-
         </div>
     );
 };
