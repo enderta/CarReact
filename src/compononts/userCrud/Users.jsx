@@ -62,7 +62,6 @@ const Users = () => {
                             </td>
                         </tr>
                     ))
-
                 }
                 </tbody>
             </Table>
