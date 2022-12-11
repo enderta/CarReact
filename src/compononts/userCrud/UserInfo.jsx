@@ -10,11 +10,10 @@ const UserInfo = () => {
             .then((response) => response.json())
             .then((data) => {
                     setUser(data);
-                    console.log(data);
                 }
             )
     },[])
-    console.log(user)
+
     return (
         <div>
             <h1>UserInfo</h1>
