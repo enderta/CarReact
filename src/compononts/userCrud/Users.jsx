@@ -26,7 +26,7 @@ const Users = () => {
     return (
         <div>
             <h1>Users</h1>
-            <Button className={'btn-danger'} variant="danger" as={Link} to={`/add`}>
+            <Button className='btn-success' variant="danger" as={Link} to={`/add`}>
                 Add User
             </Button>
             <Table className={'table'} striped bordered hover>

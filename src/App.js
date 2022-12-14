@@ -26,6 +26,7 @@ import Flags from "./compononts/countries/Flags";
 import Users from "./compononts/userCrud/Users";
 import Rout from "./compononts/accounts/Rout";
 import MainCrud from "./compononts/userCrud/MainCrud";
+import Crud2 from "./compononts/crud2/Crud2";
 
 
 const App = () => {
@@ -50,13 +51,14 @@ const App = () => {
 
 
             {/* <img src={x.map((item)=>item.img_src)} />*/}
-          {/*  <Patients/>*/}
+        {/*    <Patients/>*/}
             {/*      <Main/>*/}
-              <RandomNameGetter/>
+            {/*  <RandomNameGetter/>*/}
             {/*<Baby/>*/}
         {/*     <Flags/>*/}
           {/*  <Rout/>*/}
-       {/*   <MainCrud/>*/}
+        {/*  <MainCrud/>*/}
+            <Crud2/>
         </div>
     );
 };

@@ -7,7 +7,7 @@ import EditPat from "./EditPat";
 const Patient = ({patient}) => {
     const del=useContext(PatientContext);
     const [show, setShow] = React.useState(false);
-    console.log(patient.country);
+
 
     const handleDelete=()=>{
         del.handleDelete(patient.id);
