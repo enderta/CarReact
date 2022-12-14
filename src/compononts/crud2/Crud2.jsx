@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Modal, Table} from "react-bootstrap";
 import UserModal from "./UserModal";
 import Crud2Table from "./Crud2Table";
+import ModalAddUser from "./ModalAddUser";
 
 const Crud2 = () => {
     const [users, setUsers] = React.useState([]);
@@ -20,6 +21,10 @@ const Crud2 = () => {
     return (
         <div>
             <h1>Crud2</h1>
+            <Button variant="success" onClick={() => setShow(true)}>
+                Add User
+            </Button>
+            <ModalAddUser show={show} setShow={setShow}/>
             <Table className={'table'} striped bordered hover>
                 <thead>
                 <tr>
