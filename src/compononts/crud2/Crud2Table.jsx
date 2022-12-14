@@ -4,6 +4,7 @@ import {Button} from "react-bootstrap";
 
 const Crud2Table = (props) => {
     const [show, setShow] = React.useState(false);
+
     return (
        <tr>
               <td>
@@ -15,6 +16,13 @@ const Crud2Table = (props) => {
                 <td>{props.user.name}</td>
                 <td>{props.user.surname}</td>
                 <td>{props.user.title}</td>
+                <td>
+                    <Button variant="danger" onClick={() => {
+                        props.delete(props.user.id)
+                    }
+                    }>Delete</Button>
+
+                </td>
 
        </tr>
     );

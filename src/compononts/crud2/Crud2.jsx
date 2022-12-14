@@ -17,6 +17,15 @@ const Crud2 = () => {
             )
     },[]);
 
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3001/users/${id}`, {
+            method: 'DELETE'
+        }).then(res => res.json())
+            .then(data => {
+                setUsers(users.filter(user => user.id !== id));
+            })
+        window.location.reload();
+    }
 
     return (
         <div>
@@ -32,12 +41,13 @@ const Crud2 = () => {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Title</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 {
                     users.map((user) => (
-                      <Crud2Table key={user.id} user={user} setShow={setShow}/>
+                      <Crud2Table key={user.id} user={user} setShow={setShow} delete={handleDelete}/>
                     ))
 
 
