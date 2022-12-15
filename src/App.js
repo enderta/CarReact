@@ -27,6 +27,7 @@ import Users from "./compononts/userCrud/Users";
 import Rout from "./compononts/accounts/Rout";
 import MainCrud from "./compononts/userCrud/MainCrud";
 import Crud2 from "./compononts/crud2/Crud2";
+import Notes from "./compononts/notes/Notes";
 
 
 const App = () => {
@@ -58,7 +59,8 @@ const App = () => {
         {/*     <Flags/>*/}
           {/*  <Rout/>*/}
         {/*  <MainCrud/>*/}
-            <Crud2/>
+         {/*   <Crud2/>*/}
+            <Notes/>
         </div>
     );
 };
