@@ -59,7 +59,7 @@ const App = () => {
         {/*     <Flags/>*/}
           {/*  <Rout/>*/}
         {/*  <MainCrud/>*/}
-         {/*   <Crud2/>*/}
+       {/*     <Crud2/>*/}
             <Notes/>
         </div>
     );

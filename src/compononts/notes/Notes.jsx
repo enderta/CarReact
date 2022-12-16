@@ -1,15 +1,19 @@
 import React from 'react';
+import './notes.css'
 import {
     Button,
     ButtonGroup,
     Card,
     CardImg,
     Col,
-    Container,
+    Container, Modal,
     Row
 } from 'react-bootstrap';
 const Notes = () => {
     const [notes, setNotes] = React.useState([]);
+    const [content, setContent] = React.useState('');
+    const [title, setTitle] = React.useState('');
+    const [show, setShow] = React.useState(false);
 
     React.useEffect(() => {
         fetch('http://localhost:3001/notes')
@@ -18,37 +22,116 @@ const Notes = () => {
                 setNotes(data);
             })
     }, []);
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3001/notes/${id}`, {
+            method: 'DELETE'
+        }).then(res => res.json())
+            .then(data => {
+                setNotes(notes.filter(note => note.id !== id));
+            })
+        window.location.reload();
+    }
+    const handleEdit = (id) => {
+        fetch(`http://localhost:3001/notes/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: title,
+                content: content
+            })
+        }).then(res => res.json())
+            .then(data => {
+                setNotes(notes.map(note => note.id === id ? data : note));
+            })
+        window.location.reload();
+    }
 
+    const handleAdd = () => {
+        fetch('http://localhost:3001/notes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: title,
+                content: content
+            })
+        }).then(res => res.json())
+            .then(data => {
+                setNotes([...notes, data]);
+            })
+        window.location.reload();
+
+    }
+    const handleShow = () => setShow(true);
     return (
         <div>
-            <div className="album py-5 bg-light">
-                <Container>
-                    <Row>
+            <div className="app-container">
+                <div className="toolbar">
+                    <h1 className="toolbar-title">My Notes</h1>
+                    <Button className="toolbar-button" onClick={handleShow}>New Note</Button>
+                    <Modal show={show} onHide={() => setShow(false)}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Add Note</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
+                            <input type="text" placeholder="Content" onChange={(e) => setContent(e.target.value)}/>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => setShow(false)}>
+                                Close
+                            </Button>
+                            <Button variant="primary" onClick={handleAdd}>
+                                Save Changes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+                <div className="notes-container">
+                    <div className="note-card">
                         {
                             notes.map((note) => (
-                                <Col md={4}>
-                                    <Card className="mb-4 shadow-sm">
-                                        <CardImg top width="100%" src={note.image} alt="Card image cap"/>
-                                        <Card.Body>
-                                            <Card.Title>{note.title}</Card.Title>
-                                            <Card.Text>
-                                                {note.content}
-                                            </Card.Text>
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <ButtonGroup>
-                                                    <Button variant="outline-secondary">View</Button>
-                                                    <Button variant="outline-secondary">Edit</Button>
-                                                </ButtonGroup>
+                                <Card key={note.id} >
+                                    <Card.Body>
+                                        <Card.Title>{note.title}</Card.Title>
+                                        <Card.Text>
+                                            {note.content}
+                                        </Card.Text>
+                                        <ButtonGroup aria-label="Basic example">
+                                            <Button onClick={handleShow}>Edit</Button>
+                                            <Modal show={show} onHide={() => setShow(false)}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Edit Note</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>
+                                                    <input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
+                                                    <input type="text" placeholder="Content" onChange={(e) => setContent(e.target.value)}/>
+                                                </Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="secondary" onClick={() => setShow(false)}>
+                                                        Close
+                                                    </Button>
+                                                    <Button variant="primary" onClick={()=>handleEdit(note.id)}>
+                                                        Save Changes
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
 
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
+                                            <Button variant="danger" onClick={() => handleDelete(note.id)}>Delete</Button>
+                                        </ButtonGroup>
+                                    </Card.Body>
+                                </Card>
+
                             ))
-
                         }
-                    </Row>
-                </Container>
+                        <div className="note-footer">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
