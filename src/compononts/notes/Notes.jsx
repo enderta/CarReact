@@ -6,8 +6,9 @@ import NotesModal from "./NotesModal";
 
 const Notes = () => {
     const [notes, setNotes] = React.useState([]);
-
     const [show, setShow] = React.useState(false);
+    const [theme, setTheme] = React.useState('light');
+
 
     React.useEffect(() => {
         fetch('http://localhost:3001/notes')
