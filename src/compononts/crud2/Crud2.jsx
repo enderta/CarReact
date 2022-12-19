@@ -9,13 +9,14 @@ const Crud2 = () => {
     const [show, setShow] = React.useState(false);
 
     React.useEffect(() => {
-        fetch('http://localhost:3001/users')
-            .then(res => res.json())
-            .then(data => {
-                    setUsers(data);
-                }
-            )
-    },[]);
+            fetch('http://localhost:3001/users')
+                .then(res => res.json())
+                .then(data => {
+                        setUsers(data);
+                    }
+                )
+        },
+        []);
 
     const handleDelete = (id) => {
         fetch(`http://localhost:3001/users/${id}`, {
