@@ -25,7 +25,7 @@ const JobTrc = () => {
                 <Button variant="success" onClick={handleShow}>
                     New Application
                 </Button>
-                <NewAppModal show={show} setShow={setShow} />
+                <NewAppModal show={show} setShow={setShow} job={setJobs}/>
             </div>
             <Table variant={'dark'} striped bordered hover>
                 <thead>
