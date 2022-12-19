@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, ButtonGroup, Card, Modal} from "react-bootstrap";
+import {Button, ButtonGroup, Card} from "react-bootstrap";
 import NotesModal from "./NotesModal";
 
 
@@ -7,7 +7,6 @@ const NotesCard = (props) => {
     const note=props.note;
     const [show, setShow] = React.useState(false);
     const handleShow = () => setShow(true);
-
     return (
         <div>
             <Card key={note.id} >

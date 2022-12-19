@@ -1,6 +1,4 @@
 import React from 'react';
-
-import {Button} from 'react-bootstrap';
 import NotesCard from "./NotesCard";
 import NotesModal from "./NotesModal";
 
@@ -8,7 +6,6 @@ const Notes = () => {
     const [notes, setNotes] = React.useState([]);
     const [show, setShow] = React.useState(false);
     const [theme, setTheme] = React.useState('light');
-
 
     React.useEffect(() => {
         fetch('http://localhost:3001/notes')
@@ -26,8 +23,6 @@ const Notes = () => {
             })
         window.location.reload();
     }
-
-
     const handleShow = () => setShow(true);
     return (
         <div>
@@ -35,18 +30,16 @@ const Notes = () => {
                 <div className="toolbar">
                     <h1 className="toolbar-title">My Notes</h1>
                     <button className={'btn1'} onClick={handleShow}>New Note</button>
-                   <NotesModal show={show} setShow={setShow} notes={notes} setNotes={setNotes}/>
+                    <NotesModal show={show} setShow={setShow} notes={notes} setNotes={setNotes}/>
                 </div>
                 <div className="notes-container">
                     <div className="note-card">
                         {
                             notes.map((note) => (
-                               <NotesCard note={note} handleDelete={handleDelete} handleShow={handleShow}/>
-
+                                <NotesCard note={note} handleDelete={handleDelete} handleShow={handleShow}/>
                             ))
                         }
                         <div className="note-footer">
-
                         </div>
                     </div>
                 </div>
