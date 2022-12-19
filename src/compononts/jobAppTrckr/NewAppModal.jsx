@@ -1,15 +1,11 @@
 import React from 'react';
 import {Button, Modal} from "react-bootstrap";
 
-const NewAppModal = () => {
-    const [show, setShow] = React.useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+const NewAppModal = (props) => {
+    const handleClose = () => props.setShow(false);
     return (
         <div>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={props.show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add New Application</Modal.Title>
                 </Modal.Header>

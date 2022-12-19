@@ -1,6 +1,7 @@
 import React from 'react';
 import JobTrcTable from "./JobTrcTable";
 import {Button, Table} from "react-bootstrap";
+import NewAppModal from "./NewAppModal";
 
 const JobTrc = () => {
     const [jobs, setJobs] = React.useState([]);
@@ -15,13 +16,16 @@ const JobTrc = () => {
         }
         , []);
 
+
     const handleShow = () => setShow(true);
     return (
         <div>
             <div>
-                <Button variant={'success'} onClick={handleShow} >
+                <h1>Job Tracker</h1>
+                <Button variant="success" onClick={handleShow}>
                     New Application
                 </Button>
+                <NewAppModal show={show} setShow={setShow} />
             </div>
             <Table variant={'dark'} striped bordered hover>
                 <thead>
