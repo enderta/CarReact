@@ -1,8 +1,10 @@
 import React from 'react';
 import JobTrcTable from "./JobTrcTable";
+import {Button, Table} from "react-bootstrap";
 
 const JobTrc = () => {
     const [jobs, setJobs] = React.useState([]);
+    const [show, setShow] = React.useState(false);
 
     React.useEffect(() => {
             fetch('http://localhost:3001/jobs')
@@ -12,8 +14,15 @@ const JobTrc = () => {
                 })
         }
         , []);
+
+    const handleShow = () => setShow(true);
     return (
         <div>
+            <div>
+                <Button variant={'success'} onClick={handleShow} >
+                    New Application
+                </Button>
+            </div>
             <Table variant={'dark'} striped bordered hover>
                 <thead>
                 <tr>
@@ -36,5 +45,6 @@ const JobTrc = () => {
         </div>
     );
 };
+
 
 export default JobTrc;

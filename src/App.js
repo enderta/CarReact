@@ -28,6 +28,7 @@ import Rout from "./compononts/accounts/Rout";
 import MainCrud from "./compononts/userCrud/MainCrud";
 import Crud2 from "./compononts/crud2/Crud2";
 import Notes from "./compononts/notes/Notes";
+import JobTrc from "./compononts/jobAppTrckr/JobTrc";
 
 
 const App = () => {
@@ -60,7 +61,8 @@ const App = () => {
           {/*  <Rout/>*/}
         {/*  <MainCrud/>*/}
        {/*     <Crud2/>*/}
-            <Notes/>
+      {/*      <Notes/>*/}
+            <JobTrc/>
         </div>
     );
 };
