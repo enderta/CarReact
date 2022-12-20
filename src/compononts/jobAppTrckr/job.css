@@ -5,7 +5,7 @@ body{
 
 table{
 
-
+border-radius:10px;
     box-shadow: 0 5px 15px black;
     overflow: hidden;
     /* shrink the table a bit*/
@@ -37,12 +37,18 @@ button{
     background: black;
         background: linear-gradient(90deg, black 0%, purple 80%);
     border: none;
-    color: white;
+    color: #2e9b2b;
     padding: 15px 32px;
+    border-radius: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-weight: bolder;
     margin: 4px 2px;
     cursor: pointer;
+}
+.modal{
+    background: black;
+    background: linear-gradient(90deg, black 0%, purple 80%);
 }

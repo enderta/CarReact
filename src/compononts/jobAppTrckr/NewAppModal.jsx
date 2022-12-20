@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Form, Modal} from "react-bootstrap";
+import './job.css'
 
 const NewAppModal = (props) => {
     const [name, setName] = React.useState('');
@@ -32,13 +33,13 @@ const NewAppModal = (props) => {
 
 
     return (
-        <div>
-            <Modal show={props.show} onHide={handleClose}>
+        <div >
+            <Modal className={'modal'} show={props.show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add Application</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    <Form >
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Company Name</Form.Label>
                             <Form.Control type="text" placeholder="Enter Company Name"
