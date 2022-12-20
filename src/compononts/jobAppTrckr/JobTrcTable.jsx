@@ -55,7 +55,7 @@ const handleDelete = (id) => {
                 <td>{props.job.date.substring(0,10)}</td>
                 <td>{props.job.result}</td>
                 <td>
-                    <Button variant={"success"} onClick={()=>setShow(true)}>Edit</Button>
+                    <button variant={"success"} onClick={()=>setShow(true)}>Edit</button>
                   <Modal show={show} onHide={() => setShow(false)}>
                       <EditJop/>
                         <Modal.Footer>
@@ -69,7 +69,7 @@ const handleDelete = (id) => {
                     </Modal>
                 </td>
                 <td>
-                    <Button variant={"danger"} onClick={()=>handleDelete(props.job.id)}>Delete</Button>
+                    <button variant={"danger"} onClick={()=>handleDelete(props.job.id)}>Delete</button>
                 </td>
             </tr>
 

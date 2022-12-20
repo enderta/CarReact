@@ -34,7 +34,8 @@ th{
     text-align: center;
 }
 button{
-    background-color: #4CAF50; /* Green */
+    background: black;
+        background: linear-gradient(90deg, black 0%, purple 80%);
     border: none;
     color: white;
     padding: 15px 32px;
