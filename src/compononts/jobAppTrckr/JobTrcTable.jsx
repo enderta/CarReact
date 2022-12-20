@@ -58,6 +58,9 @@ const JobTrcTable = (props) => {
                         </Modal.Footer>
                     </Modal>
                 </td>
+                <td>
+                    <Button variant={"danger"}>Delete</Button>
+                </td>
             </tr>
 
     );
