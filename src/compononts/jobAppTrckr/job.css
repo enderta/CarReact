@@ -1,11 +1,9 @@
-body{
-    background: rgb(87,9,116);
-    background: linear-gradient(90deg, rgba(87,9,116,1) 48%, rgba(226,7,7,0.8575805322128851) 100%);
+body {
+    background: black;
+    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgba(226, 7, 7, 0.8575805322128851) 100%);
 }
-
-table{
-
-border-radius:10px;
+table {
+    border-radius: 10px;
     box-shadow: 0 5px 15px black;
     overflow: hidden;
     /* shrink the table a bit*/
@@ -13,29 +11,24 @@ border-radius:10px;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     font-weight: 800;
-
     line-height: 1;
     outline-color: black;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid ;
+    border: 1px solid;
     width: 80%;
     height: 80%;
     margin: 0 auto;
-
-
 }
-td{
-   border: solid 1px #000;
-
-
+td {
+    border: solid 1px #000;
 }
-th{
+th {
     text-align: center;
 }
-button{
+button {
     background: black;
-        background: linear-gradient(90deg, black 0%, purple 80%);
+    background: linear-gradient(90deg, black 0%, purple 80%);
     border: none;
     color: blanchedalmond;
     padding: 15px 32px;
@@ -44,11 +37,10 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
     margin: 4px 2px;
     cursor: pointer;
 }
-.modal{
+.modal {
     background: black;
     background: linear-gradient(90deg, black 0%, purple 80%);
 }
