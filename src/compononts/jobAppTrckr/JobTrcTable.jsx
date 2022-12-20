@@ -32,7 +32,19 @@ const JobTrcTable = (props) => {
 
         window.location.reload();
     }
+const handleDelete = (id) => {
+    fetch(`http://localhost:3001/jobs/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
 
+    window.location.reload();
+}
 
 
     return (
@@ -59,7 +71,7 @@ const JobTrcTable = (props) => {
                     </Modal>
                 </td>
                 <td>
-                    <Button variant={"danger"}>Delete</Button>
+                    <Button variant={"danger"} onClick={()=>handleDelete(props.job.id)}>Delete</Button>
                 </td>
             </tr>
 
