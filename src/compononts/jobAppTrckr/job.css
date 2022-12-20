@@ -12,7 +12,7 @@ border-radius:10px;
     color: #000;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 800;
 
     line-height: 1;
     outline-color: black;
@@ -37,14 +37,14 @@ button{
     background: black;
         background: linear-gradient(90deg, black 0%, purple 80%);
     border: none;
-    color: #2e9b2b;
+    color: blanchedalmond;
     padding: 15px 32px;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    font-weight: bolder;
+
     margin: 4px 2px;
     cursor: pointer;
 }
