@@ -36,13 +36,16 @@ const JobTrc = () => {
                     <th>Description</th>
                     <th>Date</th>
                     <th>Result</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 {
-                    jobs.map((job) => (
-                        <JobTrcTable key={job.id} job={job}/>
-                    ))
+                    jobs.sort((a, b) => a.id - b.id).map((job) => {
+                        return <JobTrcTable job={job} key={job.id}/>
+                    }
+                    )
                 }
                 </tbody>
             </Table>
