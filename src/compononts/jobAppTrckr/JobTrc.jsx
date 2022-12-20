@@ -30,7 +30,7 @@ const JobTrc = () => {
                 <NewAppModal show={show} setShow={setShow} job={setJobs}/>
                 <br/>
             </div>
-            <Table>
+            <table>
                 <thead>
                 <tr>
                     <th>Id</th>
@@ -52,7 +52,7 @@ const JobTrc = () => {
                     })
                         }
                 </tbody>
-            </Table>
+            </table>
         </div>
     );
 };
