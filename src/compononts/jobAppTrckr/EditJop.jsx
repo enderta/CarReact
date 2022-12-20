@@ -8,9 +8,9 @@ const EditJop = (props) => {
     const [description, setDescription] = React.useState('');
     const [date, setDate] = React.useState('');
     const [result, setResult] = React.useState('');
-    console.log(id);
+    console.log(props.id);
     const handleEdit = () => {
-        fetch(`http://localhost:3001/jobs/${id}`, {
+        fetch(`http://localhost:3001/jobs/${props.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const EditJop = (props) => {
 
     return (
         <div>
-            <Modal show={props.show} onHide={props.setShow}>
+
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Application</Modal.Title>
                 </Modal.Header>
@@ -66,15 +66,8 @@ const EditJop = (props) => {
                         </Form.Group>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={props.setShow}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleEdit}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+
+
         </div>
 );
 };
