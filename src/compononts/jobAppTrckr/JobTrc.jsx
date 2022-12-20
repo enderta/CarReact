@@ -2,6 +2,7 @@ import React from 'react';
 import JobTrcTable from "./JobTrcTable";
 import {Button, Table} from "react-bootstrap";
 import NewAppModal from "./NewAppModal";
+import './job.css';
 
 const JobTrc = () => {
     const [jobs, setJobs] = React.useState([]);
@@ -18,6 +19,7 @@ const JobTrc = () => {
 
 
     const handleShow = () => setShow(true);
+    let id=0;
     return (
         <div>
             <div>
@@ -26,8 +28,9 @@ const JobTrc = () => {
                     New Application
                 </Button>
                 <NewAppModal show={show} setShow={setShow} job={setJobs}/>
+                <br/>
             </div>
-            <Table variant={'dark'} striped bordered hover>
+            <Table>
                 <thead>
                 <tr>
                     <th>Id</th>
@@ -43,10 +46,11 @@ const JobTrc = () => {
                 <tbody>
                 {
                     jobs.sort((a, b) => a.id - b.id).map((job) => {
-                        return <JobTrcTable job={job} key={job.id}/>
-                    }
-                    )
-                }
+                      return(
+                        <JobTrcTable key={job.id} id={id} job={job} setJobs={setJobs}/>
+                      )
+                    })
+                        }
                 </tbody>
             </Table>
         </div>

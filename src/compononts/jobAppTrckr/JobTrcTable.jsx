@@ -45,12 +45,10 @@ const handleDelete = (id) => {
 
     window.location.reload();
 }
-
-
     return (
 
             <tr>
-                <td>{props.job.id}</td>
+              <td>{props.job.id}</td>
                 <td>{props.job.name}</td>
                 <td>{props.job.job_title}</td>
                 <td>{props.job.description}</td>

@@ -1,0 +1,23 @@
+body{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(195,22,22,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+Table{
+
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    overflow: hidden;
+    /* shrink the table a bit*/
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    outline-color: black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid ;
+    width: auto;
+
+}
