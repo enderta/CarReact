@@ -31,7 +31,7 @@ const Crud2 = () => {
 
     return (
         <div>
-            <h1>Crud2</h1>
+            <h1>Users</h1>
             <Button variant="success" onClick={() => setShow(true)}>
                 Add User
             </Button>
