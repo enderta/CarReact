@@ -4,7 +4,7 @@ import {Button, Form, Modal} from "react-bootstrap";
 const ModalAddUser = (props) => {
     const [name, setName] = React.useState('');
     const [surname, setSurname] = React.useState('');
-    const [title, setTitle] = React.useState('');
+    const [email, setEmail] = React.useState('');
     const handleChange=(e)=>{
         if(e.target.name==='name'){
             setName(e.target.value);
@@ -12,8 +12,8 @@ const ModalAddUser = (props) => {
         if(e.target.name==='surname'){
             setSurname(e.target.value);
         }
-        if(e.target.name==='title'){
-            setTitle(e.target.value);
+        if(e.target.name==='email'){
+            setEmail(e.target.value);
         }
     }
     const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ const ModalAddUser = (props) => {
         const user = {
             name,
             surname,
-            title
+            email
         }
         fetch('http://localhost:3001/users', {
             method: 'POST',
@@ -53,12 +53,12 @@ const ModalAddUser = (props) => {
                             <Form.Control type="text" placeholder="Enter surname" name={'surname'} value={surname} onChange={handleChange}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
-                            <Form.Control type="text" placeholder="Enter title" name={'title'} value={title} onChange={handleChange}/>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="text" placeholder="Enter title" name={'email'} value={email} onChange={handleChange}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit" onClick={handleSubmit}>
+                        <button variant="primary" type="submit" onClick={handleSubmit}>
                             Submit
-                        </Button>
+                        </button>
                     </Form>
                 </Modal.Body>
 

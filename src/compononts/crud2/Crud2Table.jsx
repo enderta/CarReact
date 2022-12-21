@@ -15,7 +15,7 @@ const Crud2Table = (props) => {
               </td>
                 <td>{props.user.name}</td>
                 <td>{props.user.surname}</td>
-                <td>{props.user.title}</td>
+                <td>{props.user.email}</td>
                 <td>
                     <Button variant="danger" onClick={() => {
                         props.delete(props.user.id)
