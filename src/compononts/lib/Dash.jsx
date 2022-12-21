@@ -30,7 +30,7 @@ const Dash = () => {
                         <div className="card" style={{margin:"10px"}}>
                            <Link to={"/users"} className="btn btn">
                                <div className="card-body">
-                                   <h5 className="card-title">Total Users</h5>
+                                   <h5 className="card-title">Users</h5>
                                    <p className="card-text">{data.users}</p>
                                </div>
                            </Link>
@@ -38,7 +38,7 @@ const Dash = () => {
                         <div className="card"style={{margin:"10px"}}>
                             <Link to={"/books"} className="btn btn">
                                 <div className="card-body">
-                                    <h5 className="card-title">Total Books</h5>
+                                    <h5 className="card-title">Books</h5>
                                     <p className="card-text">{data.book_count}</p>
                                 </div>
                             </Link>
@@ -46,7 +46,7 @@ const Dash = () => {
                         <div className="card" style={{margin:"10px"}}>
                            <Link to={"/borrowedBooks"} className="btn btn">
                                  <div className="card-body">
-                                        <h5 className="card-title">Total Borrowed Books</h5>
+                                        <h5 className="card-title">Borrow Books</h5>
                                         <p className="card-text">{data.borrowed_books}</p>
                                  </div>
                             </Link>
