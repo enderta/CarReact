@@ -1,9 +1,9 @@
 body {
-    background: black;
-    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgba(226, 7, 7, 0.8575805322128851) 100%);
+    background: rgba(87, 9, 116, 1);
+    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgb(3, 66, 14) 100%);
 }
 h1{
-    color: white;
+    color: #0cc02c;
     text-align: center;
     font-size: 50px;
 
@@ -13,7 +13,7 @@ table {
     box-shadow: 0 5px 15px black;
     overflow: hidden;
     /* shrink the table a bit*/
-    color: whitesmoke;
+    color: #0cc02c;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     font-weight: 800;
@@ -29,16 +29,16 @@ table {
 td {
     border: solid 1px #000;
     padding: 1px;
-
+    color: #0cc02c;
 }
-th {
+th { color: #0cc02c;
     text-align: center;
 }
 button {
-    background: black;
-    background: linear-gradient(90deg, black 0%, purple 80%);
+    background: rgba(87, 9, 116, 1);
+    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgb(20, 23, 21) 100%);
     border: none;
-    color: blanchedalmond;
+    color: #0cc02c;
     padding: 15px 32px;
     border-radius: 10px;
     text-align: center;
@@ -49,6 +49,7 @@ button {
     cursor: pointer;
 }
 .modal {
-    background: black;
-    background: linear-gradient(90deg, black 0%, purple 80%);
+    color: #0cc02c;
+    background: rgba(87, 9, 116, 1);
+    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgb(3, 66, 14) 100%);
 }

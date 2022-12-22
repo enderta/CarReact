@@ -3,7 +3,7 @@ import {Button, Modal, Table} from "react-bootstrap";
 import UserModal from "./UserModal";
 import Crud2Table from "./Crud2Table";
 import ModalAddUser from "./ModalAddUser";
-import '../jobAppTrckr/job.css';
+import '../compononts/jobAppTrckr/job.css';
 
 const Crud2 = () => {
     const [users, setUsers] = React.useState([]);
@@ -32,9 +32,9 @@ const Crud2 = () => {
     return (
         <div>
             <h1>Users</h1>
-            <Button variant="success" onClick={() => setShow(true)}>
+            <button variant="success" onClick={() => setShow(true)}>
                 Add User
-            </Button>
+            </button>
             <ModalAddUser show={show} setShow={setShow}/>
             <table >
                 <thead>

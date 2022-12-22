@@ -16,9 +16,9 @@ const UserModal = (props) => {
                     <h1>{props.user.email}</h1>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => props.setShow(false)}>
+                    <button variant="secondary" onClick={() => props.setShow(false)}>
                         Close
-                    </Button>
+                    </button>
                 </Modal.Footer>
             </Modal>
         </div>
