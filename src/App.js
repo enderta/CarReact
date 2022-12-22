@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Crud2 from "./crud2/Crud2";
+import Crud2 from "./compononts/crud2/Crud2";
 
 
 const App = () => {
