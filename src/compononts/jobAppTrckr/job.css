@@ -53,7 +53,7 @@ button {
     background: rgba(87, 9, 116, 1);
     background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgb(3, 66, 14) 100%);
 }
-#reactgooglegraph{
-    background: rgba(87, 9, 116, 1);
-    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 48%, rgb(3, 66, 14) 100%);
+.chart{
+
+    background-color: #771515;
 }

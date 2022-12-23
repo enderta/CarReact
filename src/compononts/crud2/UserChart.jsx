@@ -25,11 +25,13 @@ const UserChart = () => {
             duration: 1500,
         },
         enableInteractivity: false,
+
+         backgroundColor: '#594260',
     };
 
 
     return (
-        <div className="chart">
+        <div >
             <br/>
             <Chart
                 chartType="ScatterChart"
