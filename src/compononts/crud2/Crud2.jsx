@@ -4,6 +4,7 @@ import UserModal from "./UserModal";
 import Crud2Table from "./Crud2Table";
 import ModalAddUser from "./ModalAddUser";
 import '../jobAppTrckr/job.css';
+import UserChart from "./UserChart";
 
 const Crud2 = () => {
     const [users, setUsers] = React.useState([]);
@@ -55,7 +56,15 @@ const Crud2 = () => {
 
                 }
                 </tbody>
+
             </table>
+            <br/>
+
+            <div>
+                <br/>
+                <UserChart/>
+            </div>
+
 
         </div>
     );
