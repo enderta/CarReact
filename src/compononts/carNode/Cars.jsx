@@ -9,7 +9,7 @@ const Cars = (props) => {
     const handleShow = () => setShow(true);
 
     React.useEffect(() => {
-        fetch(`http://localhost:3001/cars/${props.id}`,{
+        fetch(`http://localhost:3001/cars/owner/${props.id}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,22 +30,24 @@ const Cars = (props) => {
                     <Modal.Title>Car</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <table className="table table-dark">
+                    <table className="table table-dark table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Make</th>
+                            <th>Model</th>
+                        </tr>
+                        </thead>
                         <tbody>
-                        <tr>
-                            <td>Id</td>
+                        {car.map(car => <tr key={car.id}>
                             <td>{car.id}</td>
-                        </tr>
-                        <tr>
-                            <td>Brand</td>
                             <td>{car.make}</td>
-                        </tr>
-                        <tr>
-                            <td>Model</td>
                             <td>{car.model}</td>
-                        </tr>
+                        </tr>)}
                         </tbody>
                     </table>
+
+
                 </Modal.Body>
                 <Modal.Footer>
                     <button className="btn btn-secondary" onClick={props.handleClose}>Close</button>
