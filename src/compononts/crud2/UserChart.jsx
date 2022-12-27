@@ -3,30 +3,28 @@ import { Chart } from "react-google-charts";
 import '../jobAppTrckr/job.css';
 
 
-const UserChart = () => {
+const UserChart = (props) => {
      const data = [
-        ["Age", "Weight"],
-        [8, 12],
-        [4, 5.5],
-        [11, 14],
-        [4, 5],
-        [3, 3.5],
-        [6.5, 7],
+        ["Element", "Density", { role: "style" } ],
+        ["Copper", 8.94, "#b87333"],
+        ["Silver", 10.49, "silver"],
+        ["Gold", 19.30, "gold"],
+        ["Platinum", 21.45, "color: #e5e4e2"]
+
+
     ];
 
      const options = {
-        title: "Age vs. Weight comparison",
-        hAxis: { title: "Age", minValue: 0, maxValue: 15 },
-        vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
+        title: "Density of Precious Metals, in g/cm^3",
         legend: "none",
         animation: {
             startup: true,
             easing: "linear",
-            duration: 1500,
+            duration: 10000,
         },
         enableInteractivity: false,
 
-         backgroundColor: '#594260',
+         backgroundColor: "#0b4817",
     };
 
 
@@ -34,11 +32,12 @@ const UserChart = () => {
         <div >
             <br/>
             <Chart
-                chartType="ScatterChart"
-                width="80%"
+                chartType="BarChart"
+                width="100%"
                 height="400px"
-                data={data}
+                data={props.user.name}
                 options={options}
+
             />
         </div>
 

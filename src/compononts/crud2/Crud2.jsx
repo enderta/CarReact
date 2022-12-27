@@ -62,7 +62,7 @@ const Crud2 = () => {
 
             <div>
                 <br/>
-                <UserChart/>
+                <UserChart user={users}/>
             </div>
 
 
