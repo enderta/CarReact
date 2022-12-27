@@ -11,7 +11,7 @@ const Owner = (props) => {
 
             <tr>
                 <td>{props.owner.id}</td>
-                <td>{props.owner.firstName}</td>
+                <td>{props.owner.name}</td>
                 <td>{props.owner.surname}</td>
                 <td>{props.owner.email}</td>
                 <td>
