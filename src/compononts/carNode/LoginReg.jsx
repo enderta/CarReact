@@ -1,10 +1,12 @@
 import React from 'react';
 import '../car/car.css';
 import {Form, FormGroup} from "react-bootstrap";
+import Cars from "./Cars";
+import Owners from "./Owners";
 const LoginReg = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-
+    let token='';
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -26,8 +28,8 @@ const LoginReg = () => {
     }).then(res => res.json())
         .then(data => {
             if(data.token){
-                localStorage.setItem('token', data.token);
-                window.location.href = 'http://localhost:3000';
+               localStorage.setItem('token', data.token);
+                window.location.href = 'http://localhost:3000/home';
             }
             else {
                 alert(data.message);
@@ -56,7 +58,7 @@ const LoginReg = () => {
         .then(data => {
             if(data.message==='User created'){
 
-                window.location.href = 'http://localhost:3000';
+                window.location.href = 'http://localhost:3000/login';
             }
             else {
                 alert(data.message);
@@ -114,7 +116,6 @@ const LoginReg = () => {
                                             }}>Login</button>
                                             <button className="btn btn-info" onClick={register}>Register</button>
                                         </Form>
-
                                     </FormGroup>
                                 </div>
                             </div>
