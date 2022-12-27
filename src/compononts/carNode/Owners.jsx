@@ -25,7 +25,7 @@ const Owners = (props) => {
     return (
         <div>
             <h1 style={{color:"yellow"}}>Owners</h1>
-            <Table variant="dark" striped bordered hover>
+            <table className="table table-responsive table-dark table-borderless table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>Id</th>
@@ -38,7 +38,7 @@ const Owners = (props) => {
                 <tbody>
                 {owners.map(owner => <Owner key={owner.id} owner={owner}/>)}
                 </tbody>
-            </Table>
+            </table>
 
 
         </div>

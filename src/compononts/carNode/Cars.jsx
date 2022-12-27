@@ -30,7 +30,7 @@ const Cars = (props) => {
                     <Modal.Title>Car</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <table className="table table-dark table-striped table-bordered table-hover">
+                    <table className="table table-info table-striped table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>Id</th>
@@ -50,7 +50,7 @@ const Cars = (props) => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="btn btn-secondary" onClick={props.handleClose}>Close</button>
+                    <button className="btn btn-outline-info" onClick={props.handleClose}>Close</button>
                 </Modal.Footer>
             </Modal>
 
