@@ -1,6 +1,6 @@
 import React from 'react';
 import '../car/car.css';
-import {FormGroup} from "react-bootstrap";
+import {Form, FormGroup} from "react-bootstrap";
 const LoginReg = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -81,29 +81,49 @@ const LoginReg = () => {
 
                 </video>
                 <div className="container">
-                   //login and register form
-                    <div className="login">
-                        <h1>Login</h1>
-                        <form style={{position:"absolute"}}>
-                            <FormGroup>
-                                <label htmlFor="email">Email</label>
-                                <input type="email" name="email" id="email" placeholder="Email" value={email} onChange={handleEmail}/>
-                            </FormGroup>
-                            <FormGroup>
-                                <label htmlFor="password">Password</label>
-                                <input type="password" name="password" id="password" placeholder="Password" value={password} onChange={handlePassword}/>
-                            </FormGroup>
-                            <button onClick={login}>Login</button>
-                            <button onClick={register}>Register</button>
-                        </form>
+                    <div className="row">
+                        <div className="col-6">
+                            <div className="card" style={{
 
+                                padding: '10px',
+                                margin: "10px",
+                                position: 'absolute',
+                                top: '25%',
+                                left: "25%",
+                                right: "25%",
+                                background: "none",
+                                border: "none"
+                            }}>
+                                <div className="card-body">
+                                    <h1 className="card-title" style={{color:"yellow"}}>Login or Register</h1>
+                                    <FormGroup>
+                                        <Form>
+                                            <div className="form-group">
+                                                <label htmlFor="exampleInputEmail1" style={{color:"yellow"}}>Email </label>
+                                                <input  type="email" className="form-control" id="exampleInputEmail1"
+                                                       aria-describedby="emailHelp" onChange={handleEmail}/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label style={{color:"yellow"}} htmlFor="exampleInputPassword1">Password</label>
+                                                <input type="password" className="form-control" id="exampleInputPassword1"
+                                                       onChange={handlePassword}/>
+                                            </div>
+                                            <br/>
+                                            <button className="btn btn-success" onClick={login} style={{
+                                                margin: "10px",
+                                            }}>Login</button>
+                                            <button className="btn btn-info" onClick={register}>Register</button>
+                                        </Form>
 
-
+                                    </FormGroup>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
-        </div>
+
     );
 };
 
