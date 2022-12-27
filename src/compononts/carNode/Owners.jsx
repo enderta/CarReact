@@ -25,6 +25,7 @@ const Owners = (props) => {
     return (
         <div>
             <h1 style={{color:"yellow"}}>Owners</h1>
+            <div className="container">
             <table className="table table-responsive table-dark table-borderless table-striped table-bordered table-hover">
                 <thead>
                 <tr>
@@ -40,7 +41,7 @@ const Owners = (props) => {
                 </tbody>
             </table>
 
-
+            </div>
         </div>
     );
 };

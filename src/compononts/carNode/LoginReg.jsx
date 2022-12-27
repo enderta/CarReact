@@ -6,7 +6,10 @@ import Owners from "./Owners";
 const LoginReg = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [err, setErr] = React.useState(false);
     let token='';
+
+
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -82,6 +85,7 @@ const LoginReg = () => {
                     />
 
                 </video>
+
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
@@ -103,12 +107,17 @@ const LoginReg = () => {
                                             <div className="form-group">
                                                 <label htmlFor="exampleInputEmail1" style={{color:"#f3ce13"}}>Email </label>
                                                 <input  type="email" className="form-control" id="exampleInputEmail1"
-                                                       aria-describedby="emailHelp" onChange={handleEmail}/>
+                                                        required={
+                                                            true
+                                                        } aria-describedby="emailHelp" onChange={handleEmail}/>
                                             </div>
                                             <div className="form-group">
                                                 <label style={{color:"#f3ce13"}} htmlFor="exampleInputPassword1">Password</label>
                                                 <input type="password" className="form-control" id="exampleInputPassword1"
-                                                       onChange={handlePassword}/>
+                                                     required={
+                                                            true
+                                                     }  onChange={handlePassword}/>
+
                                             </div>
                                             <br/>
                                             <button className="btn btn-success" onClick={login} style={{

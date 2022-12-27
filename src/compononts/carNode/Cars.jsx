@@ -24,12 +24,13 @@ const Cars = (props) => {
     }, []);
 
     return (
-        <div>
-            <Modal show={props.show} onHide={props.handleClose}>
+        <div >
+            <div className="container" >
+            <Modal show={props.show} onHide={props.handleClose} >
                 <Modal.Header closeButton>
                     <Modal.Title>Car</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body >
                     <table className="table table-info table-striped table-bordered table-hover">
                         <thead>
                         <tr>
@@ -55,7 +56,7 @@ const Cars = (props) => {
             </Modal>
 
 
-
+            </div>
         </div>
     );
 };
