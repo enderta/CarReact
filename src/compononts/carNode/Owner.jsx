@@ -15,7 +15,7 @@ const Owner = (props) => {
                 <td>{props.owner.surname}</td>
                 <td>{props.owner.email}</td>
                 <td>
-                    <button className="btn btn-primary" onClick={handleShow}>Cars</button>
+                    <button className="btn btn-outline-info" onClick={handleShow}>Cars</button>
                     <Cars id={props.owner.id} show={show} handleClose={handleClose}/>
                 </td>
 

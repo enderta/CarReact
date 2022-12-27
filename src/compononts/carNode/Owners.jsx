@@ -24,7 +24,7 @@ const Owners = (props) => {
 
     return (
         <div>
-            <h1>Owners</h1>
+            <h1 style={{color:"yellow"}}>Owners</h1>
             <Table variant="dark" striped bordered hover>
                 <thead>
                 <tr>
