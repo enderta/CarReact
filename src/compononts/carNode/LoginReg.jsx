@@ -95,16 +95,16 @@ const LoginReg = () => {
                                 border: "none"
                             }}>
                                 <div className="card-body">
-                                    <h1 className="card-title" style={{color:"yellow"}}>Login or Register</h1>
+
                                     <FormGroup>
                                         <Form>
                                             <div className="form-group">
-                                                <label htmlFor="exampleInputEmail1" style={{color:"yellow"}}>Email </label>
+                                                <label htmlFor="exampleInputEmail1" style={{color:"#f3ce13"}}>Email </label>
                                                 <input  type="email" className="form-control" id="exampleInputEmail1"
                                                        aria-describedby="emailHelp" onChange={handleEmail}/>
                                             </div>
                                             <div className="form-group">
-                                                <label style={{color:"yellow"}} htmlFor="exampleInputPassword1">Password</label>
+                                                <label style={{color:"#f3ce13"}} htmlFor="exampleInputPassword1">Password</label>
                                                 <input type="password" className="form-control" id="exampleInputPassword1"
                                                        onChange={handlePassword}/>
                                             </div>
