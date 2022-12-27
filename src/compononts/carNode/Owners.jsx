@@ -21,10 +21,20 @@ const Owners = (props) => {
             }
             );
     }, []);
-
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = 'http://localhost:3000/';
+    }
     return (
         <div>
-            <h1 style={{color:"yellow"}}>Owners</h1>
+            <h1 style={{color:"yellow" ,textAlign:"center"}} >Owners</h1>
+            <div>
+                  <span >
+                <button onClick={handleLogout} className="btn btn-outline-info" style={{float:"right" ,margin:"10px"}}>Logout</button>
+            </span>
+            </div>
+
+
             <div className="container">
             <table className="table table-responsive table-dark table-borderless table-striped table-bordered table-hover">
                 <thead>
