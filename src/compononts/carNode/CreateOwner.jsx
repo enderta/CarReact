@@ -52,7 +52,7 @@ const CreateOwner = (props) => {
                             <label htmlFor="email">Email</label>
                             <input type="text" className="form-control" id="email" name={'email'} value={email} onChange={handleChange}/>
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+                        <button type="submit" className="btn btn-outline-primary" onClick={handleSubmit}>Submit</button>
                     </form>
                 </ModalBody>
             </Modal>

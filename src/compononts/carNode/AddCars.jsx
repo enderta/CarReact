@@ -61,7 +61,7 @@ const AddCars = (props) => {
                             <label htmlFor="plate">Plate</label>
                             <input type="text" className="form-control" id="plate" name={'plate'} value={plate} onChange={handleChange}/>
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+                        <button type="submit" className="btn btn-outline-primary" onClick={handleSubmit}>Submit</button>
                     </form>
                 </Modal.Body>
             </Modal>
