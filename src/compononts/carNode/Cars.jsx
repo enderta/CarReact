@@ -23,6 +23,19 @@ const Cars = (props) => {
             );
     }, []);
 
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3001/cars/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            }
+        }).then(res => res.json())
+            .then(data => {
+            })
+        window.location.reload();
+    }
+
     return (
         <div >
             <div className="container" >
@@ -37,6 +50,7 @@ const Cars = (props) => {
                             <th>Id</th>
                             <th>Make</th>
                             <th>Model</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -44,6 +58,7 @@ const Cars = (props) => {
                             <td>{car.id}</td>
                             <td>{car.make}</td>
                             <td>{car.model}</td>
+                            <td><button className="btn btn-danger" onClick={() => handleDelete(car.id)}>Delete</button></td>
                         </tr>)}
                         </tbody>
                     </table>
