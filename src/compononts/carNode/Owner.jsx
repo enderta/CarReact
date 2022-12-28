@@ -7,6 +7,20 @@ const Owner = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3001/owners/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            }
+        }).then(res => res.json())
+            .then(data => {
+                props.setOwners(props.owners.filter(owner => owner.id !== id));
+            })
+        window.location.reload();
+    }
+
     return (
 
             <tr>
@@ -17,6 +31,9 @@ const Owner = (props) => {
                 <td>
                     <button className="btn btn-outline-info" onClick={handleShow}>Cars</button>
                     <Cars id={props.owner.id} show={show} handleClose={handleClose}/>
+                </td>
+                <td>
+                    <button className="btn btn-outline-danger" onClick={() => handleDelete(props.owner.id)}>Delete</button>
                 </td>
 
             </tr>

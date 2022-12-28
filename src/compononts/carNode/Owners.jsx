@@ -59,10 +59,11 @@ const Owners = (props) => {
                         <th>Surname</th>
                         <th>Email</th>
                         <th>Cars</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {owners.map(owner => <Owner key={owner.id} owner={owner}/>)}
+                    {owners.map(owner => <Owner key={owner.id} owner={owner} setOwners={setOwners}/>)}
                     </tbody>
                 </table>
 
