@@ -2,6 +2,7 @@ import React from 'react';
 import Owner from "./Owner";
 import {Modal, Table} from "react-bootstrap";
 import CreateOwner from "./CreateOwner";
+import ScrollToTop from "../car/ScroolToTop";
 
 const Owners = (props) => {
     const [owners, setOwners] = React.useState([]);
@@ -33,6 +34,7 @@ const Owners = (props) => {
 
     return (
         <div>
+
             <h1 style={{color: "yellow", textAlign: "center"}}>Owners</h1>
             <div>
                   <span>
