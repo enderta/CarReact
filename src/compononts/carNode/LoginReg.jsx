@@ -8,8 +8,6 @@ const LoginReg = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [err, setErr] = React.useState(false);
-    let token = '';
-
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -39,16 +37,12 @@ const LoginReg = () => {
                             window.location.href = 'http://localhost:3000/home';
                         } else {
                             alert(data.message);
-
                         }
                     }
                 )
                 .catch(err => console.log(err))
         }
-
     }
-
-
 
     const register = (e) => {
         e.preventDefault()
@@ -80,8 +74,6 @@ const LoginReg = () => {
 
         }
     }
-
-
         return (
             <div>
                 <div>
@@ -90,9 +82,7 @@ const LoginReg = () => {
                             src={require('../car/pexels-anthony-shkraba-8064146.mp4')}
                             type="video/mp4"
                         />
-
                     </video>
-
                     <div className="container">
                         <div className="row">
                             <div className="col-6">

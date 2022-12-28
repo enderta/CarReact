@@ -38,10 +38,6 @@ const Owner = (props) => {
                     <button className="btn btn-outline-success" onClick={handleShow2} >Add Car</button>
                     <Cars id={props.owner.id} show={show} handleClose={handleClose}/>
                     <AddCars id={props.owner.id} show={show2} handleClose={handleClose2}/>
-
-
-
-
                 </td>
                 <td>
                     <button className="btn btn-outline-danger" onClick={() => handleDelete(props.owner.id)}>Delete</button>
