@@ -120,11 +120,11 @@ const LoginReg = () => {
 
                                                 </div>
                                                 <br/>
-                                                <button className="btn btn-success" onClick={login} style={{
+                                                <button className="btn btn-outline-success" onClick={login} style={{
                                                     margin: "10px",
                                                 }}>Login
                                                 </button>
-                                                <button className="btn btn-info" onClick={register}>Register</button>
+                                                <button className="btn btn-outline-info" onClick={register}>Register</button>
                                             </Form>
                                         </FormGroup>
                                     </div>
