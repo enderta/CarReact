@@ -58,7 +58,7 @@ const Cars = (props) => {
                             <td>{car.id}</td>
                             <td>{car.make}</td>
                             <td>{car.model}</td>
-                            <td><button className="btn btn-danger" onClick={() => handleDelete(car.id)}>Delete</button></td>
+                            <td><button className="btn btn-outline-danger" onClick={() => handleDelete(car.id)}>Delete</button></td>
                         </tr>)}
                         </tbody>
                     </table>
