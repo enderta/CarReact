@@ -16,7 +16,7 @@ const Owner = (props) => {
             }
         }).then(res => res.json())
             .then(data => {
-                props.setOwners(props.owners.filter(owner => owner.id !== id));
+
             })
         window.location.reload();
     }
