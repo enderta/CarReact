@@ -5,17 +5,12 @@ import AddCars from "./AddCars";
 const Owner = (props) => {
     const [show, setShow] = React.useState(false);
     const [show2, setShow2] = React.useState(false);
-    const [show3, setShow3] = React.useState(false);
-
-
-
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
-    const handleClose3 = () => setShow3(false);
-    const handleShow3 = () => setShow3(true);
+
 
     const handleDelete = (id) => {
         fetch(`http://localhost:3001/owners/${id}`, {
@@ -41,7 +36,6 @@ const Owner = (props) => {
                 <td>
                     <button className="btn btn-outline-info" style={{margin:"10px"}} onClick={handleShow}>Cars</button>
                     <button className="btn btn-outline-success" onClick={handleShow2} >Add Car</button>
-                    <button className="btn btn-outline-success" onClick={handleShow3} >Delete Car</button>
                     <Cars id={props.owner.id} show={show} handleClose={handleClose}/>
                     <AddCars id={props.owner.id} show={show2} handleClose={handleClose2}/>
 
