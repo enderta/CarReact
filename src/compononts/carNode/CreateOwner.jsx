@@ -43,6 +43,9 @@ const CreateOwner = (props) => {
         <div>
             <Modal show={props.show} onHide={props.handleClose}   >
                 <ModalBody>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Create Owner</Modal.Title>
+                    </Modal.Header>
                     <form >
                         <div className="form-group">
                             <label htmlFor="name">Name</label>

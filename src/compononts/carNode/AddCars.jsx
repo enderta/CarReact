@@ -49,6 +49,9 @@ const AddCars = (props) => {
     return (
         <div>
             <Modal show={props.show} onHide={props.handleClose}   >
+                <Modal.Header closeButton>
+                    <Modal.Title>Add Car</Modal.Title>
+                </Modal.Header>
                 <Modal.Body>
                     <form >
                         <div className="form-group">
