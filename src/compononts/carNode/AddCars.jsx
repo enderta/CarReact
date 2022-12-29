@@ -7,7 +7,6 @@ const AddCars = (props) => {
     const [vin, setVin] = React.useState('');
     const [plate, setPlate] = React.useState('');
     const [owner_id, setOwner_id] = React.useState(props.id);
-
     const handleChange=(e)=>{
         if(e.target.name==='make'){
             setMake(e.target.value);

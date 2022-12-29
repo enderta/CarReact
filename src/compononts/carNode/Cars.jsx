@@ -54,7 +54,8 @@ const Cars = (props) => {
                         </tr>
                         </thead>
                         <tbody>
-                        {car.map(car => <tr key={car.id}>
+                        {car.map(car =>
+                            <tr key={car.id}>
                             <td>{car.id}</td>
                             <td>{car.make}</td>
                             <td>{car.model}</td>
