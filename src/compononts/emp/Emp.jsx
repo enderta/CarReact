@@ -2,43 +2,74 @@ import React from 'react';
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import MoneyIcon from "@mui/icons-material/Money";
 import {Table} from "react-bootstrap";
+import SalaryGrap from "./SalaryGrap";
 const Emp = () => {
     const [emp, setEmp] = React.useState([]);
     const [sales, setSales] = React.useState([]);
+    const [token, setToken] = React.useState('');
   const budget=1000;
 
+  React.useEffect(() => {
+    fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "email":"et2@gmail.com",
+            "password":"12345678"
 
-   /* React.useEffect(() => {
-        fetch('http://localhost:3001/employees', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
+        })
+    }).then(res => res.json())
+        .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                setToken(data.token);
+            } else {
+                alert(data.message);
             }
-        }).then(res => res.json())
-            .then(data => {
-                setEmp(data);
-            }
-            );
-    }, []);
+        }
+        )
+        .catch(err => console.log(err))
+}, []);
+    console.log(token);
+React.useEffect(() => {
+    fetch('http://localhost:3001/employees', {
+        method: 'GET',
+        headers: {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+    }).then(res => res.json())
+        .then(data => {
+            setEmp(data);
+        }
+        )
+        .catch(err => console.log(err))
+}
+    , [token]);
 
 React.useEffect(() => {
     fetch('http://localhost:3001/prod', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
+                'Authorization': token
             }
         }).then(res => res.json())
             .then(data => {
                 setSales(data);
             }
             );
-    }, []);
+    }, [token]);
 
-*/
+    console.log(emp);
 
     return (
+        <div>
+            <div>
+              {/*  <SalaryGrap/>*/}
+            </div>
         <div>
             //create dashboard for emp and sales using material ui
             <Grid container spacing={3}>
@@ -196,6 +227,8 @@ React.useEffect(() => {
                     </Card>
                 </Grid>
             </Grid>
+
+        </div>
         </div>
 
     );
