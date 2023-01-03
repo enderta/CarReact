@@ -9,36 +9,14 @@ const Emp = () => {
     const [token, setToken] = React.useState('');
   const budget=1000;
 
-  React.useEffect(() => {
-    fetch('http://localhost:3001/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            "email":"et2@gmail.com",
-            "password":"12345678"
 
-        })
-    }).then(res => res.json())
-        .then(data => {
-            if (data.token) {
-                localStorage.setItem('token', data.token);
-                setToken(data.token);
-            } else {
-                alert(data.message);
-            }
-        }
-        )
-        .catch(err => console.log(err))
-}, []);
-    console.log(token);
 React.useEffect(() => {
+
     fetch('http://localhost:3001/employees', {
         method: 'GET',
         headers: {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             'Content-Type': 'application/json',
-            'Authorization': token
+            'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV0MkBnbWFpbC5jb20iLCJpYXQiOjE2NzI2Nzc5OTd9.B7p92h6erk-f0DMlJ3NA6kx4Wk7dHyiD-b2dowv07rM'
         },
     }).then(res => res.json())
         .then(data => {
@@ -47,28 +25,29 @@ React.useEffect(() => {
         )
         .catch(err => console.log(err))
 }
-    , [token]);
+    , []);
 
 React.useEffect(() => {
+
     fetch('http://localhost:3001/prod', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV0MkBnbWFpbC5jb20iLCJpYXQiOjE2NzI2Nzc5OTd9.B7p92h6erk-f0DMlJ3NA6kx4Wk7dHyiD-b2dowv07rM'
             }
         }).then(res => res.json())
             .then(data => {
                 setSales(data);
             }
             );
-    }, [token]);
+    }, []);
 
-    console.log(emp);
+
 
     return (
         <div>
             <div>
-              {/*  <SalaryGrap/>*/}
+                <SalaryGrap emp={emp}/>
             </div>
         <div>
             //create dashboard for emp and sales using material ui
@@ -137,7 +116,7 @@ React.useEffect(() => {
                                 gutterBottom
                                 variant="h4"
                             >
-                                {sales}
+
                             </Typography>
                             <Typography
                                 align="center"
@@ -207,7 +186,6 @@ React.useEffect(() => {
                                     <tr>
                                         <th>id</th>
                                         <th>name</th>
-                                        <th>email</th>
                                         <th>salary</th>
                                     </tr>
                                     </thead>
@@ -216,7 +194,6 @@ React.useEffect(() => {
                                         <tr key={emp.id}>
                                             <td>{emp.id}</td>
                                             <td>{emp.name}</td>
-                                            <td>{emp.email}</td>
                                             <td>{emp.salary}</td>
                                         </tr>
                                     ))}
