@@ -46,14 +46,7 @@ const [data, setData] = React.useState([]);
                 chartType="Bar"
                 loader={<div>Loading Chart</div>}
                 data={chartData}
-                options={{
-                    // Material design options
-                    chart: {
-                        title: 'Company Performance',
-                        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-                    },
-                    }
-                }
+
             />
 
         </div>

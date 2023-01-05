@@ -47,18 +47,32 @@ React.useEffect(() => {
 
     return (
           <div style={{margin:"10px"}}>
-              <Grid container spacing={3}>
-                  <Grid item xs={6}>
+              <Grid container spacing={4}>
+                  <Grid item xs={12 }>
                       <Card>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
                                     Employees
                                 </Typography>
                                 <Typography variant="h5" component="div">
-                                    {emp.length}
-                                </Typography>
-                                <Typography color="textSecondary">
-                                    Total Employees
+                                   <Table striped bordered hover>
+                                        <thead>
+                                        <tr>
+                                            <th>Employee Name</th>
+                                            <th>Salary</th>
+                                            <th>Department</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {emp.map((item) => (
+                                            <tr>
+                                                <td>{item.name}</td>
+                                                <td>{item.salary}</td>
+                                                <td>{item.department}</td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </Table>
                                 </Typography>
                             </CardContent>
 
@@ -68,15 +82,27 @@ React.useEffect(() => {
                       <Card>
                          <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Sales
+                                   Salary Graph
                                 </Typography>
-                                <Typography variant="h5" component="div">
-                                    {sales.length}
-                                </Typography>
-                                <Typography color="textSecondary">
-                                    Total Sales
-                                </Typography>
+
+                                    <SalaryGrap/>
+
                          </CardContent>
+                      </Card>
+                  </Grid>
+                  <Grid item xs={6}>
+                      <Card>
+                          <CardContent>
+                              <Typography color="textSecondary" gutterBottom>
+                                  Sales
+                              </Typography>
+                              <Typography variant="h5" component="div">
+                                  {sales.length}
+                              </Typography>
+                              <Typography color="textSecondary">
+                                  Total Sales
+                              </Typography>
+                          </CardContent>
                       </Card>
                   </Grid>
                   <Grid item xs={6}>
