@@ -21,7 +21,7 @@ const [data, setData] = React.useState([]);
                 .catch(err => console.log(err))
         }
         , []);
-    console.log(data);
+
    let names=data.map((item)=>item.name);
     let sal=data.map((item)=>item.salary);
     let nameSalary=[...names,...sal];
@@ -31,7 +31,6 @@ const [data, setData] = React.useState([]);
         obj[names[i]] = sal[i];
 
     }
-    console.log(obj);
 
     const chartData=[
         ['Name','Salary'],

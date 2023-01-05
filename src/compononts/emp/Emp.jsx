@@ -4,6 +4,7 @@ import MoneyIcon from "@mui/icons-material/Money";
 import {Table} from "react-bootstrap";
 import SalaryGrap from "./SalaryGrap";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Performance from "./Performance";
 const Emp = () => {
     const [emp, setEmp] = React.useState([]);
     const [sales, setSales] = React.useState([]);
@@ -88,6 +89,18 @@ React.useEffect(() => {
                                     <SalaryGrap/>
 
                          </CardContent>
+                      </Card>
+                  </Grid>
+                  <Grid item xs={6}>
+                      <Card>
+                          <CardContent>
+                              <Typography color="textSecondary" gutterBottom>
+                                 Performance
+                              </Typography>
+
+                            <Performance/>
+
+                          </CardContent>
                       </Card>
                   </Grid>
                   <Grid item xs={6}>
