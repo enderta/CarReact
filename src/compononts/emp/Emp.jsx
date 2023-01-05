@@ -3,8 +3,14 @@ import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material'
 import MoneyIcon from "@mui/icons-material/Money";
 import {Table} from "react-bootstrap";
 import SalaryGrap from "./SalaryGrap";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Performance from "./Performance";
+import TimeLine from "./TimeLine";
+import Budeget from "./Budeget";
+
+function Timeline() {
+    return null;
+}
+
 const Emp = () => {
     const [emp, setEmp] = React.useState([]);
     const [sales, setSales] = React.useState([]);
@@ -48,6 +54,7 @@ React.useEffect(() => {
 
     return (
           <div style={{margin:"10px"}}>
+              <h1>Dashboard</h1>
               <Grid container spacing={4}>
                   <Grid item xs={12 }>
                       <Card>
@@ -107,28 +114,27 @@ React.useEffect(() => {
                       <Card>
                           <CardContent>
                               <Typography color="textSecondary" gutterBottom>
-                                  Sales
-                              </Typography>
-                              <Typography variant="h5" component="div">
-                                  {sales.length}
-                              </Typography>
-                              <Typography color="textSecondary">
-                                  Total Sales
-                              </Typography>
+                                Growth
+                            </Typography>
+
+                             <TimeLine/>
+
                           </CardContent>
                       </Card>
                   </Grid>
                   <Grid item xs={6}>
                       <Card>
-                          <p>Sales number: 456</p>
+                          <CardContent>
+                              <Typography color="textSecondary" gutterBottom>
+                                  Budget
+                              </Typography>
+
+                              <Budeget/>
+
+                          </CardContent>
                       </Card>
-                  </Grid>
-                  <Grid item xs={6}>
-                      <Card>
-                          <p>Budget: $1,000</p>
-                      </Card>
-                  </Grid>
               </Grid>
+                </Grid>
 
         </div>
         );
