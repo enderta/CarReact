@@ -53,7 +53,7 @@ React.useEffect(() => {
 
 
     return (
-          <div style={{margin:"10px"}}>
+          <div style={{margin:"10px",background:"grey"}}>
               <h1>Dashboard</h1>
               <Grid container spacing={4}>
                   <Grid item xs={12 }>
