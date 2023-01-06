@@ -1,4 +1,5 @@
 import React  from 'react';
+import Dashboard from "./compononts/Maps/Dashboard.jsx";
 
 
 
@@ -7,7 +8,7 @@ const App = () => {
 
     return (
         <div>
-            {/*<Emp/>*/}
+            <Dashboard />
         </div>
 
     );
