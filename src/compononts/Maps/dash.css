@@ -1,22 +1,19 @@
 body{
     background: black;
+    color: #0cc02c;
 
 
 
 }
 .card{
     background: black;
-    background: linear-gradient(90deg, rgba(87, 9, 116, 1) 15%, rgba(5, 93, 22, 1) 100%);
-    margin: 10px;
-    padding: 10px;
-    align-content: center;
+    background: linear-gradient(90deg, rgb(56, 28, 66) 15%, rgba(5, 93, 22, 1) 100%);
 
-    width: 100%;
 }
 
 .parent {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 

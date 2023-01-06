@@ -64,7 +64,7 @@ const Dashboard = () => {
                                         title: "Amount",
 
                                     },
-                                    backgroundColor: '#b7851a',
+
                                     colors: ['#f44336', '#2196f3'],
                                     legend: {position: 'top', maxLines: 3},
                                     isStacked: true,
@@ -103,7 +103,7 @@ const Dashboard = () => {
                             options={{
                                 title: "Sales",
                                 pieHole: 0.4,
-                                backgroundColor: '#093403',
+
                                 legend: {position: 'top', maxLines: 3},
                                 bar: {groupWidth: '75%'},
                                 isStacked: true,
@@ -140,7 +140,6 @@ const Dashboard = () => {
                             options={{
                                 title: "Sales",
                                 pieHole: 0.4,
-                                backgroundColor: '#093403',
                                 legend: {position: 'top', maxLines: 3},
                                 bar: {groupWidth: '75%'},
                                 isStacked: true,
@@ -180,7 +179,7 @@ const Dashboard = () => {
                                 hAxis: { title: "Life Expectancy" },
                                 vAxis: { title: "Fertility Rate" },
                                 bubble: { textStyle: { fontSize: 11 } },
-                                backgroundColor: '#093403',
+
                                 legend: {position: 'top', maxLines: 3},
                                 bar: {groupWidth: '75%'},
                                 isStacked: true,
