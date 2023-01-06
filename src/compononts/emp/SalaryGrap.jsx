@@ -45,8 +45,21 @@ const [data, setData] = React.useState([]);
                 chartType="Bar"
                 loader={<div>Loading Chart</div>}
                 data={chartData}
+                options={{
+                    theme: 'dark',
+                    title: 'Salary',
+                    chartArea: { width: '50%' },
+                    hAxis: {
+                        title: 'Salary',
+                        minValue: 0,
+                    },
+                    vAxis: {
+                        title: 'Name',
+                    },
+                }}
 
             />
+
 
         </div>
     );

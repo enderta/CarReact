@@ -4,7 +4,7 @@ import {Chart} from "react-google-charts";
 const Budeget = () => {
 
     return (
-        <div>
+        <div >
             <Chart
                 chartType="PieChart"
                 loader={<div>Loading Chart</div>}
@@ -17,9 +17,14 @@ const Budeget = () => {
                 ]}
                 options={{
                     title: "Company Performance",
-                    pieHole: 0.4,
+                    pieHole: 0.5,
+                    theme: 'dark',
+                    is3D: true,
+
+
+
                 }}
-                rootProps={{ "data-testid": "1" }}
+
             />
 
         </div>

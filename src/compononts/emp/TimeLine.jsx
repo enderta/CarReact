@@ -1,10 +1,26 @@
 import React from 'react';
 import {Chart} from "react-google-charts";
+import {createMuiTheme} from "@mui/material";
+import * as PropTypes from "prop-types";
 
+function MuiThemeProvider(props) {
+    return null;
+}
+
+MuiThemeProvider.propTypes = {
+    theme: PropTypes.any,
+    children: PropTypes.node
+};
 const TimeLine = () => {
 
+    const theme = createMuiTheme({
+        palette: {
+            type: 'dark',
+        },
+    });
     return (
         <div>
+
             <Chart
                 chartType="Line"
                 loader={<div>Loading Chart</div>}
@@ -22,10 +38,12 @@ const TimeLine = () => {
                     vAxis: {
                         title: 'Popularity',
                     },
+                    theme: 'dark',
 
                         }}
 
             />
+
 
         </div>
     );

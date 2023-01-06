@@ -1,21 +1,20 @@
 import React from 'react';
-import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
-import MoneyIcon from "@mui/icons-material/Money";
+
 import {Table} from "react-bootstrap";
 import SalaryGrap from "./SalaryGrap";
 import Performance from "./Performance";
 import TimeLine from "./TimeLine";
 import Budeget from "./Budeget";
+import * as PropTypes from "prop-types";
+import {CardContent, Grid, Typography,Card} from "@mui/material";
+import {withStyles} from "@mui/styles";
 
-function Timeline() {
-    return null;
-}
 
 const Emp = () => {
     const [emp, setEmp] = React.useState([]);
     const [sales, setSales] = React.useState([]);
     const [token, setToken] = React.useState('');
-  const budget=1000;
+
 
 
 React.useEffect(() => {
@@ -51,19 +50,32 @@ React.useEffect(() => {
     }, []);
 
 
+    const BlackCard = withStyles({
+        root: {
+            backgroundColor: '#1e1e1e',
+            color: 'black',
+            borderRadius: '10px',
+            boxShadow: '0 0 10px 0 rgba(0,0,0,0.5)',
+            '&:hover': {
+                backgroundColor: '#1e1e1e',
+            }
+        }
+    })(Card);
+
 
     return (
-          <div style={{margin:"10px",background:"grey"}}>
+          <div style={{margin:"10px",textAlign:"center",color:"red",position:'absolute'}}>
               <h1>Dashboard</h1>
-              <Grid container spacing={4}>
-                  <Grid item xs={12 }>
-                      <Card>
-                            <CardContent>
+
+              <Grid container spacing={6} >
+                  <Grid item xs={12}>
+                      <BlackCard>
+                            <CardContent style={{background:"black"}}>
                                 <Typography color="textSecondary" gutterBottom>
                                     Employees
                                 </Typography>
                                 <Typography variant="h5" component="div">
-                                   <Table striped bordered hover>
+                                   <Table striped bordered hover  variant={"dark"}>
                                         <thead>
                                         <tr>
                                             <th>Employee Name</th>
@@ -84,11 +96,11 @@ React.useEffect(() => {
                                 </Typography>
                             </CardContent>
 
-                      </Card>
+                      </BlackCard>
                   </Grid>
-                  <Grid item xs={6}>
-                      <Card>
-                         <CardContent>
+                  <Grid  item xs={6}>
+                      <Black >
+                         <CardContent >
                                 <Typography color="textSecondary" gutterBottom>
                                    Salary Graph
                                 </Typography>
@@ -96,7 +108,7 @@ React.useEffect(() => {
                                     <SalaryGrap/>
 
                          </CardContent>
-                      </Card>
+                      </Black>
                   </Grid>
                   <Grid item xs={6}>
                       <Card>
@@ -136,7 +148,9 @@ React.useEffect(() => {
               </Grid>
                 </Grid>
 
+
         </div>
+
         );
 };
 
