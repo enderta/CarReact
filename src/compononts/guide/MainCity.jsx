@@ -10,9 +10,6 @@ const MainCity = () => {
         <div>
             <h1>City Guide</h1>
             <DropDown/>
-
-
-
         </div>
     );
 };
