@@ -22,12 +22,10 @@ const CityTable = (props) => {
                             <td>{item.phone}</td>
                             <td><a href={item.website} target={"_blank"}>{item.name}</a> </td>
                         </tr>
-                    )
-                }
+                    )}
                 )}
                 </tbody>
             </Table>
-
         </div>
     );
 };
