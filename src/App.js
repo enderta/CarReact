@@ -1,5 +1,5 @@
 import React  from 'react';
-import Dashboard from "./compononts/Maps/Dashboard.jsx";
+import MainCity from "./compononts/guide/MainCity.jsx";
 
 
 
@@ -8,7 +8,7 @@ const App = () => {
 
     return (
         <div>
-            <Dashboard />
+       <MainCity />
         </div>
 
     );
