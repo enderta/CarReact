@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from "react-bootstrap";
 import CityTable from "./CityTable.jsx";
+import Form from 'react-bootstrap/Form';
 
 const DropDown = (props) => {
     const [data, setData] = React.useState([]);
@@ -32,16 +33,16 @@ React.useEffect(() => {
 }, [data]);
     return (
         <div>
-            <select style={{margin:"10px"}} onChange={handleCity}>
+            <Form.Select style={{margin:"10px",width:"200px"}} onChange={handleCity}>
                 <option value="harrow">Harrow</option>
                 <option value="heathrow">Heathrow</option>
                 <option value="startford">Startford</option>
-            </select>
+            </Form.Select>
             <div>
-                <Button style={{margin:"10px"}} onClick={handleCategory} value={'doctors'}>Doctors</Button>
-                <Button style={{margin:"10px"}} onClick={handleCategory} value={'pharmacies'}>Pharmacies</Button>
-                <Button style={{margin:"10px"}} onClick={handleCategory} value={'colleges'}>Colleges</Button>
-                <Button style={{margin:"10px"}} onClick={handleCategory} value={'hospitals'}>Hospitals</Button>
+                <Button variant={"outline-primary"} style={{margin:"10px"}} onClick={handleCategory} value={'doctors'}>Doctors</Button>
+                <Button  variant={"outline-danger"} style={{margin:"10px"}} onClick={handleCategory} value={'pharmacies'}>Pharmacies</Button>
+                <Button  variant={"outline-info"} style={{margin:"10px"}} onClick={handleCategory} value={'colleges'}>Colleges</Button>
+                <Button variant={"outline-dark"} style={{margin:"10px"}} onClick={handleCategory} value={'hospitals'}>Hospitals</Button>
             </div>
             <div>
                 <CityTable data={data}/>

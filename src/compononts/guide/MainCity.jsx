@@ -8,7 +8,7 @@ const MainCity = () => {
 
     return (
         <div>
-            <h1>City Guide</h1>
+            <h1 style={{textAlign:"center",margin:"10px"}}>City Guide</h1>
             <DropDown/>
         </div>
     );
