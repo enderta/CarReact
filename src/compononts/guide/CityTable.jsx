@@ -4,7 +4,7 @@ import {Table} from "react-bootstrap";
 const CityTable = (props) => {
     return (
         <div>
-            <Table >
+            <Table  style={{margin:"10px",height:"400px",width:"1600px"}} >
                 <thead>
                 <tr>
                     <th>name</th>
