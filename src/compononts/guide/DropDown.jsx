@@ -7,14 +7,11 @@ const DropDown = (props) => {
     const [data, setData] = React.useState([]);
     const [city, setCity] = React.useState("harrow");
     const [category, setCategory] = React.useState("doctors");
-
     const handleCity = (e) => {
         setCity(e.target.value);
-
     }
     const handleCategory = (e) => {
         setCategory(e.target.value);
-
     }
 
 React.useEffect(() => {
@@ -22,7 +19,6 @@ React.useEffect(() => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-
         },
     }).then(res => res.json())
         .then(data => {
@@ -31,6 +27,7 @@ React.useEffect(() => {
         )
         .catch(err => console.log(err))
 }, [data]);
+
     return (
         <div>
             <Form.Select style={{margin:"10px",width:"200px"}} onChange={handleCity}>
@@ -47,8 +44,6 @@ React.useEffect(() => {
             <div>
                 <CityTable data={data}/>
             </div>
-
-
         </div>
     );
 };
