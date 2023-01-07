@@ -12,13 +12,15 @@ const Dashboard = () => {
         {id:5,name:'Adam',age:40,city:'London'},
 ];
     return (
+
         <div>
+
             <div className="parent">
                 <div className="div1">
                    <Card className={'card'}>
                           <Card.Body>
                                 <Card.Title>Employees</Card.Title>
-                                    <Table variant={"dark"}>
+                                    <Table style={{backgroundColor:'#f59f06'}}>
                                         <thead>
                                         <tr>
                                             <th>Id</th>
@@ -74,6 +76,7 @@ const Dashboard = () => {
                                         fontName: 'Roboto',
                                         bold: true,
                                     },
+                                    backgroundColor:'#f59f06',
 
                                 }}
                                 rootProps={{ "data-testid": "1" }}
@@ -113,6 +116,7 @@ const Dashboard = () => {
                                     fontName: 'Roboto',
                                     bold: true,
                                 },
+                                backgroundColor:'#f59f06',
                             }}
                             rootProps={{ "data-testid": "2" }}
 
@@ -143,6 +147,7 @@ const Dashboard = () => {
                                 legend: {position: 'top', maxLines: 3},
                                 bar: {groupWidth: '75%'},
                                 isStacked: true,
+                                backgroundColor:'#f59f06',
                             }
                             }
                             rootProps={{ "data-testid": "2" }}
@@ -183,6 +188,7 @@ const Dashboard = () => {
                                 legend: {position: 'top', maxLines: 3},
                                 bar: {groupWidth: '75%'},
                                 isStacked: true,
+                                backgroundColor:'#f59f06',
                             }}
                             rootProps={{ "data-testid": "1" }}
                         />

@@ -1,14 +1,19 @@
 body{
-    background: black;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     color: #0cc02c;
 
 
 
 }
 .card{
-    background: black;
-    background: linear-gradient(90deg, rgb(56, 28, 66) 15%, rgba(5, 93, 22, 1) 100%);
 
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+Chart{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 }
 
 .parent {
