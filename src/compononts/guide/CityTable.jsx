@@ -4,12 +4,13 @@ import {Table} from "react-bootstrap";
 const CityTable = (props) => {
     return (
         <div>
-            <Table variant={"dark"}>
+            <Table >
                 <thead>
                 <tr>
                     <th>name</th>
                     <th>address</th>
                     <th>phone</th>
+                    <th>web-site</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@ const CityTable = (props) => {
                             <td>{item.name}</td>
                             <td>{item.address}</td>
                             <td>{item.phone}</td>
+                            <td><a href={item.website} target={"_blank"}>{item.name}</a> </td>
                         </tr>
                     )
                 }

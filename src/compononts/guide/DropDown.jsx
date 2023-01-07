@@ -5,7 +5,7 @@ import CityTable from "./CityTable.jsx";
 const DropDown = (props) => {
     const [data, setData] = React.useState([]);
     const [city, setCity] = React.useState("harrow");
-    const [category, setCategory] = React.useState("pharmacies");
+    const [category, setCategory] = React.useState("doctors");
 
     const handleCity = (e) => {
         setCity(e.target.value);
@@ -29,19 +29,25 @@ React.useEffect(() => {
             }
         )
         .catch(err => console.log(err))
-}, [city,category]);
+}, [data]);
     return (
         <div>
-            <select onChange={handleCity}>
+            <select style={{margin:"10px"}} onChange={handleCity}>
                 <option value="harrow">Harrow</option>
                 <option value="heathrow">Heathrow</option>
                 <option value="startford">Startford</option>
             </select>
-            <Button onClick={handleCategory} value={'doctors'}>Doctors</Button>
-            <Button onClick={handleCategory} value={'pharmacies'}>Pharmcies</Button>
-            <Button onClick={handleCategory} value={'colleges'}>Colleges</Button>
-            <Button onClick={handleCategory} value={'hospitals'}>Hospitals</Button>
-            <CityTable data={data}/>
+            <div>
+                <Button style={{margin:"10px"}} onClick={handleCategory} value={'doctors'}>Doctors</Button>
+                <Button style={{margin:"10px"}} onClick={handleCategory} value={'pharmacies'}>Pharmacies</Button>
+                <Button style={{margin:"10px"}} onClick={handleCategory} value={'colleges'}>Colleges</Button>
+                <Button style={{margin:"10px"}} onClick={handleCategory} value={'hospitals'}>Hospitals</Button>
+            </div>
+            <div>
+                <CityTable data={data}/>
+            </div>
+
+
         </div>
     );
 };
