@@ -4,7 +4,7 @@ import {Table} from "react-bootstrap";
 const CityTable = (props) => {
     return (
         <div>
-            <Table  style={{margin:"10px",height:"400px",width:"1600px"}} >
+            <Table xm striped bordered hover style={{margin:"8px"}} >
                 <thead>
                 <tr>
                     <th>name</th>
