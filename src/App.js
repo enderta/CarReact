@@ -1,5 +1,5 @@
 import React  from 'react';
-import MainCity from "./compononts/guide/MainCity.jsx";
+import Lists from "./compononts/emailList/Lists.jsx";
 
 
 
@@ -8,7 +8,7 @@ const App = () => {
 
     return (
         <div>
-       <MainCity />
+      <Lists    />
         </div>
 
     );

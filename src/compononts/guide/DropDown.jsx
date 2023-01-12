@@ -1,8 +1,7 @@
 import React from 'react';
 import {Button} from "react-bootstrap";
-import CityTable from "./CityTable.jsx";
 import Form from 'react-bootstrap/Form';
-
+import CityTable from "./CityTable.jsx";
 const DropDown = (props) => {
     const [data, setData] = React.useState([]);
     const [city, setCity] = React.useState("harrow");
