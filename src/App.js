@@ -1,5 +1,8 @@
 import React  from 'react';
-import Lists from "./compononts/emailList/Lists.jsx";
+import PicSlide from "./compononts/userCrud/PicSlide.js";
+
+
+
 
 
 
@@ -8,7 +11,7 @@ const App = () => {
 
     return (
         <div>
-      <Lists    />
+       <PicSlide />
         </div>
 
     );
