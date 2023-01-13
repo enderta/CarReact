@@ -1,5 +1,5 @@
 import React from 'react';
-import './pic.css'
+
 const PicSlide = () => {
     const images = [
         "https://images.pexels.com/photos/3836292/pexels-photo-3836292.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -26,25 +26,21 @@ const PicSlide = () => {
     }
 
     return (
-        <div>
-            <h2>Project 1: Carousel</h2>
-            <div className="slider">
-                <div className="left-arrow" onClick={prevPic}>
-                    ⬅
-                </div>
-                <div className="right-arrow" onClick={nextPic}>
-                    ⮕
-                </div>
-                {images.map(
-                    (image, index) =>
-                        pic === index && (
-                            <div key={image} className="slide">
-                                <img src={image} alt="images" />
-                            </div>
-                        )
-                )}
-            </div>
+
+        /*image should cover all the page */
+        <div className="pic" style={{
+            width: '100vw',
+            height: '100vh',
+            backgroundImage: `url(${images[pic]})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+        }}>
+            <button onClick={prevPic}>Prev</button>
+            <button onClick={nextPic}>Next</button>
         </div>
+
+
 
     );
 };
