@@ -21,6 +21,24 @@ const FaqAccrod = () => {
             title: "When can I get it?",
             info:
                 "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
+        },
+        {
+            id: 4,
+            title: "How do I use it?",
+            info:
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
+        },
+        {
+            id: 5,
+            title: "What is the warranty?",
+            info:
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
+        },
+        {
+            id: 6,
+            title: "How long warranty does it have?",
+            info:
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
         }
     ];
     return (
