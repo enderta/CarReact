@@ -1,17 +1,15 @@
 import React  from 'react';
-import PicSlide from "./compononts/userCrud/PicSlide.js";
+import FAQAccrod from "./compononts/userCrud/FAQAccrod.jsx";
 
-
-
-
-
-
+function FAQAccordion() {
+    return null;
+}
 
 const App = () => {
 
     return (
         <div>
-       <PicSlide />
+     <FAQAccrod/>
         </div>
 
     );
