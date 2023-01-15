@@ -65,7 +65,7 @@ const FaqAccrod = () => {
 <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <Button variant="primary" onClick={handleShow}>
+                        <Button variant="outline-info" onClick={handleShow}>
                             Add New Question
                         </Button>
                         <Modal show={show} onHide={handleClose}>
