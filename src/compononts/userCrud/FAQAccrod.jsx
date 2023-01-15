@@ -1,46 +1,38 @@
 import React from 'react';
-import {Accordion} from "react-bootstrap";
-import {Card} from "reactstrap";
+import {Accordion, Button, Card, Form, Modal} from "react-bootstrap";
+
 
 const FaqAccrod = () => {
-    const questions = [
-        {
-            id: 1,
-            title: "Is this a good product?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        },
-        {
-            id: 2,
-            title: "How much does it cost?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        },
-        {
-            id: 3,
-            title: "When can I get it?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        },
-        {
-            id: 4,
-            title: "How do I use it?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        },
-        {
-            id: 5,
-            title: "What is the warranty?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        },
-        {
-            id: 6,
-            title: "How long warranty does it have?",
-            info:
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem."
-        }
-    ];
+   const [questions, setQuestions] = React.useState([]);
+   const [newQuestion, setNewQuestion] = React.useState('');
+    const [newAnswer, setNewAnswer] = React.useState('');
+    const [show, setShow] = React.useState(false);
+
+    React.useEffect(() => {
+        fetch('http://localhost:3001/faqa')
+            .then(res => res.json())
+            .then(data => {
+                setQuestions(data);
+            })
+    }, []);
+    const addNewQuestion = () => {
+        fetch('http://localhost:3001/faqa', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                question: newQuestion,
+                answer: newAnswer
+            })
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+        window.location.reload();
+    }
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
     return (
         <div>
             <h1>FAQ</h1>
@@ -53,13 +45,14 @@ const FaqAccrod = () => {
                                     <Card className={"card"}>
                                         <Accordion>
                                             <Accordion.Item eventKey={question.id}>
-                                                <Accordion.Header>{question.title}</Accordion.Header>
-                                                <Accordion.Body>{question.info}</Accordion.Body>
+                                                <Accordion.Header>{question.question}</Accordion.Header>
+                                                <Accordion.Body>{question.answer}</Accordion.Body>
                                             </Accordion.Item>
                                         </Accordion>
 
                                     </Card>
                                 </div>
+
                             </div>
                             );
 
@@ -68,8 +61,45 @@ const FaqAccrod = () => {
 
                 }
             </div>
-
+            <br/>
+<div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <Button variant="primary" onClick={handleShow}>
+                            Add New Question
+                        </Button>
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Add New Question</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <Form>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Label>Question</Form.Label>
+                                        <Form.Control type="text" placeholder="Enter Question"
+                                                        onChange={(e) => setNewQuestion(e.target.value)}/>
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Label>Answer</Form.Label>
+                                        <Form.Control type="text" placeholder="Enter Answer"
+                                                        onChange={(e) => setNewAnswer(e.target.value)}/>
+                                    </Form.Group>
+                                </Form>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={addNewQuestion}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </div>
+                </div>
+</div>
         </div>
+
     );
 };
 
