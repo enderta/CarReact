@@ -8,7 +8,6 @@ const Videos = () => {
     const [videos, setVideos] = React.useState([]);
     const [filtered, setFiltered] = React.useState(videos);
 
-
     React.useEffect(() => {
         fetch('http://localhost:3001/videos')
             .then(res => res.json())
@@ -27,15 +26,13 @@ const Videos = () => {
         }
     }
 
-
-
     return (
         <div style={{margin:"10px"}}>
 
             <Container>
                 <Row>
                     <Col>
-                        <h1 style={{textAlign:"center"}}>Video List</h1>
+                        <h1 style={{textAlign:"center",color:"darkgreen"}}>Video List</h1>
                     </Col>
                     <Col>
                         <Form.Control type="text" placeholder="Search" onChange={handleSearch}/>
