@@ -71,13 +71,10 @@ const NewVideo = () => {
                                       Submit
                                     </Button>
                            </Form>
-
                         </Card>
                     </div>
                 </Fade>
             </div>
-
-
         </>
     );
 };
