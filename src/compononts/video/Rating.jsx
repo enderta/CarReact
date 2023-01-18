@@ -44,8 +44,6 @@ const Rating = (props) => {
         window.location.reload();
     }
 
-
-
     return (
         <div>
             <div className="container">
