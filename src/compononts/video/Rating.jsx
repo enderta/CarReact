@@ -3,7 +3,6 @@ import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
     const [rating, setRating] = React.useState(props.id.rating);
-    const [hover, setHover] = React.useState(0);
 
     const increaseRating = (id) => {
         fetch(`http://localhost:3001/videos/${id}`, {
@@ -53,7 +52,6 @@ const Rating = (props) => {
                     {rating}
                 </span>
                 <Button style={{margin:'10px'}}  variant="danger" onClick={() => decreaseRating(props.id.id)}>-</Button>
-
         </div>
         </div>
     );
