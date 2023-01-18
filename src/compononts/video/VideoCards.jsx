@@ -2,12 +2,13 @@ import React from 'react';
 import Rating from "./Rating.jsx";
 
 const VideoCards = (props) => {
-    console.log(props.video.url.split('='));
+
     let src='https://www.youtube.com/embed/'+props.video.url.split('=')[1];
     if(props.video.url.split('=')[1].includes('&')){
         src='https://www.youtube.com/embed/'+props.video.url.split('=')[1].split('&')[0];
 
     }
+    console.log(src);
     return (
         <div>
             <div className="container">
@@ -24,16 +25,12 @@ const VideoCards = (props) => {
                                 <iframe
                                     style={{"height":"500px",'weihgt':"200px"}} className="card-img-top" alt={props.video.Title}
                                     src={src}
-                                    frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                     title="Embedded youtube"
                                 />
                             </div>
                         </div>
-
-
-
         </div>
     );
 };
