@@ -41,23 +41,12 @@ const Videos = () => {
                     </Col>
                 </Row>
             </Container>
-
                     {filtered.map((video, index) => (
-
                                 <div>
                                    <VideoCards video={video}/>
                                 </div>
-
-
-
                     ))}
-
-
             </div>
-
-
-
-
     );
 };
 
