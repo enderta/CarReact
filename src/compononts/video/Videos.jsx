@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button, Card, Container, Form, Table,Row,Col} from "react-bootstrap";
+import {Container, Form,Row,Col} from "react-bootstrap";
 import NewVideo from "./NewVideo.jsx";
-import Rating from "./Rating.jsx";
 import VideoCards from "./VideoCards.jsx";
 
 const Videos = () => {
