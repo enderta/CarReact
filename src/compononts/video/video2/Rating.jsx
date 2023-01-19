@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
-    const [rating, setRating] = React.useState(props.rt.rating);
+    const [rating, setRating] = React.useState(props.id.rating);
 
     const handleIncrease = () => {
         setRating(rating + 1);
@@ -22,7 +22,7 @@ const Rating = (props) => {
                 <Button style={{margin:'10px'}} variant="danger" onClick={() => handleDelete(props.id.id)}>Delete</Button>
                 <Button style={{margin:'10px'}} variant="success" onClick={() => handleIncrease()}>+</Button>
                 <span style={{color:"darkgoldenrod",margin:"10px"}}>
-                    {rating}
+                    {"Rating: " + rating}
                 </span>
                 <Button style={{margin:'10px'}}  variant="danger" onClick={() => handleDecrease()}>-</Button>
 
