@@ -74,6 +74,10 @@ const Baby = () => {
         setFiltered(sortedByName.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())));
     }
         , [search]);
+    const handledelete = (item) => {
+        setFiltered(filtered.filter((i) => i.id !== item.id));
+    }
+
     return (
         <div>
             <div className="search">
@@ -129,6 +133,7 @@ const Baby = () => {
                         </ul>
         </div>
         </div>
+
         </div>
         </div>
     );
