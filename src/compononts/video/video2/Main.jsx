@@ -5,9 +5,20 @@ import VideoCard  from "./VideoCard.jsx";
 
 const Main = () => {
     const [videos, setVideos] = React.useState(data);
+    const [filtered, setFiltered] = React.useState(videos);
+
+    const handleSearch = (e) => {
+        if(e.target.value === ''){
+            setFiltered(videos);
+        }else{
+            setFiltered(videos.filter((video) => video.title.toLowerCase().includes(e.target.value.toLowerCase())));
+        }
+    }
+
 
     return (
         <div>
+           {/* <input type="text" placeholder="Search" onChange={handleSearch}/>*/}
             {videos.map((video, index) => (
                 <div>
                     <VideoCard video={video} data={setVideos} videos={videos}/>
