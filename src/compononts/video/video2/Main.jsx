@@ -1,6 +1,7 @@
 import React from 'react';
 import data from './exampleresponse.json'
 import VideoCard  from "./VideoCard.jsx";
+import AddVideo from "./AddVideo.jsx";
 
 
 const Main = () => {
@@ -19,9 +20,11 @@ const Main = () => {
     return (
         <div>
            {/* <input type="text" placeholder="Search" onChange={handleSearch}/>*/}
+            <AddVideo data={setVideos} videos={videos}/>
             {videos.map((video, index) => (
                 <div>
                     <VideoCard video={video} data={setVideos} videos={videos}/>
+
                 </div>
             ))}
 
