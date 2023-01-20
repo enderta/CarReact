@@ -2,14 +2,27 @@ import React from 'react';
 import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
-    const [rating, setRating] = React.useState(props.id.rating);
 
-    const handleIncrease = () => {
-        setRating(rating + 1);
+
+    const handleIncrease = (id) => {
+    props.rt(props.v.map((video) => {
+        if (video.id === id) {
+            return {...video, rating: video.rating + 1}
+        }
+        return video;
+    }
+    ))
 
     }
-    const handleDecrease = () => {
-        setRating(rating - 1);
+    const handleDecrease = (id) => {
+       props.rt(props.v.map((video) => {
+        if (video.id === id) {
+            return {...video, rating: video.rating - 1}
+        }
+        return video;
+       }
+         ))
+
     }
     const handleDelete = (id) => {
         props.rt(props.v.filter((video) => video.id !== id));
@@ -20,11 +33,11 @@ const Rating = (props) => {
         <div>
             <div className="container">
                 <Button style={{margin:'10px'}} variant="danger" onClick={() => handleDelete(props.id.id)}>Delete</Button>
-                <Button style={{margin:'10px'}} variant="success" onClick={() => handleIncrease()}>+</Button>
+                <Button style={{margin:'10px'}} variant="success" onClick={() => handleIncrease(props.id.id)}>+</Button>
                 <span style={{color:"darkgoldenrod",margin:"10px"}}>
-                    {"Rating: " + rating}
+                    {"Rating: " + props.id.rating}
                 </span>
-                <Button style={{margin:'10px'}}  variant="danger" onClick={() => handleDecrease()}>-</Button>
+                <Button style={{margin:'10px'}}  variant="danger" onClick={() => handleDecrease(props.id.id)}>-</Button>
 
             </div>
         </div>
