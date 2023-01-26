@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Collapse from 'react-bootstrap/Fade';
 import {Fade, Form} from "react-bootstrap";
 const NewVideo = () => {
     const [title, setTitle] = React.useState('');

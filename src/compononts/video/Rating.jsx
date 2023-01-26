@@ -3,7 +3,6 @@ import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
     const [rating, setRating] = React.useState(props.id.rating);
-
     const increaseRating = (id) => {
         fetch(`http://localhost:3001/videos/${id}`, {
             method: 'PUT',
