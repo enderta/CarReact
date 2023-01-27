@@ -6,7 +6,7 @@ const ReadBooks = (props) => {
             <tr>
                 <td>{props.book.title}</td>
                 <td>{props.book.author}</td>
-                <td>{props.book.publishDate}</td>
+                <td>{props.book.publish}</td>
             </tr>
 
 

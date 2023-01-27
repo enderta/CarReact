@@ -22,7 +22,7 @@ const UnReadBooks = (props) => {
         <tr>
             <td>{props.book.title}</td>
             <td>{props.book.author}</td>
-            <td>{props.book.publishDate}</td>
+            <td>{props.book.publish}</td>
             <td>
                 <Button variant="outline-success" onClick={() => handleRead(props.book.id)}>Read</Button>
             </td>

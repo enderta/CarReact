@@ -3,14 +3,19 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Card, Form, FormControl, Table} from "react-bootstrap";
+import {Button, Card, Form, FormControl, Modal, Table} from "react-bootstrap";
 import ReadBooks from "./ReadBooks.jsx";
 import UnReadBooks from "./UnReadBooks.jsx";
+import AddBook from "./AddBook.jsx";
 const Main = () => {
     const [books, setBooks] = React.useState([]);
     const [filter, setFilter] = React.useState(books);
     const[unRead,setUnRead] = React.useState([]);
     const[read,setRead] = React.useState([]);
+    const [show, setShow] = React.useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     React.useEffect(() => {
         fetch('http://localhost:3001/books')
@@ -44,8 +49,29 @@ const Main = () => {
                             <Navbar.Brand href="#" >
                                 <h1 style={{textAlign:'center',color:"black"}}>Book Shelf</h1>
                             </Navbar.Brand>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav" >
+                                <Button style={{display:'flex',alignContent:"end"}} variant="primary" onClick={handleShow}>
+                                    Add Book
+                                </Button>
+                            </Navbar.Collapse>
+
                         </Container>
                     </Navbar>
+
+                    <Modal show={show} onHide={handleClose}>
+
+                        <Modal.Body>
+                            <AddBook books={books} setBooks={setBooks} handleClose={handleClose}/>
+                        </Modal.Body>
+                        <br/>
+                        <br/>
+                        <Modal.Footer>
+
+
+                        </Modal.Footer>
+
+                    </Modal>
                 </Container>
             </div>
             <div>
