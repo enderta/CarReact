@@ -3,7 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Card} from "react-bootstrap";
+import {Card, Form, FormControl, Table} from "react-bootstrap";
+import ReadBooks from "./ReadBooks.jsx";
+import UnReadBooks from "./UnReadBooks.jsx";
 const Main = () => {
     const [books, setBooks] = React.useState([]);
     const [filter, setFilter] = React.useState(books);
@@ -29,8 +31,8 @@ const Main = () => {
     }
 
     React.useEffect(() => {
-        setUnRead(filter.filter((book) => book.isRead === false));
-        setRead(filter.filter((book) => book.isRead === true));
+        setUnRead(filter.filter((book) => book.read === false));
+        setRead(filter.filter((book) => book.read === true));
     }, [filter]);
 
     return (
@@ -45,6 +47,16 @@ const Main = () => {
                         </Container>
                     </Navbar>
                 </Container>
+            </div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Form.Control type="text" placeholder="Search" onChange={handleSearch}/>
+                        </Col>
+                    </Row>
+                </Container>
+
             </div>
             <div>
                 <Container>
@@ -72,6 +84,46 @@ const Main = () => {
                     </Row>
 
                 </Container>
+            </div>
+            <div>
+                <Container>
+                    <Table style={{border:'none'}}>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {filter.filter((book) => book.read === true).map((book, index) => (
+                                <ReadBooks book={book}/>
+                            )
+                        )}
+                        </tbody>
+                    </Table>
+                </Container>
+            </div>
+            <div>
+                <Container>
+                    <Table style={{border:'none'}}>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Read</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {filter.filter((book) => book.read === false).map((book, index) => (
+                                <UnReadBooks book={book}/>
+                            )
+                        )}
+                        </tbody>
+                    </Table>
+                </Container>
+
             </div>
         </div>
     );
