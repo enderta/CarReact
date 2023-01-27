@@ -18,6 +18,7 @@ const Videos = () => {
     }, []);
 
     const handleSearch = (e) => {
+        e.preventDefault();
         if(e.target.value === ''){
             setFiltered(videos);
         }else{
