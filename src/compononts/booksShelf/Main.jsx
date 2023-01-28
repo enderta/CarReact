@@ -51,9 +51,7 @@ const Main = () => {
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav" >
-                                <Button style={{display:'flex',alignContent:"end"}} variant="primary" onClick={handleShow}>
-                                    Add Book
-                                </Button>
+
                             </Navbar.Collapse>
 
                         </Container>
@@ -83,6 +81,11 @@ const Main = () => {
                     </Row>
                 </Container>
 
+            </div>
+            <div>
+                <Button style={{display:'flex',alignContent:"end"}} variant="primary" onClick={handleShow}>
+                    Add Book
+                </Button>
             </div>
             <div>
                 <Container>
