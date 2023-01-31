@@ -13,6 +13,7 @@ const Owners = () => {
             setFiltered(owners.filter((owner) => owner.name.toLowerCase().includes(e.target.value.toLowerCase())));
         }
     }
+
     React.useEffect(() => {
         fetch('http://localhost:3001/owners')
             .then(res => res.json())
@@ -21,6 +22,7 @@ const Owners = () => {
                 setFiltered(data);
             });
     },[])
+
     React.useEffect(() => {
         fetch('https://randomuser.me/api/?results=100')
             .then(res => res.json())
@@ -30,7 +32,6 @@ const Owners = () => {
     },[])
 
 
-    console.log(picture)
     return (
         <div>
             <div className="album py-5 bg-light">
