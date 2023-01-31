@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBarS from "./NavBarS.jsx";
 
 const Owners = () => {
     const [owners, setOwners] = React.useState([]);
@@ -34,6 +35,9 @@ const Owners = () => {
 
     return (
         <div>
+            <div>
+                <NavBarS filter={setFiltered} search={handleSearch} />
+            </div>
             <div className="album py-5 bg-light">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -41,7 +45,7 @@ const Owners = () => {
                             filtered.map((owner, index) => (
                                 <div className="col" key={index}>
                                     <div className="card shadow-sm">
-                                      <img src={picture[index].picture.large}/>
+                                      <img src={picture[owner.id].picture.large}/>
                                         <div className="card-body">
                                             <p className="card-text">{owner.name}</p>
                                             <p className="card-text">{owner.email}</p>
