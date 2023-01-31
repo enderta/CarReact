@@ -58,7 +58,6 @@ const Owners = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
