@@ -1,10 +1,19 @@
 import React from 'react';
 import NavBarS from "./NavBarS.jsx";
+import Cards from "./Cards.jsx";
 
 const Owners = () => {
     const [owners, setOwners] = React.useState([]);
     const [filtered, setFiltered] = React.useState(owners);
-    const [picture, setPicture] = React.useState([]);
+    const [pictures, setPictures] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch('https://randomuser.me/api/?results=100')
+            .then(res => res.json())
+            .then(data => {
+                setPictures(data.results);
+            });
+    },[])
 
 
     const handleSearch = (e) => {
@@ -24,14 +33,7 @@ const Owners = () => {
             });
     },[])
 
-    React.useEffect(() => {
-        fetch('https://randomuser.me/api/?results=100')
-            .then(res => res.json())
-            .then(data => {
-                setPicture(data.results);
-            });
-    },[])
-
+    console.log(filtered)
 
     return (
         <div>
@@ -43,21 +45,7 @@ const Owners = () => {
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         {
                             filtered.map((owner, index) => (
-                                <div className="col" key={index}>
-                                    <div className="card shadow-sm">
-                                      <img src={picture[owner.id].picture.large}/>
-                                        <div className="card-body">
-                                            <p className="card-text">{owner.name}</p>
-                                            <p className="card-text">{owner.email}</p>
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <div className="btn-group">
-                                                    <button type="button" className="btn btn-sm btn-outline-secondary">Home</button>
-                                                    <button type="button" className="btn btn-sm btn-outline-secondary">Add Home</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                             <Cards owner={owner} id={owner.id} pic={pictures[owner.id].picture.large} />
                             ))
                         }
                     </div>
