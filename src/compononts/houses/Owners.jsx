@@ -33,7 +33,7 @@ const Owners = () => {
             });
     },[])
 
-    console.log(filtered)
+
 
     return (
         <div>
