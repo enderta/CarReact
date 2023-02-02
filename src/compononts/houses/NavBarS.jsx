@@ -4,7 +4,6 @@ import AddOwner from "./AddOwner.jsx";
 
 const NavBarS = (props) => {
     const [show, setShow] = React.useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
