@@ -12,7 +12,6 @@ const House = (props) => {
             }
         );
     },[])
-    console.log(house)
 
     return (
         <>
@@ -31,7 +30,6 @@ const House = (props) => {
                     </div>
                 ))
             }
-
         </>
     )};
 
