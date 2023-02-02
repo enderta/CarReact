@@ -26,7 +26,6 @@ const NavBarS = (props) => {
                     <AddOwner show={show} handleClose={handleClose}/>
                 </Modal>
             </div>
-
         </div>
     );
 };
