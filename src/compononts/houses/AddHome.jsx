@@ -4,7 +4,6 @@ const AddHome = (props) => {
     const [postcode, setPostcode] = React.useState('');
     const [price, setPrice] = React.useState('');
     const [forsale, setForsale] = React.useState('');
-
     const handleChange = (e) => {
         if (e.target.name === 'postcode') {
             setPostcode(e.target.value);
@@ -14,7 +13,6 @@ const AddHome = (props) => {
             setForsale(e.target.value);
         }
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const newHouse = {
@@ -37,6 +35,7 @@ const AddHome = (props) => {
             })
         window.location.reload();
     }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -53,8 +52,6 @@ const AddHome = (props) => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-
-
         </div>
     );
 };

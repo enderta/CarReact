@@ -3,15 +3,13 @@ import React from 'react';
 const AddOwner = () => {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
-
-    const handleChange= (e) => {
-        if(e.target.name === 'name'){
+    const handleChange = (e) => {
+        if (e.target.name === 'name') {
             setName(e.target.value);
-        }else if(e.target.name === 'email'){
+        } else if (e.target.name === 'email') {
             setEmail(e.target.value);
         }
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const newOwner = {
@@ -32,18 +30,20 @@ const AddOwner = () => {
             })
         window.location.reload();
     }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
-                    <input type="text" className="form-control" id="name" name={'name'} value={name} onChange={handleChange}/>
+                    <input type="text" className="form-control" id="name" name={'name'} value={name}
+                           onChange={handleChange}/>
                     <label htmlFor="email">Email</label>
-                    <input type="text" className="form-control" id="email" name={'email'} value={email} onChange={handleChange}/>
+                    <input type="text" className="form-control" id="email" name={'email'} value={email}
+                           onChange={handleChange}/>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-
         </div>
     );
 };
