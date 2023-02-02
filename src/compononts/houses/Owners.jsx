@@ -5,18 +5,6 @@ import Cards from "./Cards.jsx";
 const Owners = () => {
     const [owners, setOwners] = React.useState([]);
     const [filtered, setFiltered] = React.useState(owners);
-    const [pictures, setPictures] = React.useState([]);
-const picturesArr= ['https://randomuser.me/api/portraits/men/84.jpg',
-'https://randomuser.me/api/portraits/men/85.jpg']
-    React.useEffect(() => {
-        fetch('https://randomuser.me/api/?results=100')
-            .then(res => res.json())
-            .then(data => {
-                setPictures(data.results);
-            });
-    },[])
-
-
     const handleSearch = (e) => {
         if(e.target.value === ''){
             setFiltered(owners);
@@ -33,8 +21,6 @@ const picturesArr= ['https://randomuser.me/api/portraits/men/84.jpg',
                 setFiltered(data);
             });
     },[])
-
-
 
     return (
         <div>
