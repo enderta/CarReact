@@ -32,8 +32,10 @@ const AddHome = (props) => {
         })
             .then(res => res.json())
             .then(data => {
-                props.data(data);
+                console.log(data)
+
             })
+        window.location.reload();
     }
     return (
         <div>
