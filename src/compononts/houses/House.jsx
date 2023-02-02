@@ -16,25 +16,22 @@ const House = (props) => {
 
     return (
         <>
-            <div className="col">
-                <div className="card shadow-sm">
-                    <div className="card-body">
-                        {
-                            house.map((item, index) => {
-                           return(
-                                 <>
-                                        <p className="card-text">{item.postcode}</p>
-                                        <p className="card-text">{item.price}</p>
-                                        <p className="card-text">{item.forsale}</p>
-                                     </>
-                           )
-
-                            })
-
-                        }
+            {
+                house.map((house) => (
+                    <div className={"container"}>
+                        <div className='col'>
+                            <div className='card shadow-sm'>
+                                <div className='card-body'>
+                                    <p className='card-text'>PostCode: {house.postcode}</p>
+                                    <p className='card-text'>Price: {house.price}</p>
+                                    <p className='card-text'>Forsale: {house.forsale}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                ))
+            }
+
         </>
     )};
 
