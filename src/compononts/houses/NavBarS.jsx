@@ -14,6 +14,9 @@ const NavBarS = (props) => {
                     </form>
                    </span>
                 </a>
+                <button >
+                    Add Owner
+                </button>
 
 
             </div>
