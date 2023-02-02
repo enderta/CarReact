@@ -6,7 +6,8 @@ const Owners = () => {
     const [owners, setOwners] = React.useState([]);
     const [filtered, setFiltered] = React.useState(owners);
     const [pictures, setPictures] = React.useState([]);
-
+const picturesArr= ['https://randomuser.me/api/portraits/men/84.jpg',
+'https://randomuser.me/api/portraits/men/85.jpg']
     React.useEffect(() => {
         fetch('https://randomuser.me/api/?results=100')
             .then(res => res.json())
@@ -45,7 +46,7 @@ const Owners = () => {
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         {
                             filtered.map((owner, index) => (
-                             <Cards owner={owner} id={owner.id} pic={pictures[owner.id].picture.large} />
+                             <Cards owner={owner} id={owner.id} pic={`https://randomuser.me/api/portraits/men/${owner.id}.jpg`} />
                             ))
                         }
                     </div>
