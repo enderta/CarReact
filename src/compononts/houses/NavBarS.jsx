@@ -1,6 +1,12 @@
 import React from 'react';
+import {Modal} from "react-bootstrap";
+import AddOwner from "./AddOwner.jsx";
 
 const NavBarS = (props) => {
+    const [show, setShow] = React.useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div>
@@ -14,9 +20,11 @@ const NavBarS = (props) => {
                     </form>
                    </span>
                 </a>
-                <button >
-                    Add Owner
-                </button>
+                <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleShow}>Add Owner</button>
+                <Modal show={show} onHide={handleClose}>
+                    <AddOwner show={show} handleClose={handleClose}  />
+                </Modal>
+
 
 
             </div>
