@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBarS from "./NavBarS.jsx";
 import Cards from "./Cards.jsx";
-
 const Owners = () => {
     const [owners, setOwners] = React.useState([]);
     const [filtered, setFiltered] = React.useState(owners);
