@@ -38,20 +38,22 @@ const AddHome = (props) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="postcode">Postcode</label>
-                    <input type="text" className="form-control" id="postcode" name={'postcode'} value={postcode}
-                           onChange={handleChange}/>
-                    <label htmlFor="price">Price</label>
-                    <input type="text" className="form-control" id="price" name={'price'} value={price}
-                           onChange={handleChange}/>
-                    <label htmlFor="forsale">For Sale</label>
-                    <input type="text" className="form-control" id="forsale" name={'forsale'} value={forsale}
-                           onChange={handleChange}/>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <div className="container py-4">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="postcode">Postcode</label>
+                        <input type="text" className="form-control" id="postcode" name={'postcode'} value={postcode}
+                               onChange={handleChange}/>
+                        <label htmlFor="price">Price</label>
+                        <input type="text" className="form-control" id="price" name={'price'} value={price}
+                               onChange={handleChange}/>
+                        <label htmlFor="forsale">For Sale</label>
+                        <input type="text" className="form-control" id="forsale" name={'forsale'} value={forsale}
+                               onChange={handleChange}/>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     );
 };

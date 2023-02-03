@@ -15,6 +15,7 @@ const House = (props) => {
 
     return (
         <>
+            <div className="container py-4">
             {
                 house.map((house) => (
                     <div className={"container"}>
@@ -30,6 +31,7 @@ const House = (props) => {
                     </div>
                 ))
             }
+            </div>
         </>
     )};
 

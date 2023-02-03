@@ -26,24 +26,25 @@ const AddOwner = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-
             })
         window.location.reload();
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" className="form-control" id="name" name={'name'} value={name}
-                           onChange={handleChange}/>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" className="form-control" id="email" name={'email'} value={email}
-                           onChange={handleChange}/>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <div className="container py-4">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" className="form-control" id="name" name={'name'} value={name}
+                               onChange={handleChange}/>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" className="form-control" id="email" name={'email'} value={email}
+                               onChange={handleChange}/>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     );
 };

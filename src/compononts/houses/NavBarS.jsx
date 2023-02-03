@@ -22,9 +22,11 @@ const NavBarS = (props) => {
                 </a>
                 <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleShow}>Add Owner
                 </button>
+                <br/>
                 <Modal show={show} onHide={handleClose}>
                     <AddOwner show={show} handleClose={handleClose}/>
                 </Modal>
+                <br/>
             <div className="p-5 mb-4 bg-light rounded-3">
                 <div className="container-fluid py-5">
                     <h1 className="display-5 fw-bold">Home Management</h1>
@@ -34,7 +36,7 @@ const NavBarS = (props) => {
                         how you can remix and restyle it to your liking.
                     </p>
                     <button className="btn btn-primary btn-lg" type="button">
-                        Example button
+                       For More Information
                     </button>
                 </div>
             </div>
