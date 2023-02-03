@@ -37,7 +37,6 @@ const Cards = (props) => {
                                         <AddHome show={showAdd} handleClose={handleCloseAdd} id={props.id}/>
                                     </Modal>
                                 </div>
-
                             </div>
                         </div>
                     </div>

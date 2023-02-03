@@ -42,6 +42,7 @@ const AddOwner = () => {
                         <input type="text" className="form-control" id="email" name={'email'} value={email}
                                onChange={handleChange}/>
                     </div>
+                    <br/>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
