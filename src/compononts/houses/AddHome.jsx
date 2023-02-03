@@ -51,6 +51,7 @@ const AddHome = (props) => {
                         <input type="text" className="form-control" id="forsale" name={'forsale'} value={forsale}
                                onChange={handleChange}/>
                     </div>
+                    <br/>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
