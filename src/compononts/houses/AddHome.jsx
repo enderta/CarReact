@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from "react-bootstrap";
 
 const AddHome = (props) => {
     const [postcode, setPostcode] = React.useState('');
@@ -52,7 +53,7 @@ const AddHome = (props) => {
                                onChange={handleChange}/>
                     </div>
                     <br/>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <Button type="button" className="btn-outline-success">Submit</Button>
                 </form>
             </div>
         </div>
