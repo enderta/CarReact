@@ -4,7 +4,7 @@ import {Button} from "react-bootstrap";
 const Rating = (props) => {
     const [rating, setRating] = React.useState(props.id.rating);
     const increaseRating = (id) => {
-        fetch(`http://localhost:3001/videos/${id}`, {
+        fetch(`hhttps://server-rpsh.onrender.com/videos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ const Rating = (props) => {
         window.location.reload();
     }
     const decreaseRating = (id) => {
-        fetch(`http://localhost:3001/videos/${id}`, {
+        fetch(`https://server-rpsh.onrender.com/videos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const Rating = (props) => {
         window.location.reload();
     }
     const handleDelete= (id) => {
-        fetch(`http://localhost:3001/videos/${id}`, {
+        fetch(`https://server-rpsh.onrender.com/videos/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

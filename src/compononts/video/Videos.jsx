@@ -8,7 +8,7 @@ const Videos = () => {
     const [filtered, setFiltered] = React.useState(videos);
     const handleSort = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/videos/sort')
+        fetch('https://server-rpsh.onrender.com//videos/sort')
             .then(res => res.json())
             .then(data => {
                     setVideos(data);
@@ -17,7 +17,7 @@ const Videos = () => {
             );
     }
     React.useEffect(() => {
-        fetch('http://localhost:3001/videos')
+        fetch('https://server-rpsh.onrender.com/videos')
             .then(res => res.json())
             .then(data => {
                 setVideos(data.sort((a, b) => b.rating - a.rating));

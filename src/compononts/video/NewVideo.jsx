@@ -28,7 +28,7 @@ const NewVideo = () => {
             url,
             rating
         }
-        fetch('http://localhost:3001/videos', {
+        fetch('https://server-rpsh.onrender.com//videos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const NewVideo = () => {
             })
             .catch(err => console.log(err))
         alert ('Video added successfully');
-        window.location.href = 'http://localhost:3000';
+       window.location.reload();
     }
 
     return (
