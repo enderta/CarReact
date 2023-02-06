@@ -34,13 +34,9 @@ const Videos = () => {
             setFiltered(videos.filter((video) => video.title.toLowerCase().includes(e.target.value.toLowerCase())).sort((a, b) => b.rating - a.rating));
         }
     }
-    //sort button function to sort the videos by rating
-
 
     return (
         <div style={{margin: "10px"}}>
-
-            <button onClick={handleSort}>Sort</button>
             <Container>
                 <Row>
                     <Col>
