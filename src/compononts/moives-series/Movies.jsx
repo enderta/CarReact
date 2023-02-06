@@ -19,7 +19,6 @@ const Movies = () => {
         getMovieRequest(searchValue);
     }, [searchValue]);
 
-
     return (
         <div>
             <header id='root' style={{margin: '10px'}}>
