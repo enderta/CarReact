@@ -27,7 +27,6 @@ const Owner = (props) => {
     }
 
     return (
-
             <tr>
                 <td>{props.owner.id}</td>
                 <td>{props.owner.name}</td>
@@ -42,11 +41,7 @@ const Owner = (props) => {
                 <td>
                     <button className="btn btn-outline-danger" onClick={() => handleDelete(props.owner.id)}>Delete</button>
                 </td>
-
             </tr>
-
-
-
     );
 };
 
