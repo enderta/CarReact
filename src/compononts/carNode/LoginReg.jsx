@@ -16,63 +16,54 @@ const LoginReg = () => {
         setPassword(e.target.value);
     }
     const login = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const user = {
             email,
             password
         }
-        if (email === '' || password === '') {
-            alert('Please enter all fields');
-        } else {
-            fetch('http://localhost:3001/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            }).then(res => res.json())
-                .then(data => {
-                        if (data.token) {
-                            localStorage.setItem('token', data.token);
-                            window.location.href = 'http://localhost:3000/home';
-                        } else {
-                            alert(data.message);
-                        }
-                    }
-                )
-                .catch(err => console.log(err))
-        }
+        fetch('http://localhost:3001/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.token) {
+
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/home';
+                } else {
+                    alert('Wrong email or password')
+                    setErr(true);
+                }
+            })
+            .catch(err => console.log(err))
     }
-
     const register = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const user = {
             email,
             password
         }
-        if (email === '' || password === '') {
-            alert("Please fill in all the fields");
-        } else {
-            fetch('http://localhost:3001/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            }).then(res => res.json())
-                .then(data => {
-                        if (data.message === 'User created') {
-
-                            window.location.href = 'http://localhost:3000/login';
-                        } else {
-                            alert(data.message);
-
-                        }
-                    }
-                )
-                .catch(err => console.log(err))
-
-        }
+        fetch('http://localhost:3001/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.token) {
+                    alert('You are registered')
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/home';
+                } else {
+                    alert('Wrong email or password')
+                    setErr(true);
+                }
+            })
+            .catch(err => console.log(err))
     }
         return (
             <div>
@@ -97,10 +88,10 @@ const LoginReg = () => {
                                     background: "none",
                                     border: "none"
                                 }}>
-                                    <div className="card-body">
+                                    <div className="card-body" style={{background:"none"}}>
 
-                                        <FormGroup>
-                                            <Form>
+                                        <>
+                                            <form >
                                                 <div className="form-group">
                                                     <label htmlFor="exampleInputEmail1"
                                                            style={{color: "#f3ce13"}}>Email </label>
@@ -125,8 +116,8 @@ const LoginReg = () => {
                                                 }}>Login
                                                 </button>
                                                 <button className="btn btn-outline-info" onClick={register}>Register</button>
-                                            </Form>
-                                        </FormGroup>
+                                            </form>
+                                        </>
                                     </div>
                                 </div>
                             </div>

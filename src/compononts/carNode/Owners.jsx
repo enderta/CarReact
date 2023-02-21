@@ -27,7 +27,7 @@ const Owners = (props) => {
     }, []);
     const handleLogout = () => {
         localStorage.removeItem('token');
-        window.location.href = 'http://localhost:3000/';
+        window.location.href = 'http://localhost:3000';
     }
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -68,7 +68,6 @@ const Owners = (props) => {
                     {owners.map(owner => <Owner key={owner.id} owner={owner} setOwners={setOwners}/>)}
                     </tbody>
                 </table>
-
             </div>
         </div>
     );
